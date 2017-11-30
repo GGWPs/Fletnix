@@ -73,3 +73,10 @@
     align-items: center;
     text-align: center;
 }
+
+.filmoverzicht img{
+    font-size: 16%;
+    flex-direction:row;
+
+}
+
