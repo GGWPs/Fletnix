@@ -11,6 +11,7 @@
     flex-wrap: wrap;
 }
 
+.
 
 
 
@@ -71,3 +72,10 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.filmoverzicht img{
+    font-size: 16%;
+    flex-direction:row;
+
+}
+
