@@ -17,6 +17,11 @@ header {
     background-color: #dc0505; /* Blue */
 }
 
+p, h1 {
+    color: white;
+}
+
+
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
     body {

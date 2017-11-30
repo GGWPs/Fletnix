@@ -11,10 +11,6 @@
     flex-wrap: wrap;
 }
 
-p, h1 {
-    color: white;
-}
-
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
     body {
@@ -80,6 +76,10 @@ p, h1 {
     width: 20%;
     height: 37.5%;
     margin: 30px;
+}
+.trailer_button{
+
+    /*to be continued*/
 }
 
 .filmoverzicht {
