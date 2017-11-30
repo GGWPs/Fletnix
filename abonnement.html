@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="css/basisstijlen.css">
 </head>
 <body>
+    <h1>Kies uw abbonement</h1>
+    <form action="/cgi-bin/mail.pl" method="post">
+        <fieldset id="persoon">
+            <legend>
+                Gegevens
+            </legend>
+            <input id=heer name="aanspreking" type=radio value=mijnheer>
+            <input id=mevrouw name="aanspreking" type=radio value=vrouw>
+        </fieldset>
+        <fieldset id="betaalgegevens">
+            <legend>
+                Uw betaalgegevens
+            </legend>
+        </fieldset>
+        <fieldset id="Gebruiker">
+            <legend>
+                Gebruiker aanmaken
+            </legend>
+        </fieldset>
+    </form>
+
+
 
 <!--voornaam, achternaam, land, geboortejaar,-->
 <!--rekeningnummer, gebruikersnaam en 2x wachtwoord ingevuld en een abonnement-->
