@@ -11,11 +11,6 @@
     flex-wrap: wrap;
 }
 
-.
-
-
-
-
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
     body {
@@ -36,6 +31,7 @@
         background-color: #ffffff; /* Blue */
     }
 }
+
 /*.*/
 #slideshow {
     margin: 50px auto;
@@ -52,6 +48,7 @@
     right: 10px;
     bottom: 10px;
 }
+
 .footer {
     color: white;
     background-color: #000000;
@@ -61,6 +58,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .bottom {
     display: flex;
     align-items: center;
@@ -73,20 +71,30 @@
     flex-wrap: wrap;
 }
 
+.populaire_film img {
+    display: block;
+    float: left;
+
+}
+
+.populair_afbeelding_filmoverzicht {
+    width: 25%;
+    height: 37.5%;
+    margin: 30px;
+}
 
 .filmoverzicht {
-    background-color: #dc0505;;
-    padding:1%;
-    display:flex;
+    background-color: #dc0505;
+    padding: 1%;
+    display: flex;
     justify-content: center;
-    align-content:center;
+    align-content: center;
     flex-flow: row wrap;
 }
 
-.afbeelding_filmoverzicht{
+.afbeeldingen_filmoverzicht {
 
-    width:18%;
-    height:15%;
-    margin:30px;
-
+    width: 5%;
+    height: 15%;
+    margin: 10px;
 }
