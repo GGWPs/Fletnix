@@ -11,6 +11,10 @@
     flex-wrap: wrap;
 }
 
+p, h1 {
+    color: white;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
     body {
@@ -72,13 +76,8 @@
 }
 
 .populaire_film img {
-    display: block;
     float: left;
-
-}
-
-.populair_afbeelding_filmoverzicht {
-    width: 25%;
+    width: 20%;
     height: 37.5%;
     margin: 30px;
 }
@@ -97,4 +96,9 @@
     width: 5%;
     height: 15%;
     margin: 10px;
+}
+
+.afbeeldingen_filmoverzicht_tekst {
+    color: white;
+    font-size: 12px;
 }
