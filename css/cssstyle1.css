@@ -73,9 +73,20 @@
     flex-wrap: wrap;
 }
 
-.filmoverzicht img{
-    font-size: 16%;
-    flex-direction:row;
 
+.filmoverzicht {
+    background-color: #dc0505;;
+    padding:1%;
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    flex-flow: row wrap;
 }
 
+.afbeelding_filmoverzicht{
+
+    width:18%;
+    height:15%;
+    margin:30px;
+
+}
