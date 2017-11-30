@@ -1,4 +1,7 @@
-.page {
-    background-image: url("afbeeldingen\fletnix-index.jpg");
-    background-size: cover;
+.cover {
+    background-image: url("../afbeeldingen/fletnix-index-achtergrond.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
 }
