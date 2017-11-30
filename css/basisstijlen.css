@@ -1,18 +1,16 @@
 html{
     height: 100%;
-    marge:o;
     padding:0;
 
 }
 body {
     height: 100%;
-    marge:o;
     padding:0;
 
 }
 header {
 
-    background-color: #dc0505; /* Blue */
+    background-color: #dc0505;
 }
 
 /* Mobile Styles */
