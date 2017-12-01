@@ -102,10 +102,3 @@ h2{
     flex-direction: column;
     justify-content: center;
 }
-.filmoverzicht2 {
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
-}
