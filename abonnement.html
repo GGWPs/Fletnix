@@ -5,51 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="favicon icon" href="afbeeldingen/favicon.ico" />
     <title>Kies uw abonnement</title>
-    <link rel="stylesheet" href="css/cssstyle1.css">
+    <link rel="stylesheet" href="css/basisstijlen.css">
 </head>
 <body>
+<!--de website/videodienst mogen jullie aanpassen.-->
 <header>
+    <div class="logoheader">
+        <img src="afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50" alt="Fletnix logo">
+    </div>
+    <div class="headerbuttons">
+        <button class="header-button" type="button" onclick="window.location.href='aanmeldpagina.html'">Meld u aan</button>
+        <button class="header-button" type="button" onclick="window.location.href='abonnement.html'">Maak een account</button>
+    </div>
 
-    <img src="afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="75" alt="Fletnix logo">
 
 </header>
+<div class="registratie">
 
     <h1>Kies uw abbonement</h1>
-    <form action="/cgi-bin/mail.pl" method="post">
-        <fieldset id="persoon">
-            <legend>
-                Gegevens
-            </legend>
-                <input id=heer name="aanspreking" type=radio value=mijnheer>
-                <label for="heer">De heer</label>
-                <input id=mevrouw name="aanspreking" type=radio value=vrouw>
-                <label for="mevrouw">mevrouw</label>
-                    <br>
-                    <label for="naam">Voor- en achternaam :</label>
-                    <input id="naam" maxlength="90" name="naam" size="30" type="text"
-                           placeholder="Voornaam Achternaam">
-                    <br>
-                    <label for=mail>e-mailadres :</label>
-                    <input id="mail" name="mail" type="email" placeholder="E-mailadres">
-
-        </fieldset>
-        <fieldset id="betaalgegevens">
-            <legend>
-                Uw betaalgegevens
-            </legend>
-        </fieldset>
-        <fieldset id="Gebruiker">
-            <legend>
-                Gebruiker aanmaken
-            </legend>
-        </fieldset>
-    </form>
+<div class="invoerveld">
+<form method="post" action="filmoverzicht.html">
+    <input type="text" placeholder="Voornaam">
+    <input type="text" placeholder="Achternaam">
+    <input type="text" placeholder="Land">
+    <input type="text" placeholder="Geboortejaar">
+    <input type="text" placeholder="Rekeningnummer">
+    <input type="text" placeholder="Gebruikersnaam">
+    <input type="text" placeholder="Wachtwoord">
+    <input type="text" placeholder="Wachtwoord herhalen">
+    <input type="submit" class="submit-button" value="Registreer">
+</form>
+</div>
+</div>
 
 
 <!--voornaam, achternaam, land, geboortejaar,-->
 <!--rekeningnummer, gebruikersnaam en 2x wachtwoord ingevuld en een abonnement-->
 <!--gekozen worden-->
-
+<footer>
+    <div class="footer">
+        <div class="footer1">
+            <ul>
+                <img src="afbeeldingen/Menu.png" class="Contact">
+                <h2>Menu</h2>
+                <li><a href="filmoverzicht.html"> Genre</a></li>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="overons.html"> Over ons</a></li>
+                <li><a href="voorwaarden.html"> Algemene voorwaarden</a></li>
+            </ul>
+        </div>
+        <div class="footer2">
+            <img src="afbeeldingen/Contact.png" class="Contact">
+            <h2>Contact</h2>
+            <p>[T] 0612345678<br>[E] I.Miladinovic@live.nl<br><br>Fletnix BV<br>Technovium<br>Nijmegen, Nederland</p>
+        </div>
+    </div>
+    </div>
+    <div class="bottom">
+        <p>&copy; 2017 - Ivan Miladinovic - Kaene Peters - FLETNIX</p>
+    </div>
+</footer>
 </body>
 
 </html>
