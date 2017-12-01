@@ -4,22 +4,50 @@
     <meta charset="UTF-8">
     <title>Fletnix</title>
     <link rel="stylesheet" href="css\basisstijlen.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/knoppen.css">
+    <link rel="favicon icon" href="afbeeldingen/favicon.ico" />
 </head>
 <body>
 <header>
-    <div class="header-aanmeld-balk">
-    </div>
     <img src="afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="75" alt="Fletnix logo">
-    <div class="aanmelden">
-        Aanmelden:
-        <form method="post" action="filmoverzicht.html">
-            <input>
-            <input type="password">
-            <input type="submit">
-        </form>
-    </div>
-    <div class="knop-registreren">
-    </div>
 </header>
+<main>
+    <div class="cover">
+    <div class="login">
+        <h1>Inloggen</h1>
+        <img src="../images/icons/iconLockSecure.png" alt="login">
+        <form method="post" action="filmoverview.html">
+            <input type="text" placeholder="Gebruikersnaam" id="username">
+            <input type="text" placeholder="Wachtwoord" id="password">
+            <input type="submit" class="submit-button" value="Log in">
+        </form>
+        <a href="register.html"><p>Nog geen account? klik dan hier</p></a>
+    </div>
+    </div>
+</main>
+<footer>
+    <div class="footer">
+        <div class="footer1">
+            <ul>
+                <h2>Menu</h2>
+                <img src="afbeeldingen/nav.png" width="50px" height="50px" class="navigatie">
+                <li><a href="filmoverzicht.html"> Genre</a></li>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="overons.html"> Over ons</a></li>
+                <li><a href="voorwaarden.html"> Algemene voorwaarden</a></li>
+            </ul>
+        </div>
+        <div class="footer2">
+            <h2>Contact</h2>
+            <img src="afbeeldingen/informatie.png" width="50px" height="50px" class="informatie">
+            <p>[T] 0612345678<br>[E] I.Miladinovic@live.nl<br><br>Fletnix BV<br>Technovium<br>Nijmegen, Nederland</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <p>&copy; 2017 - Ivan Miladinovic - Kaene Peters - FLETNIX</p>
+    </div>
+</footer>
 </body>
 </html>
