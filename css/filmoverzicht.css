@@ -3,7 +3,7 @@ main{
     width:100%;
     background-color: #dc0505;
 }
-h2{
+h1, h2{
     margin:0;
     color:white;
 }
@@ -82,4 +82,19 @@ h2{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.achtergrond {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.filmoverzicht2 {
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
 }
