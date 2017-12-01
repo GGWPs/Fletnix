@@ -4,7 +4,8 @@
     height: 37.5%;
     margin: 30px;
 }
-.trailer_button{
+
+.trailer_button {
     background-color: #dc0505;
     border: none;
     color: white;
@@ -12,7 +13,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    display:block;
+    display: block;
 
 }
 
@@ -24,16 +25,20 @@
     align-content: center;
     flex-flow: row wrap;
 }
-.afbeelding_filmoverzicht_blok{
-    text-align:center;
+
+.afbeelding_filmoverzicht_blok {
+    text-align: center;
     width: 12%;
     height: 15%;
     margin: 10px;
 }
 
-
 .afbeeldingen_filmoverzicht {
     width: 100%;
     height: 100%;
     margin: 10px;
+}
+.poster_film_pagina{
+
+
 }
