@@ -71,36 +71,5 @@
     flex-wrap: wrap;
 }
 
-.populaire_film img {
-    float: left;
-    width: 20%;
-    height: 37.5%;
-    margin: 30px;
-}
-.trailer_button{
 
-    /*to be continued*/
-}
-
-.filmoverzicht {
-    background-color: #dc0505;
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
-}
-.afbeelding_filmoverzicht_blok{
-    text-align:center;
-    width: 12%;
-    height: 15%;
-    margin: 10px;
-}
-
-
-.afbeeldingen_filmoverzicht {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-}
 
