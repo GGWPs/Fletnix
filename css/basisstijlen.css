@@ -28,7 +28,7 @@ body {
     justify-content: flex-start;
 }
 
-p, h1, ul{
+p, h1, h2, ul{
     color: white;
 }
 
