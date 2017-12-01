@@ -1,0 +1,30 @@
+/*HEADERS EN BUTTONS*/
+
+.headerbuttons {
+
+}
+.logoheader {
+    width:20%;
+    justify-content: flex-start;
+    height:100%;
+}
+
+.header-button {
+    background-color: #dc0505;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    height:100%;
+}
+button:hover{
+    background-color: #fa1e1e;
+}
+
+header {
+    display: flex;
+    background-color: #dc0505;
+    justify-content:space-between;
+}
