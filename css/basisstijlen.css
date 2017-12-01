@@ -1,11 +1,14 @@
 /*HEADERS EN BUTTONS*/
 
 .headerbuttons {
-    justify-content: flex-end;
+
 }
 .logoheader {
-width:20%;
+    width:20%;
+    justify-content: flex-start;
+    height:100%;
 }
+
 .header-button {
     background-color: #dc0505;
     border: none;
@@ -14,18 +17,16 @@ width:20%;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    display:block;
-
+    height:100%;
 }
-/*.header-login-balk {*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*flex-wrap: wrap;*/
-/*}*/
+button:hover{
+    background-color: #fa1e1e;
+}
 
 header {
-
+    display: flex;
     background-color: #dc0505;
+    justify-content:space-between;
 }
 html{
     height: 100%;
