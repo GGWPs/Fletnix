@@ -28,8 +28,9 @@ body {
     width: 100%;
     margin:0;
     padding:0;
+    justify-content: flex-start;
 
-}
+/*}*/
 
 
 p, h1 {
