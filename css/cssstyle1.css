@@ -65,11 +65,7 @@
     text-align: center;
 }
 
-.header-login-balk {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 
 .populaire_film img {
     float: left;
