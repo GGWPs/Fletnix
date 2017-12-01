@@ -1,0 +1,22 @@
+button.button2 {
+    background-color: #dc0505;
+    width: 100px;
+    marge:0px;
+    border:0;
+    border-radius: 12px;
+}
+button.button2:hover{
+    background-color: #fa1e1e;
+}
+
+input.button2 {
+    background-color: #dc0505;
+    width: 100px;
+    margin-top: 10px;
+    border:0;
+    border-radius: 12px;
+    align-self: center;
+}
+input.button2 {
+    background-color: #fa1e1e;
+}
