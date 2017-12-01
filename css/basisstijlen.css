@@ -1,7 +1,6 @@
 /*HEADERS EN BUTTONS*/
 
 .headerbuttons {
-    flex-direction:row;
     justify-content: flex-end;
 }
 .logoheader {
