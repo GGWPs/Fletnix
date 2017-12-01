@@ -1,3 +1,9 @@
+main{
+    height:100%;
+    width:100%;
+    background-color: #dc0505;
+}
+
 .populaire_film img {
     float: left;
     width: 20%;
@@ -18,7 +24,6 @@
 }
 
 .filmoverzicht {
-    background-color: #dc0505;
     padding: 1%;
     display: flex;
     justify-content: center;
@@ -38,7 +43,26 @@
     height: 100%;
     margin: 10px;
 }
+
+.poster_links{
+    background-color: #dc0505;
+    float:left;
+    width:40%;
+}
+
 .poster_film_pagina{
+    width: 60%;
+    height:60%;
+}
 
 
+.details_film{
+}
+
+.center_tekst {
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
