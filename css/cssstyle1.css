@@ -49,20 +49,28 @@
     bottom: 10px;
 }
 
-.footer {
+.footer1 {
     color: white;
-    background-color: #000000;
-    display: flex;
+    background-color: black;
     align-items: center;
     text-align: center;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer2 {
+    width:20%;
+}
+.footer3 {
+    width:20%;
 }
 
 .bottom {
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
+    background-color:black;
 }
 
 
