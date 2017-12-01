@@ -49,19 +49,21 @@
     bottom: 10px;
 }
 
-.footer1 {
+.footer {
     color: white;
     background-color: black;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    display: flex;
+    height:200px;
+    align-items:flex-start;
 }
 
-.footer2 {
+.footer1 {
     width:20%;
 }
-.footer3 {
+.footer2 {
     width:20%;
 }
 
