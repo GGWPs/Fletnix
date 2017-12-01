@@ -3,6 +3,10 @@ main{
     width:100%;
     background-color: #dc0505;
 }
+h2{
+    margin:0;
+    color:white;
+}
 
 .populaire_film img {
     float: left;
@@ -44,22 +48,35 @@ main{
     margin: 10px;
 }
 
+
+/*avengers infinity war pagina*/
+.film_pagina{
+    display:flex;
+    flex-wrap: wrap;
+}
+
 .poster_links{
     background-color: #dc0505;
-    float:left;
-    width:40%;
+    height:100%;
+    width:30%;
 }
 
 .poster_film_pagina{
+    margin:5%;
     width: 60%;
-    height:60%;
+    height:50%;
 }
 
 
 .details_film{
+    height:100%;
+    width:70%;
 }
 
+.trailer_poster{
+}
 .center_tekst {
+
     color:white;
     position: absolute;
     top: 50%;
