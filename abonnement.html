@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/basisstijlen.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/inlogenregis.css">
 </head>
 <body>
 <!--de website/videodienst mogen jullie aanpassen.-->
@@ -22,20 +23,31 @@
 
 
 </header>
+<main>
 <div class="cover">
 
 
 <div class="invoerveld">
     <h1>Kies uw abbonement</h1>
-<form method="post" action="filmoverzicht.html">
+
+
+
+
+<form method="post" action="home.html">
+    <select name="Abonnement">
+        <option value="Pakket 1">Basis €4.99</option>
+        <option value="Pakket 2">Pro €7.99</option>
+        <option value="Pakket 3">Elite €11.99</option>
+    </select>
+    <br>
     <input type="text" placeholder="Voornaam">
     <input type="text" placeholder="Achternaam">
     <input type="text" placeholder="Land">
     <input type="text" placeholder="Geboortejaar">
     <input type="text" placeholder="Rekeningnummer">
     <input type="text" placeholder="Gebruikersnaam">
-    <input type="text" placeholder="Wachtwoord">
-    <input type="text" placeholder="Wachtwoord herhalen">
+    <input type="password" placeholder="Wachtwoord">
+    <input type="password" placeholder="Wachtwoord herhalen">
     <input type="submit" class="submit-button" value="Registreer">
 </form>
 </div>
@@ -46,6 +58,7 @@
 <!--rekeningnummer, gebruikersnaam en 2x wachtwoord ingevuld en een abonnement-->
 <!--gekozen worden-->
 </div>
+</main>
 <footer>
     <div class="footer">
         <div class="footer1">
