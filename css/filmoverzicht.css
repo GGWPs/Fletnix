@@ -3,7 +3,7 @@ main{
     width:100%;
     background-color: #dc0505;
 }
-h1, h2{
+h2{
     margin:0;
     color:white;
 }
@@ -51,37 +51,48 @@ h1, h2{
 
 /*avengers infinity war pagina*/
 .film_pagina{
+    width:100%;
+    height:100%;
     display:flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .poster_links{
+    float:left;
     background-color: #dc0505;
     height:100%;
-    width:30%;
+    width:50%;
 }
 
 .poster_film_pagina{
-    margin:5%;
-    width: 60%;
-    height:50%;
+    margin:3%;
+    width: 50%;
+    height:80%;
 }
 
 
 .details_film{
-    height:100%;
-    width:70%;
+
+
 }
 
 .trailer_poster{
 }
 .center_tekst {
-
     color:white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.trailer_video{
+    display:flex;
+    align-content: center;
+    width:100%;
+    height:100%;
+    background-color: #dc0505;
 }
 
 .achtergrond {
