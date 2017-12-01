@@ -3,6 +3,10 @@ main{
     width:100%;
     background-color: #dc0505;
 }
+h2{
+    margin:0;
+    color:white;
+}
 
 .populaire_film img {
     float: left;
@@ -47,16 +51,20 @@ main{
 .poster_links{
     background-color: #dc0505;
     float:left;
+    height:100%;
     width:40%;
 }
 
 .poster_film_pagina{
+    margin:5%;
     width: 60%;
     height:60%;
 }
 
 
 .details_film{
+    height: 100%;
+    width:100%;
 }
 
 .center_tekst {
