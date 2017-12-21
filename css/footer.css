@@ -25,3 +25,14 @@ footer{
     background-color:black;
 
 }
+
+a:link {
+    color:white;
+}
+
+a:visited {
+    color:white;
+}
+a:hover {
+    color: #dc0505;
+}

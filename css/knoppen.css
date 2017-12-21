@@ -4,6 +4,7 @@ button.button2 {
     marge:0px;
     border:0;
     border-radius: 12px;
+    color: white;
 }
 button.button2:hover{
     background-color: #fa1e1e;

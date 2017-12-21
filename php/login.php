@@ -6,6 +6,7 @@
 </head>
 <body>
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Lenovo
@@ -13,8 +14,13 @@
  * Time: 14:02
  */
 
-print_r($_GET);
 print_r($_POST);
+if (isset($_POST['user'])) {
+    echo 'Hello' . $_POST{'user'};
+}
+if (isset($_POST['password'])) {
+    echo 'PW is' . $_POST{'password'};
+}
 ?>
 
 </body>
