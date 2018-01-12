@@ -1,4 +1,4 @@
 <?php
-echo "<p>&copy; 2017 - Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
+echo "<p>&copy;";  echo date("Y"); echo "- Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
 ?>
 
