@@ -19,14 +19,10 @@
 <!--de website/videodienst mogen jullie aanpassen.-->
 <header>
     <div class="logoheader">
-        <a href="index.php"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50"
-                                  alt="Fletnix logo"></a>
+        <?php include '../php/headerlogo.php';?>
     </div>
     <div class="headerbuttons">
-        <button class="header-button" type="button" onclick="window.location.href='aanmeldpagina.html'">Meld u aan
-        </button>
-        <button class="header-button" type="button" onclick="window.location.href='abonnement.html'">Maak een account
-        </button>
+        <?php include '../php/headerknop.php';?>
     </div>
 
 
@@ -116,23 +112,14 @@
 <footer>
     <div class="footer">
         <div class="footer1">
-            <h2>Menu</h2>
-            <img src="../afbeeldingen/nav.png" width="50" height="50" alt="nav.png" class="navigatie">
-            <ul>
-                <li><a href="filmoverzicht.html"> Genre</a></li>
-                <li><a href="index.php"> Home</a></li>
-                <li><a href="overons.html"> Over ons</a></li>
-                <li><a href="voorwaarden.html"> Algemene voorwaarden</a></li>
-            </ul>
+            <?php include '../php/footer1.php';?>
         </div>
         <div class="footer2">
-            <h2>Contact</h2>
-            <img src="../afbeeldingen/informatie.png" width="50" height="50" alt="informatie.png" class="informatie">
-            <p>[T] 0612345678<br>[E] I.Miladinovic@live.nl<br><br>Fletnix BV<br>Technovium<br>Nijmegen, Nederland</p>
+            <?php include '../php/footer2.php';?>
         </div>
     </div>
     <div class="bottom">
-        <p>&copy; 2017 - Ivan Miladinovic - Kaene Peters - FLETNIX</p>
+        <?php include '../php/footer.php';?>
     </div>
 </footer>
 </body>
