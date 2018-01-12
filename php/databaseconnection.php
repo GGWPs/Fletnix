@@ -15,11 +15,11 @@ try {
 
 
 //@@@@Voorbeelden@@@@@
-$data = $dbh->query('SELECT TOP 20 * FROM Customer');
-
-while ($row = $data->fetch()){
-    echo "$row[lastname] $row[firstname]</br>";
-}
+//$data = $dbh->query('SELECT TOP 20 * FROM Customer');
+//
+//while ($row = $data->fetch()){
+//    echo "$row[lastname] $row[firstname]</br>";
+//}
 
 //$dbh->query("insert into Person (person_id, lastname, firstname, gender)
 //values (945466, 'Kaene', 'Peters', 'M')");
