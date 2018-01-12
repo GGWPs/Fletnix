@@ -24,8 +24,6 @@
     <div class="headerbuttons">
         <?php include '../php/headerknop.php';?>
     </div>
-
-
 </header>
 <main>
     <div class="cover">
