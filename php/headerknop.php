@@ -4,7 +4,8 @@ echo "        <button class=\"header-button\" type=\"button\" onclick=\"window.l
         <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='abonnement.html'\">Maak een account
         </button>";
 
-echo " 
 
-"
+if (isset($_SESSION['user'])){
+    echo 'Hallo' . $_POST['user'];
+}
 ?>
