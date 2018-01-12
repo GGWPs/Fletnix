@@ -37,18 +37,17 @@
     </div>
 </main>
 <footer>
-<div class="footer">
-    <div class="footer1">
-        <a>1</a>
-        <?php include '../php/footer1.php';?>
+    <div class="footer">
+        <div class="footer1">
+            <?php include '../php/footer1.php';?>
+        </div>
+        <div class="footer2">
+            <?php include '../php/footer2.php';?>
+        </div>
     </div>
-    <div class="footer2">
-        <?php include '../php/footer2.php';?>
+    <div class="bottom">
+        <?php include '../php/footer.php';?>
     </div>
-</div>
-<div class="bottom">
-    <?php include 'php/php/footer.php';?>
-</div>
 </footer>
 </body>
 </html>
