@@ -7,12 +7,6 @@
 <body>
 <?php
 session_start();
-/**
- * Created by PhpStorm.
- * User: Lenovo
- * Date: 19-12-2017
- * Time: 14:02
- */
 
 print_r($_POST);
 if (isset($_POST['user'])) {
@@ -25,3 +19,4 @@ if (isset($_POST['password'])) {
 
 </body>
 </html>
+
