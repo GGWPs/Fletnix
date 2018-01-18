@@ -15,6 +15,9 @@ if (isset($_POST['user'])) {
 if (isset($_POST['password'])) {
     echo 'PW is' . $_POST{'password'};
 }
+
+//strip_tags($input, '<br>');
+
 ?>
 
 </body>
