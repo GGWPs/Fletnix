@@ -12,6 +12,4 @@ echo "        <button class=\"header-button\" type=\"button\" onclick=\"window.l
         <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='abonnement.html'\">Maak een account
         </button>";
 
-
-
 ?>
