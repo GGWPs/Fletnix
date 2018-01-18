@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/footer.php';?>
+        <?php include '../php/copyright.php';?>
     </div>
 </footer>
 </body>
