@@ -51,6 +51,14 @@
                 detailpagina
             </button>
         </div>
+        <div class="zoekBalk">
+            <form name="zoekBalk" method="get" action="../php/zoekpagina.php">
+            <input type="text" name="zoekFunctie" size="50" placeholder="type hier om je film te zoeken..."/>
+                <input type="submit" name="submit" value="Zoek"/>
+            </form>
+
+        </div>
+
         <div class="afbeelding_filmoverzicht_blok">
             <p>Avengers Infinity War</p>
             <a href="../html/avengers_infinity_war.html"> <img src="../afbeeldingen/filmoverzicht/avengers-infinity-war.jpg"
