@@ -1,11 +1,11 @@
 <?php
 
 $hostname = "localhost";
-$dbname = "FLETNIX_DOCENT2";
+//$dbname = "FLETNIX_DOCENT2";
+$dbname = "FLETNIX_DOCENT";
 $username = "sa";
-//$password = "fojmBNHfMyYjHB6boNcZ"; /* Kaene's wachtwoord Swieber niet stelen  !ZET JE EIGEN ERONDER ALS JE HET WILT TESTEN!
- //(overigens ook de andere waardes hierboven als die anders zijn bij jou*/
-$password = "Hacker11";
+$password = "fojmBNHfMyYjHB6boNcZ";
+//$password = "Hacker11";
 
 try {
     $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
