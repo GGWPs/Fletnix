@@ -31,7 +31,7 @@
             <div class="tekst">
                 <h1>Welkom bij Fletnix. Waar jongelui hun leven kunnen verwoesten. Nummer 2 op het gebied van
                     films!</h1>
-                <button class="button2" type="button" onclick="window.location.href='abonnement.html'">Verwoest mijn
+                <button class="button2" type="button" onclick="window.location.href='../html/abonnement.html'">Verwoest mijn
                     leven
                 </button>
             </div>
@@ -96,7 +96,7 @@
                     </tr>
                 </table>
                 <br>
-                <button class="button2" type="button" onclick="window.location.href='abonnement.html'">Koop nu!</button>
+                <button class="button2" type="button" onclick="window.location.href='../html/abonnement.html'">Koop nu!</button>
             </div>
         </div>
 
