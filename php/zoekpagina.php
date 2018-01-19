@@ -24,16 +24,19 @@
     <?php
     require_once '../php/databaseconnection.php';
 
-
 $zoek = $_POST["zoekFunctie"];
-    $sql = $dbh ->query("select top 30 * from Movie WHERE title like '%$zoek%'");
+    $sql = "select top 30 * from Movie WHERE title like '%$zoek%'";
+    foreach ($dbh ->query($sql) as $row) {
+        print $row['title'] . "\t";
+        print $row['description'] . "\t";
+        echo "</br>";
+    }
+//    $search_query=mssql_query($sql);
 
-$q = mssql_query($sql);
-echo $q;
-//    if(mssql_num_rows($sql)!=0) {
+//    if(mssql_num_rows($search_query)!=0) {
 //        $search_rs = mssql_fetch_assoc($search_query);
 //    }
-
+//    print_r($search_query);
     ?>
 </main>
 
