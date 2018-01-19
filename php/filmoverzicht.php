@@ -52,7 +52,7 @@
             </button>
         </div>
         <div class="zoekBalk">
-            <form name="zoekBalk" method="get" action="../php/zoekpagina.php">
+            <form name="zoekBalk" method="post" action="../php/zoekpagina.php">
             <input type="text" name="zoekFunctie" size="50" placeholder="type hier om je film te zoeken..."/>
                 <input type="submit" name="submit" value="Zoek"/>
             </form>
