@@ -30,9 +30,9 @@
 
             <form method="post" action="nieuwaccount.php">
                 <select name="abonnement">
-                    <option value="'Basic'">Basis €4.99</option>
-                    <option value="'Pro'">Pro €7.99</option>
-                    <option value="'Premium'">Elite €11.99</option>
+                    <option value="Basic">Basis €4.99</option>
+                    <option value="Pro">Pro €7.99</option>
+                    <option value="Premium">Elite €11.99</option>
                 </select>
                 <input type="email" name="email" placeholder="Email">
                 <input type="text" name="voornaam" placeholder="Voornaam">
@@ -40,10 +40,9 @@
                 <input type="text" name="land" placeholder="Land">
                 <input type="date" name="geboortejaar" placeholder="Geboortejaar">
                 <select name="betaalMethode">
-                    <option value="'Ideal'">Ideal</option>
-                    <option value="'Mastercard'">Mastercard</option>
-                    <option value="'Visa'">Visa</option>
-                    <option value="'Amex'">Amex</option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Visa">Visa</option>
+                    <option value="Amex">Amex</option>
                 </select>
                 <input type="text" name="rekeningnummer" placeholder="Rekeningnummer">
                 <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">

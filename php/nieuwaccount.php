@@ -8,7 +8,7 @@ $email = $_POST["email"];
 $voornaam = $_POST["voornaam"];
 $achternaam = $_POST["achternaam"];
 $land = $_POST["land"];
-$geboortejaar = $_POST["geboortejaar"];
+$geboortejaar = date("Y-m-d");
 $betaalMethode = $_POST["betaalMethode"];
 $rekeningnummer = $_POST["rekeningnummer"];
 $gebruikersnaam = $_POST["gebruikersnaam"];
@@ -17,13 +17,27 @@ $wachtwoord2 = $_POST["wachtwoord2"];
 $subscription_start = date("Y-m-d") ;
 $land = "Netherlands";
 
-$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name)
-         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land)";
+//date("Y-m-d") ;
+//new DateTime($_POST["geboortejaar"]);
 
-$query = $dbh->prepare($sql);
-$query->execute(
-    array( ':email' => $email, 	':voornaam' => $voornaam, ':achternaam' => $achternaam, ':betaalmethode' => $betaalMethode, ':rekeningnummer' => $rekeningnummer, ':abonnement' => $abonnement, ':datumregistratie' => $subscription_start, ':gebruikersnaam' => $gebruikersnaam, ':wachtwoord' => $wachtwoord, ':land' => $land));
+//$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+//         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land, null)";
+$sql = $dbh ->query ("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+         values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
 
+echo 'Uw registratie is gelukt! Klik <a href="../php/index.php">hier</a>  om terug te gaan'
+//$result = $dbh->insertQuery($sql);
+//if(!empty($result)) {
+//    $error_message = "";
+//    $success_message = "You have registered successfully!";
+//    unset($_POST);
+//} else {
+//    $error_message = "Problem in registration. Try Again!";
+//}
+//print_r($sql);
+//$query->execute(
+//    array( ':email' => $email, 	':voornaam' => $voornaam, ':achternaam' => $achternaam, ':betaalmethode' => $betaalMethode, ':rekeningnummer' => $rekeningnummer, ':abonnement' => $abonnement, ':datumregistratie' => $subscription_start, ':gebruikersnaam' => $gebruikersnaam, ':wachtwoord' => $wachtwoord, ':land' => $land));
+//
 
 
 
