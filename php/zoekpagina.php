@@ -22,19 +22,18 @@
 <main>
     <h1>Zoekresultaten</h1>
     <?php
-    print_r($_POST);
     include '../php/databaseconnection.php';
 
 
-$zoek = $_POST['Zoek'];
-    $sql = $dbh ->query("select top 30 * from Movie WHERE title like %:zoek%");
+$zoek = $_POST["zoekFunctie"];
+    $sql = $dbh ->query("select top 30 * from Movie WHERE title like '%$zoek%'");
 
-    $search_query=mssql_query($sql);
+$q = mssql_query($sql);
+echo $q;
+//    if(mssql_num_rows($sql)!=0) {
+//        $search_rs = mssql_fetch_assoc($search_query);
+//    }
 
-    if(mssql_num_rows($search_query)!=0) {
-        $search_rs = mssql_fetch_assoc($search_query);
-    }
-    print_r($search_query);
     ?>
 </main>
 
