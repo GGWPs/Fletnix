@@ -25,11 +25,11 @@
         <h1>Inloggen</h1>
         <img src="../afbeeldingen/slot.png" width="100" height="100" alt="login">
         <form method="POST" action="testlogin.php">
-            <input type="email" placeholder="Email" id="email">
-            <input type="password" placeholder="Wachtwoord" id="password">
+            <input type="text" placeholder="Gebruikersnaam" name="gebruikersnaam">
+            <input type="password" placeholder="Wachtwoord" name="password">
             <input type="submit" class="submit-button" value="Log in">
         </form>
-        <a href="../html/abonnement.html"><h4>Nog geen account? klik dan hier</h4></a>
+        <a href="abonnement.php"><h4>Nog geen account? klik dan hier</h4></a>
     </div>
     </div>
 </main>

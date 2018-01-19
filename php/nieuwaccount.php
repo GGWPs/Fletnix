@@ -1,35 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Kaene-laptop
- * Date: 12/01/2018
- * Time: 11:44
- */
-
-
-
 
 include '../php/databaseconnection.php';
 
 
-$abonnement = $_POST("abonnement");
-$email = $_POST("email");
-$voornaam = $_POST("voornaam");
-$achternaam = $_POST("achternaam");
-$land = $_POST("land");
-$geboortejaar = $_POST("geboortejaar");
-$betaalMethode = $_POST("betaalMethode");
-$rekeningnummer = $_POST("rekeningnummer");
-$gebruikersnaam = $_POST("gebruikersnaam");
-$wachtwoord = $_POST("wachtwoord");
-$wachtwoord2 = $_POST("wachtwoord2");
+$abonnement = $_POST["abonnement"];
+$email = $_POST["email"];
+$voornaam = $_POST["voornaam"];
+$achternaam = $_POST["achternaam"];
+$land = $_POST["land"];
+$geboortejaar = $_POST["geboortejaar"];
+$betaalMethode = $_POST["betaalMethode"];
+$rekeningnummer = $_POST["rekeningnummer"];
+$gebruikersnaam = $_POST["gebruikersnaam"];
+$wachtwoord = $_POST["wachtwoord"];
+$wachtwoord2 = $_POST["wachtwoord2"];
+$subscription_start = date("Y-m-d") ;
+$land = "Netherlands";
 
-$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password)
-         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,getdate(),null,:gebruikersnaam,:wachtwoord)";
+$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name)
+         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land)";
 
 $query = $dbh->prepare($sql);
 $query->execute(
-    array( ':cijfer' => $cijfer, 	':vak' => $vak	));
+    array( ':email' => $email, 	':voornaam' => $voornaam, ':achternaam' => $achternaam, ':betaalmethode' => $betaalMethode, ':rekeningnummer' => $rekeningnummer, ':abonnement' => $abonnement, ':datumregistratie' => $subscription_start, ':gebruikersnaam' => $gebruikersnaam, ':wachtwoord' => $wachtwoord, ':land' => $land));
 
 
 

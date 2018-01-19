@@ -14,15 +14,11 @@
 <body>
 <header>
     <div class="logoheader">
-        <a href="../php/index.php"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50"
-                                         alt="Fletnix logo"></a>
+        <?php include '../php/headerlogo.php';?>
     </div>
     <div class="headerbuttons">
-        <button class="header-button" type="button" onclick="window.location.href='../php/aanmeldpagina.php'">Meld u aan
-        </button>
+        <?php include '../php/headerknop.php';?>
     </div>
-
-
 </header>
 <main>
     <div class="cover">
@@ -32,7 +28,7 @@
             <h1>Kies uw abbonement</h1>
 
 
-            <form method="post" action="../php/nieuwaccount.php">
+            <form method="post" action="nieuwaccount.php">
                 <select name="abonnement">
                     <option value="'Basic'">Basis €4.99</option>
                     <option value="'Pro'">Pro €7.99</option>
@@ -66,14 +62,14 @@
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '/php/footer1.php';?>
+            <?php include '../php/footer1.php';?>
         </div>
         <div class="footer2">
             <?php include '../php/footer2.php';?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/footer.php';?>
+        <?php include '../php/copyright.php';?>
     </div>
 </footer>
 </body>
