@@ -24,7 +24,7 @@ if(!empty($result)){
     $_SESSION['logintijd'] = date("H:i") ;
 //    print_r($_SESSION);
 //    print_r($_SESSION['voornaam']);
-    header("Location: ../php/index.php");
+    header("Location: ../php/filmoverzicht.php");
     die();
 }
 else
