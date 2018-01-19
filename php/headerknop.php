@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_SESSION['voornaam'])){
 //    echo $_POST['firstname'] ;
     print_r($_SESSION['voornaam']);
