@@ -22,7 +22,7 @@
 <main>
     <h1>Zoekresultaten</h1>
     <?php
-    include '../php/databaseconnection.php';
+    require_once '../php/databaseconnection.php';
 
 
 $zoek = $_POST["zoekFunctie"];

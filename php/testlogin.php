@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../php/databaseconnection.php';
+require_once '../php/databaseconnection.php';
 $stmt = $dbh->prepare("SELECT * FROM Customer WHERE user_name = :value1 AND password = :value2");
 
 

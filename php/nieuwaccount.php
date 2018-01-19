@@ -1,6 +1,6 @@
 <?php
 
-include '../php/databaseconnection.php';
+require_once '../php/databaseconnection.php';
 
 
 $abonnement = $_POST["abonnement"];
