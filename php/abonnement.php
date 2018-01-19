@@ -45,7 +45,6 @@
                     <option value="Amex">Amex</option>
                 </select>
                 <input type="text" name="rekeningnummer" placeholder="Rekeningnummer">
-                <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
                 <input type="password" name="wachtwoord" placeholder="Wachtwoord">
                 <input type="password" name="wachtwoord2" placeholder="Wachtwoord herhalen">
                 <input type="submit" class="button2" value="Registreer">

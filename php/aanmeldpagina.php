@@ -25,7 +25,7 @@
         <h1>Inloggen</h1>
         <img src="../afbeeldingen/slot.png" width="100" height="100" alt="login">
         <form method="POST" action="testlogin.php">
-            <input type="text" placeholder="Gebruikersnaam" name="gebruikersnaam">
+            <input type="text" placeholder="Email" name="gebruikersnaam">
             <input type="password" placeholder="Wachtwoord" name="password">
             <input type="submit" class="submit-button" value="Log in">
         </form>

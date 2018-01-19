@@ -2,7 +2,7 @@
 session_start();
 
 include '../php/databaseconnection.php';
-$stmt = $dbh->prepare("SELECT * FROM Customer WHERE user_name = :value1 AND password = :value2");
+$stmt = $dbh->prepare("SELECT * FROM Customer WHERE customer_mail_address = :value1 AND password = :value2");
 
 
 $stmt->execute(array(":value1" => $_POST["gebruikersnaam"], ":value2" => $_POST["password"]));

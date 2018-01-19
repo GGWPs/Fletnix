@@ -11,11 +11,16 @@ $land = $_POST["land"];
 $geboortejaar = date("Y-m-d");
 $betaalMethode = $_POST["betaalMethode"];
 $rekeningnummer = $_POST["rekeningnummer"];
-$gebruikersnaam = $_POST["gebruikersnaam"];
+$gebruikersnaam = $email;
 $wachtwoord = $_POST["wachtwoord"];
 $wachtwoord2 = $_POST["wachtwoord2"];
 $subscription_start = date("Y-m-d") ;
 $land = "Netherlands";
+
+if ($wachtwoord != $wachtwoord2) {
+    echo("Error... Passwords do not match");
+    exit;
+}
 
 //date("Y-m-d") ;
 //new DateTime($_POST["geboortejaar"]);
@@ -26,7 +31,7 @@ try {
 $sql = $dbh ->query ("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
          values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
 
-echo 'Uw registratie is gelukt! Klik <a href="../php/index.php">hier</a>  om terug te gaan';
+echo 'Uw registratie is gelukt! Klik <a href="../php/aanmeldpagina.php">hier</a>  om aan te melden!';
 } catch (PDOException $e) {
     echo 'Uw account bestaat al. Klik <a href="../php/abonnement.php">hier</a>  om terug te gaan\'';
 //. $e->getMessage()
