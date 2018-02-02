@@ -34,19 +34,19 @@
                     <option value="Pro">Pro €7.99</option>
                     <option value="Premium">Elite €11.99</option>
                 </select>
-                <input type="email" name="email" placeholder="Email">
-                <input type="text" name="voornaam" placeholder="Voornaam">
-                <input type="text" name="achternaam" placeholder="Achternaam">
-                <input type="text" name="land" placeholder="Land">
-                <input type="date" name="geboortejaar" placeholder="Geboortejaar">
+                <input type="email" name="email" required placeholder="Email">
+                <input type="text" name="voornaam" required placeholder="Voornaam">
+                <input type="text" name="achternaam" required placeholder="Achternaam">
+                <input type="text" name="land" required placeholder="Land">
+                <input type="date" name="geboortejaar" required placeholder="Geboortejaar">
                 <select name="betaalMethode">
                     <option value="Mastercard">Mastercard</option>
                     <option value="Visa">Visa</option>
                     <option value="Amex">Amex</option>
                 </select>
-                <input type="text" name="rekeningnummer" placeholder="Rekeningnummer">
-                <input type="password" name="wachtwoord" placeholder="Wachtwoord">
-                <input type="password" name="wachtwoord2" placeholder="Wachtwoord herhalen">
+                <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
+                <input type="password" name="wachtwoord"  required placeholder="Wachtwoord">
+                <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
                 <input type="submit" class="button2" value="Registreer">
             </form>
         </div>

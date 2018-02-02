@@ -31,6 +31,7 @@ $zoek = $_POST["zoekFunctie"];
         print $row['description'] . "\t";
         echo "</br>";
     }
+
 //    $search_query=mssql_query($sql);
 
 //    if(mssql_num_rows($search_query)!=0) {
