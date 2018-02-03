@@ -21,17 +21,9 @@
 </header>
 <main>
     <div class="cover">
-    <div class="login">
-        <h1>Inloggen</h1>
-        <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">
-    </br>
-        <form method="POST" action="testlogin.php">
-            <input type="text" placeholder="Email" name="gebruikersnaam">
-            <input type="password" placeholder="Wachtwoord" name="password">
-            <input type="submit" class="submit-button" value="Log in">
-        </form>
-        <a href="abonnement.php"><h4>Nog geen account? klik dan hier</h4></a>
-    </div>
+        <div class="login">
+            <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier</a>  <h3>om aan te melden!</h3>
+        </div>
     </div>
 </main>
 <footer>

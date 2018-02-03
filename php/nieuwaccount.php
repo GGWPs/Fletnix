@@ -31,7 +31,8 @@ try {
 $sql = $dbh ->query ("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
          values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
 
-echo 'Uw registratie is gelukt! Klik <a href="../php/aanmeldpagina.php">hier</a>  om aan te melden!';
+    header("Location: ../php/accountaangemaakt.php");
+    exit;
 } catch (PDOException $e) {
     echo 'Uw account bestaat al. Klik <a href="../php/abonnement.php">hier</a>  om terug te gaan\'';
 //. $e->getMessage()
