@@ -21,6 +21,7 @@
 </header>
 <main>
     <h1>Zoekresultaten</h1>
+    <div class="zoekresultaten">
     <?php
     include '../php/databaseconnection.php';
 
@@ -39,6 +40,7 @@ $zoek = $_POST["zoekFunctie"];
 //    }
 //    print_r($search_query);
     ?>
+    </div>
 </main>
 
 
