@@ -6,7 +6,7 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - Required bij html invoervelden toegevoegd-->
-<!-- *-->
+<!-- * - Query toegevoegd aan land
 <!--*/-->
 
 
@@ -56,7 +56,7 @@
                 //$sql = mysqli_query($connection, "SELECT username FROM users");
 //                $sql = "select country_name FROM Country";
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
-                    print $row['country_name'] . "\t";
+//                    print $row['country_name'] . "\t";
                     echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
 //                    echo '<option value="land">'.$row.'</option>';
                 }
@@ -74,6 +74,12 @@
                 <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
                 <input type="password" name="wachtwoord" required placeholder="Wachtwoord">
                 <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
+                <?php
+                if ($_SESSION['case'] == 'wachtwoord') {
+                    echo "<h3 class = 'error'>Wachtwoorden komen niet overeen</h3>";
+                }
+                ?>
+
                 <input type="submit" class="button2" value="Registreer">
             </form>
         </div>

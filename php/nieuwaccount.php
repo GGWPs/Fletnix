@@ -17,26 +17,29 @@ $wachtwoord2 = $_POST["wachtwoord2"];
 $subscription_start = date("Y-m-d") ;
 $land = "Netherlands";
 
-if ($wachtwoord != $wachtwoord2) {
-    echo("Error... Passwords do not match");
-    exit;
-}
+
+//if ($wachtwoord != $wachtwoord2) {
+//    $_POST["Uw wachtwoorden komen niet overheen!"];
+//    header("Location: ../php/abonnement.php");
+//    exit;
+//} else {
 
 //date("Y-m-d") ;
 //new DateTime($_POST["geboortejaar"]);
 
 //$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
 //         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land, null)";
-try {
-$sql = $dbh ->query ("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+    try {
+        $sql = $dbh->query("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
          values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
 
-    header("Location: ../php/accountaangemaakt.php");
-    exit;
-} catch (PDOException $e) {
-    echo 'Uw account bestaat al. Klik <a href="../php/abonnement.php">hier</a>  om terug te gaan\'';
+        header("Location: ../php/accountaangemaakt.php");
+        exit;
+    } catch (PDOException $e) {
+        echo 'Uw account bestaat al. Klik <a href="../php/abonnement.php">hier</a>  om terug te gaan\'';
 //. $e->getMessage()
-}
+    }
+
 //$result = $dbh->insertQuery($sql);
 //if(!empty($result)) {
 //    $error_message = "";
