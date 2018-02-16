@@ -26,7 +26,10 @@
     require_once '../php/databaseconnection.php';
 
 $zoek = $_POST["zoekFunctie"];
-    $sql = "select top 30 * from Movie WHERE title like '%$zoek%'";
+    $sql = "select * from Movie where title like '%$zoek%' and movie_id in (select movie_id from Movie where movie_id = 300231 or movie_id = 300230 or movie_id = 300232 or movie_id = 412321
+ or movie_id = 311506 or movie_id = 412323 or movie_id = 412322 or movie_id = 146822 or movie_id = 112290 or movie_id = 267038 or movie_id = 412324 
+or movie_id = 176711 or movie_id = 207992 )
+";
     foreach ($dbh ->query($sql) as $row) {
         print $row['title'] . "\t";
         print $row['description'] . "\t";
