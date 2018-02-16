@@ -1,7 +1,26 @@
-<?php
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - aangepast-->
+<!-- * - wachtwoord check verbeterd
+<!--*/-->
 
+<?php
+session_start();
 require_once '../php/databaseconnection.php';
 
+if (isset($_POST["abonnement"]) AND $_POST["abonnement"] != '' AND isset($_POST["email"]) AND $_POST["email"] != ''
+    AND isset($_POST["voornaam"]) AND $_POST["voornaam"] != '' AND isset($_POST["achternaam"])  AND $_POST["achternaam"] != ''
+    AND isset($_POST["land"]) AND $_POST["land"] != '' AND isset($_POST["rekeningnummer"]) AND $_POST["rekeningnummer"] != ''
+    AND isset($_POST["wachtwoord"]) AND $_POST["wachtwoord"] != '' AND isset($_POST["wachtwoord2"]) AND $_POST["wachtwoord2"] != '') {
+    $invoer = true;
+} else {
+    $invoer = false;
+}
 
 $abonnement = $_POST["abonnement"];
 $email = $_POST["email"];
@@ -16,6 +35,7 @@ $wachtwoord = $_POST["wachtwoord"];
 $wachtwoord2 = $_POST["wachtwoord2"];
 $subscription_start = date("Y-m-d") ;
 $land = "Netherlands";
+
 
 
 //if ($wachtwoord != $wachtwoord2) {

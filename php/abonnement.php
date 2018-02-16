@@ -47,6 +47,11 @@
                     <option value="Premium">Elite €11.99</option>
                 </select>
                 <input type="email" required name="email" required placeholder="Email">
+<!--                --><?php
+//                if ($_SESSION['case'] == 'email') {
+//                    echo "<h3 class = 'error'>Uw email is al in gebruik! Wachtwoord vergeten?</h3>";
+//                }
+//                ?>
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
@@ -74,13 +79,20 @@
                 <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
                 <input type="password" name="wachtwoord" required placeholder="Wachtwoord">
                 <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
-                <?php
-                if ($_SESSION['case'] == 'wachtwoord') {
-                    echo "<h3 class = 'error'>Wachtwoorden komen niet overeen</h3>";
-                }
-                ?>
+<!--                --><?php
+//                if ($_SESSION['case'] == 'wachtwoordFout') {
+//                    echo "<h3 class = 'error'>Uw wachtwoorden komen niet overeen!</h3>";
+//                }
+//                ?>
 
                 <input type="submit" class="button2" value="Registreer">
+<!--                --><?php
+//                if ($_SESSION['case'] == 'data') {
+//                    echo "<h3 class = 'error'>De velden zijn niet goed ingevuld</h3>";
+//                } else if ($_SESSION['case'] == 'velden') {
+//                    echo "<h3 class = 'error'>Niet alle benodigde velden zijn ingevuld</h3>";
+//                }
+//                ?>
             </form>
         </div>
 
