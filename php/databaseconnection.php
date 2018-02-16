@@ -1,11 +1,11 @@
 <?php
 
 $hostname = "localhost";
-//$dbname = "FLETNIX_DOCENT2";
-$dbname = "FLETNIX_DOCENT";
+$dbname = "FLETNIX_DOCENT2";
+//$dbname = "FLETNIX_DOCENT";
 $username = "sa";
-$password = "fojmBNHfMyYjHB6boNcZ";
-//$password = "Hacker11";
+//$password = "fojmBNHfMyYjHB6boNcZ";
+$password = "Hacker11";
 
 try {
     $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
