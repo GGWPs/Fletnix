@@ -26,7 +26,7 @@
         <div class="populaire_film">
             <h1>Populaire opkomende film:</h1>
             <div>
-                <a href="film.html">
+                <a href="../html/avengers_infinity_war.html">
                     <img src="../afbeeldingen/filmoverzicht/avengers-infinity-war.jpg" alt="Avengers Afinity war"
                          class="populair_afbeelding_filmoverzicht"/>
                 </a>

@@ -34,7 +34,7 @@
                     <option value="Pro">Pro €7.99</option>
                     <option value="Premium">Elite €11.99</option>
                 </select>
-                <input type="email" name="email" placeholder="Email">
+                <input type="email" required name="email" placeholder="Email">
                 <input type="text" name="voornaam" placeholder="Voornaam">
                 <input type="text" name="achternaam" placeholder="Achternaam">
                 <input type="text" name="land" placeholder="Land">
