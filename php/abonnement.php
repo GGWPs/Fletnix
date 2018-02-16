@@ -1,3 +1,15 @@
+/*
+ * Team: Kaene Peters en Ivan Miladinovic
+ * Auteur: Kaene en Ivan
+ * Versie: 2
+ * Datum: 16 februari 2018
+
+ * Aangepast:
+ * - Required bij html invoervelden toegevoegd
+ *
+*/
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
