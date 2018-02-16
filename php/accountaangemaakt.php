@@ -20,30 +20,13 @@
     </div>
 </header>
 <main>
-    <h1>Zoekresultaten</h1>
-    <div class="zoekresultaten">
-    <?php
-    require_once '../php/databaseconnection.php';
-
-$zoek = $_POST["zoekFunctie"];
-    $sql = "select top 30 * from Movie WHERE title like '%$zoek%'";
-    foreach ($dbh ->query($sql) as $row) {
-        print $row['title'] . "\t";
-        print $row['description'] . "\t";
-        echo "</br>";
-    }
-
-//    $search_query=mssql_query($sql);
-
-//    if(mssql_num_rows($search_query)!=0) {
-//        $search_rs = mssql_fetch_assoc($search_query);
-//    }
-//    print_r($search_query);
-    ?>
+    <div class="cover">
+        <div class="login">
+            <img src="../afbeeldingen/loading.gif" alt="Loading">
+            <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier</a>  <h3>om aan te melden!</h3>
+        </div>
     </div>
 </main>
-
-
 <footer>
     <div class="footer">
         <div class="footer1">

@@ -23,7 +23,8 @@
     <div class="cover">
     <div class="login">
         <h1>Inloggen</h1>
-        <img src="../afbeeldingen/slot.png" width="100" height="100" alt="login">
+        <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">
+    </br>
         <form method="POST" action="testlogin.php">
             <input type="text" placeholder="Email" name="gebruikersnaam">
             <input type="password" placeholder="Wachtwoord" name="password">

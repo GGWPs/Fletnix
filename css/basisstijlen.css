@@ -77,4 +77,11 @@ tr:hover {
     background-color: black;
 }
 
+.zoekresultaten {
+    border: 1px solid blue;
+    color: white;
+    border-color: white;
+    background-color: black;
+}
+
 
