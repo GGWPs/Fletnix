@@ -1,6 +1,25 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - aangepast-->
+<!-- * -toevoeging filmoverzicht
+<!--*/-->
+
 <?php
 if (isset($_SESSION['voornaam'])){
 //    echo $_POST['firstname'] ;
+    echo "  <div class=\"dropdown\">
+        <button class=\"dropbtn\">Films</button>
+        <div class=\"dropdown-content\">
+            <a href=\"#\">Actie</a>
+            <a href=\"#\">Comedy</a>
+            <a href=\"filmoverzicht.php\">Drama</a>
+        </div>
+    </div>";
     print_r($_SESSION['voornaam']);
     echo " ";
     print_r($_SESSION['achternaam']);

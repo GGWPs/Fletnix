@@ -1,3 +1,14 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - aangepast-->
+<!-- * -
+<!--*/-->
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
