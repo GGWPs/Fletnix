@@ -34,7 +34,13 @@
 <main>
 <div class="cover">
         <div class="invoerveld">
-<h1> hallo gastboek jwz</h1>
+            <php if (isset($_SESSION['voornaam'])){
+             echo '<h1> hallo gastboek jwz</h1>';
+            } else {
+            echo '<h1> gelieve eerst in te loggen</h1>';
+            }
+                ?>
+
 
         </div>
 </div>
