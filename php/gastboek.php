@@ -24,33 +24,46 @@
 </head>
 <body>
 <header>
+
     <div class="logoheader">
-        <?php include '../php/headerlogo.php';?>
+        <?php include '../php/headerlogo.php'; ?>
     </div>
     <div class="headerbuttons">
-        <?php include '../php/headerknop.php';?>
+
+        <?php include '../php/headerknop.php'; ?>
+
+        }
     </div>
 </header>
 <main>
-<div class="cover">
-        <div class="invoerveld">
-<h1> hallo gastboek jwz</h1>
+    <div class="cover">
+        <h1> hallo gastboek jwz</h1>
 
-        </div>
-</div>
-</div>
+    </div>
+    <?php
+    session_start();
+    if (isset($_SESSION['voornaam'])) {
+       echo '<form method = "post" action = "nieuwaccount.php" >';
+
+    }
+    ?>
+    <div class="invoerveld">
+
+
+    </div>
+    </div>
 </main>
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '../php/footer1.php';?>
+            <?php include '../php/footer1.php'; ?>
         </div>
         <div class="footer2">
-            <?php include '../php/footer2.php';?>
+            <?php include '../php/footer2.php'; ?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/copyright.php';?>
+        <?php include '../php/copyright.php'; ?>
     </div>
 </footer>
 </body>

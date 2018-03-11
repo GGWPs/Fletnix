@@ -14,15 +14,15 @@
 <body>
 <header>
     <div class="logoheader">
-        <?php include '../php/headerlogo.php';?>
+        <?php include '../php/headerlogo.php'; ?>
     </div>
     <div class="headerbuttons">
-        <?php include '../php/headerknop.php';?>
+        <?php include '../php/headerknop.php'; ?>
     </div>
 </header>
 <main>
     <div class="trailer_video">
-        <video controls >
+        <video controls>
             <source src="../videos/trailer_avengers_infinity_war.mp4" type="video/mp4">
         </video>
     </div>
@@ -30,14 +30,14 @@
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '../php/footer1.php';?>
+            <?php include '../php/footer1.php'; ?>
         </div>
         <div class="footer2">
-            <?php include '../php/footer2.php';?>
+            <?php include '../php/footer2.php'; ?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/copyright.php';?>
+        <?php include '../php/copyright.php'; ?>
     </div>
 </footer>
 </body>
