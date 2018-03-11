@@ -24,11 +24,15 @@
 </head>
 <body>
 <header>
+
     <div class="logoheader">
-        <?php include '../php/headerlogo.php';?>
+        <?php include '../php/headerlogo.php'; ?>
     </div>
     <div class="headerbuttons">
-        <?php include '../php/headerknop.php';?>
+
+        <?php include '../php/headerknop.php'; ?>
+
+        }
     </div>
 </header>
 <main>
@@ -40,7 +44,22 @@
             echo '<h1> gelieve eerst in te loggen</h1>';
             }
                 ?>
+    <div class="cover">
+        <h1> hallo gastboek jwz</h1>
 
+    </div>
+    <?php
+    session_start();
+    if (isset($_SESSION['voornaam'])) {
+       echo '<form method = "post" action = "nieuwaccount.php" >';
+
+    }
+    ?>
+    <div class="invoerveld">
+
+
+    </div>
+    </div>
 ss
         </div>
 </div>
@@ -49,14 +68,14 @@ ss
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '../php/footer1.php';?>
+            <?php include '../php/footer1.php'; ?>
         </div>
         <div class="footer2">
-            <?php include '../php/footer2.php';?>
+            <?php include '../php/footer2.php'; ?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/copyright.php';?>
+        <?php include '../php/copyright.php'; ?>
     </div>
 </footer>
 </body>
