@@ -23,10 +23,6 @@
 
 </head>
 <body>
-<!--Een wervende homepage die duidelijk maakt wat er op deze website te halen valt en-->
-<!--wie de doelgroep is. Je kan de doelgroep ook benoemen (bijvoorbeeld in de-->
-<!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
-<!--de website/videodienst mogen jullie aanpassen.-->
 <header>
     <div class="logoheader">
         <?php include '../php/headerlogo.php';?>
@@ -35,12 +31,15 @@
         <?php include '../php/headerknop.php';?>
     </div>
 </header>
+<main>
+<div class="cover">
+        <div class="invoerveld">
+<h1> hallo gastboek jwz</h1>
 
-
-
-
-
-
+        </div>
+</div>
+</div>
+</main>
 <footer>
     <div class="footer">
         <div class="footer1">
@@ -55,11 +54,5 @@
     </div>
 </footer>
 </body>
-<?php
-/**
- * Created by PhpStorm.
- * User: Lenovo
- * Date: 7-3-2018
- * Time: 17:45
- */
+
 

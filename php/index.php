@@ -57,7 +57,6 @@
                         <th>Elite</th>
                     </tr>
                     <tr>
-                        sss
                         <td>Prijzen</td>
                         <td>€4.99</td>
                         <td>€7.99</td>
