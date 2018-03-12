@@ -1,3 +1,18 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - aangepast-->
+<!-- * - include naar require once gedaan.
+<!--*/-->
+<?php
+include 'functies.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -13,10 +28,10 @@
 <body>
 <header>
     <div class="logoheader">
-        <?php include '../php/headerlogo.php';?>
+        <?php printHeaderLogo(); ?>
     </div>
     <div class="headerbuttons">
-        <?php include '../php/headerknop.php';?>
+        <?php printHeaderKnoppen(); ?>
     </div>
 </header>
 <main>
@@ -37,14 +52,14 @@
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '../php/footer1.php';?>
+            <?php printFooter1();?>
         </div>
         <div class="footer2">
-            <?php include '../php/footer2.php';?>
+            <?php printFooter2();?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/copyright.php';?>
+        <?php printCopyright();?>
     </div>
 </footer>
 </body>

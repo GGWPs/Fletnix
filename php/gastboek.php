@@ -8,6 +8,10 @@
 <!-- *
 <!-- *
 <!--*/-->
+<?php
+include 'functies.php';
+
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -24,58 +28,39 @@
 </head>
 <body>
 <header>
-
     <div class="logoheader">
-        <?php include '../php/headerlogo.php'; ?>
+        <?php printHeaderLogo(); ?>
     </div>
     <div class="headerbuttons">
-
-        <?php include '../php/headerknop.php'; ?>
-
-        }
+        <?php printHeaderKnoppen(); ?>
     </div>
 </header>
 <main>
 <div class="cover">
         <div class="invoerveld">
-            <php if (isset($_SESSION['voornaam'])){
+            <?php if (isset($_SESSION['voornaam'])){
              echo '<h1> hallo gastboek jwz</h1>';
+                echo '<form method = "post" action = "" >';
             } else {
             echo '<h1> gelieve eerst in te loggen</h1>';
             }
                 ?>
-    <div class="cover">
-        <h1> hallo gastboek jwz</h1>
-
-    </div>
-    <?php
-    session_start();
-    if (isset($_SESSION['voornaam'])) {
-       echo '<form method = "post" action = "nieuwaccount.php" >';
-
-    }
-    ?>
-    <div class="invoerveld">
 
 
     </div>
-    </div>
-ss
         </div>
-</div>
-</div>
 </main>
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php include '../php/footer1.php'; ?>
+            <?php printFooter1();?>
         </div>
         <div class="footer2">
-            <?php include '../php/footer2.php'; ?>
+            <?php printFooter2();?>
         </div>
     </div>
     <div class="bottom">
-        <?php include '../php/copyright.php'; ?>
+        <?php printCopyright();?>
     </div>
 </footer>
 </body>
