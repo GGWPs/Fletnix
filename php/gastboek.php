@@ -10,7 +10,6 @@
 <!--*/-->
 <?php
 include 'functies.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="nl">

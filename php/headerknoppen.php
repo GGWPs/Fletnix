@@ -8,6 +8,8 @@
 
 if (isset($_SESSION['voornaam'])){
 //    echo $_POST['firstname'] ;
+    echo "<button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
+        </button>";
     echo "  <div class=\"dropdown\">
         <button class=\"dropbtn\">Films</button>
         <div class=\"dropdown-content\">

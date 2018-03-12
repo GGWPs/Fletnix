@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Lenovo
- * Date: 12-3-2018
- * Time: 15:40
- */
-
 function printHeaderLogo(){
     include '../php/headerlogo.php';
 }
