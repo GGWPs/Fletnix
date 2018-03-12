@@ -5,7 +5,7 @@
 <!-- * Datum: 7 maart 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!-- *
+<!-- *Gastenboek is alleen voor de herkansing dus deze hele pagina is "nieuw"
 <!-- *
 <!--*/-->
 <?php
@@ -36,31 +36,36 @@ include 'functies.php';
     </div>
 </header>
 <main>
-<div class="cover">
+    <div class="cover">
         <div class="invoerveld">
-            <?php if (isset($_SESSION['voornaam'])){
-             echo '<h1> hallo gastboek jwz</h1>';
+            <?php if (isset($_SESSION['voornaam'])) {
+                echo '<h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>';
                 echo '<form method = "post" action = "" >';
+                print_r($_SESSION['voornaam']);
+                echo " ";
+                print_r($_SESSION['achternaam']);
+                echo '<textarea name="comment" id="" cols="30" rows="10"></textarea>>';
             } else {
-            echo '<h1> gelieve eerst in te loggen</h1>';
+                echo '<h1> gelieve eerst in te loggen</h1>';
             }
-                ?>
+            echo date("Y/m/d")." ". date("H:i:sa"). "<br>";
+            ?>
 
 
-    </div>
         </div>
+    </div>
 </main>
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php printFooter1();?>
+            <?php printFooter1(); ?>
         </div>
         <div class="footer2">
-            <?php printFooter2();?>
+            <?php printFooter2(); ?>
         </div>
     </div>
     <div class="bottom">
-        <?php printCopyright();?>
+        <?php printCopyright(); ?>
     </div>
 </footer>
 </body>
