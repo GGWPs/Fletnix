@@ -30,7 +30,9 @@ if (isset($_SESSION['voornaam'])){
         </button> </div>";
 }
 else {
-    echo "<div class=\"headerbuttons\">  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
+    echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
+        </button>";
+    echo " <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
         </button>";
     echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='abonnement.php'\">Maak een account
         </button> </div>";
