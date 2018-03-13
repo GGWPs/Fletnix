@@ -11,6 +11,7 @@
 <?php
 include 'functies.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +32,20 @@ include 'functies.php';
     <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
+
+    <?php
+    if (isset($_SESSION['voornaam'])){
+        header("Location: filmoverzicht.php");
+    } else {
+        echo '
     <div class="cover">
     <div class="login">
         <h1>Inloggen</h1>
-        <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">
-    </br>
+        <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">';
+             if (isset($_GET["msg"]) && $_GET["msg"] == "failed") {
+                 echo "Uw gegevens worden niet herkent!";
+             }
+        echo '</br>
         <form method="POST" action="testlogin.php">
             <input type="text" placeholder="Email" name="gebruikersnaam">
             <input type="password" placeholder="Wachtwoord" name="password">
@@ -44,6 +54,12 @@ include 'functies.php';
         <a href="abonnement.php"><h4>Nog geen account? klik dan hier</h4></a>
     </div>
     </div>
+    ';
+
+
+    }
+    ?>
+
 </main>
 <footer>
     <div class="footer">

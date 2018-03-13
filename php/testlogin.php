@@ -30,5 +30,6 @@ if(!empty($result)){
 else
 {
     echo "Uw gegevens worden niet herkent!";
+    header("location:aanmeldpagina.php?msg=failed");
 }
 ?>
