@@ -8,7 +8,7 @@
 
 if (isset($_SESSION['voornaam'])){
 //    echo $_POST['firstname'] ;
-    echo "<button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
+    echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
         </button>";
     echo "  <div class=\"dropdown\">
         <button class=\"dropbtn\">Films</button>
@@ -27,13 +27,13 @@ if (isset($_SESSION['voornaam'])){
     echo ", ingelogd sinds ";
     print_r($_SESSION['logintijd']);
     echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='loguit.php'\">Loguit
-        </button>";
+        </button> </div>";
 }
 else {
-    echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
+    echo "<div class=\"headerbuttons\">  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
         </button>";
     echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='abonnement.php'\">Maak een account
-        </button>";
+        </button> </div>";
 }
 
 ?>

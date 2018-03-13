@@ -6,7 +6,7 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
-<!-- * - include naar require once gedaan.
+<!-- * - headers aangepast zodat ze via functies gaan en include.
 <!--*/-->
 <?php
 include 'functies.php';
@@ -27,12 +27,8 @@ include 'functies.php';
 </head>
 <body>
 <header>
-    <div class="logoheader">
-        <?php printHeaderLogo(); ?>
-    </div>
-    <div class="headerbuttons">
-        <?php printHeaderKnoppen(); ?>
-    </div>
+    <?php printHeaderLogo(); ?>
+    <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
     <div class="cover">

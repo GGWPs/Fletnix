@@ -18,12 +18,8 @@ include 'functies.php';
 <body>
 <div class="cover">
     <header>
-        <div class="logoheader">
-            <?php printHeaderLogo(); ?>
-        </div>
-        <div class="headerbuttons">
-            <?php printHeaderKnoppen(); ?>
-        </div>
+        <?php printHeaderLogo(); ?>
+        <?php  printHeaderKnoppen(); ?>
     </header>
     <div class="voorwaarden">
 
