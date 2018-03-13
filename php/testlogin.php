@@ -18,7 +18,7 @@ if(!empty($result)){
 //    echo "Result: " . $row[firstname];
 //
 
-        $_SESSION['voornaam'] = $result["firstname"];
+    $_SESSION['voornaam'] = $result["firstname"];
     $_SESSION['achternaam'] = $result["lastname"];
     setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
     $_SESSION['logintijd'] = date("H:i") ;

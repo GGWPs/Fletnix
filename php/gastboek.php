@@ -38,19 +38,35 @@ include 'functies.php';
     <div class="cover">
         <div class="invoerveld">
             <?php if (isset($_SESSION['voornaam'])) {
+
                 echo '<h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>';
                 echo '<form method = "post" action = "" >';
                 print_r($_SESSION['voornaam']);
                 echo " ";
                 print_r($_SESSION['achternaam']);
-                echo '<textarea name="comment" id="" cols="30" rows="10"></textarea>>';
+                echo '        plaats uw reactie om:    '."<br>".date("Y/m/d") . " " . date("H:i:sa") . "<br>";
+                echo '<textarea name="comment" id="" cols="30" rows="10" required placeholder="Laat hier uw reactie achter"></textarea>>';
             } else {
                 echo '<h1> gelieve eerst in te loggen</h1>';
             }
-            echo date("Y/m/d")." ". date("H:i:sa"). "<br>";
+
             ?>
+        </div>
+        <div class="comments">
+            <?php
+            require_once '../php/databaseconnection.php';
+
+            $stmt = $dbh->prepare("SELECT * FROM Gastenboek WHERE naam = :value1 AND datum = :value2 AND bericht = :value3");
+            //$stmt = $dbh->prepare("SELECT * FROM Gastenboek ");
 
 
+            $stmt->execute(array(":value1" => $_POST["naam"], ":value2" => $_POST["datum"], "value3" =>$_POST["bericht"] ));
+
+            $result = $stmt->fetch();
+            if(!empty($result)) {
+                echo $result["naam"] . $result["datum"] . $result["bericht"];
+            }
+            ?>
         </div>
     </div>
 </main>
