@@ -29,7 +29,6 @@ if(!empty($result)){
 }
 else
 {
-    echo "Uw gegevens worden niet herkent!";
-    header("location:aanmeldpagina.php?msg=failed");
+    header("location:aanmeldpagina.php?msg=fout");
 }
 ?>

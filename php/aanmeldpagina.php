@@ -42,7 +42,7 @@ include 'functies.php';
     <div class="login">
         <h1>Inloggen</h1>
         <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">';
-             if (isset($_GET["msg"]) && $_GET["msg"] == "failed") {
+             if (isset($_GET["msg"]) && $_GET["msg"] == "fout") {
                  echo "Uw gegevens worden niet herkent!";
              }
         echo '</br>
