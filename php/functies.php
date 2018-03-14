@@ -40,7 +40,7 @@ function roepComments()
 
     echo '<h2 > Laatste berichten </h2 >';
 
-    $query = $dbh->query('SELECT top 10 * FROM gastenboek ');
+    $query = $dbh->query('SELECT top 10 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
         echo "<div>" . $r["naam"] . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>' . '<hr/>';
     }

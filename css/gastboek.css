@@ -1,26 +1,34 @@
-
-
-.gastenboek{
-   height: 100%;
-    width: 100%;
+main{
+    padding: 0px;
 }
 
-.invoerveld{
-    height:100%;
+.gastenboek {
+    height: 100%;
+    width: 100%;
+
+}
+
+.invoerveld {
+    height: 100%;
     width: 40%;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 form {
     flex-direction: column;
+    width: 90%;
+
     display: flex;
 }
 
-.commentswel{
-    height:100%;
+.commentswel {
+    height: 100%;
     width: 60%;
+    justify-content: space-around;
 }
-.commentsniet{
+
+.commentsniet {
+    justify-content: space-around;
     width: 100%;
     height: 100%;
 }

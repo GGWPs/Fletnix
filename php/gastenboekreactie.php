@@ -13,7 +13,7 @@ session_start();
 
 require_once '../php/databaseconnection.php';
 $naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
-$today = date('Y-m-d');
+$today = date("Y-m-d H:i:s");
 $bericht = $_POST["comment"];
 try {
     $stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
