@@ -20,7 +20,7 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
-
+    <link rel="stylesheet" href="../css/gastboek.css"
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Fletnix</title>
 
@@ -36,17 +36,27 @@ include 'functies.php';
 </header>
 <main>
     <div class="cover">
-        <div class="invoerveld">
+        <div class="gastenboek">
             <h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
-            <?php if (isset($_SESSION['voornaam'])) {
-            gastenBoekInvoer();
+            <?php
+            if (isset($_SESSION['voornaam'])) {
+                echo '<div class="invoerveld">';
+                echo '  Plaats uw reactie om:' . "<br>" . date("Y/m/d") . "<br>";
+                print_r($_SESSION['voornaam']);
+                echo " ";
+                print_r($_SESSION['achternaam']);
+                gastenBoekInvoer();
+                echo '</div>';
+                echo '<div class="commentswel">';
+                roepComments();
+                echo ' </div>';
             } else {
-            echo '<h1> gelieve eerst in te loggen</h1>';
+                echo '<h1>Gelieve eerst in te loggen</h1>';
+                echo '<div class="commentsniet">';
+                roepComments();
+                echo '</div>';
             }
             ?>
-        </div>
-        <div class="comments">
-
         </div>
     </div>
 </main>

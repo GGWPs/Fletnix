@@ -27,7 +27,7 @@ if(!empty($result)){
 //}
 //    $row = mysqli_fetch_assoc($result);
 //    echo "Result: " . $row[firstname];
-//
+
 
     $_SESSION['voornaam'] = $result["firstname"];
     $_SESSION['achternaam'] = $result["lastname"];
