@@ -1,0 +1,13 @@
+form {
+    flex-direction: column;
+    display: flex;
+}
+
+.invoerveld{
+    width: 40%;
+    background: rgba(255,255,255,0.9);
+}
+
+.comments{
+    width: 60%;
+}

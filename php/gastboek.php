@@ -20,7 +20,7 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
-
+    <link rel="stylesheet" href="../css/gastboek.css"
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Fletnix</title>
 
@@ -39,29 +39,24 @@ include 'functies.php';
         <h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
 
 
-            <?php
+        <?php
+
+        if (isset($_SESSION['voornaam'])) {
             echo '<div class="invoerveld">';
-            if (isset($_SESSION['voornaam'])) {
-                gastenBoekInvoer();
-            } else {
-                echo '<h1> gelieve eerst in te loggen</h1>';
-            }
+            echo '  Plaats uw reactie om:' . "<br>" . date("Y/m/d") . "<br>";
+            print_r($_SESSION['voornaam']);
+            echo " ";
+            print_r($_SESSION['achternaam']);
+            gastenBoekInvoer();
             echo '</div>';
-            ?>
+            roepComments();
 
-        <div class="comments">
-            <h2>Laatste berichten</h2>
-            <?php
-            require_once '../php/databaseconnection.php';
-            $query = $dbh->query('SELECT top 5 * FROM gastenboek ');
+        } else {
+            echo '<h1> gelieve eerst in te loggen</h1>';
+            roepComments();
+        }
+        ?>
 
-            while ($r = $query->fetch()) {
-                echo  $r["naam"]. '<br>'. $r["datum"].'<br>'. $r["bericht"], '<br>';
-            }
-            ?>
-
-
-        </div>
     </div>
 </main>
 <footer>
