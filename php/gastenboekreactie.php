@@ -1,6 +1,6 @@
 <!--/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
+<!-- * Auteur: Kaene-->
 <!-- * Versie: 1-->
 <!-- * Datum: 14 maart 2018-->
 <!---->
@@ -13,17 +13,12 @@ session_start();
 
 
 require_once '../php/databaseconnection.php';
+
 $stmt = $dbh->prepare("insert into Gastenboek (id,naam,datum,bericht) 
-                                VALUES (:value1,getdate()),:value2)");
+                                VALUES ('".$_SESSION['voornaam']." ".$_SESSION['achternaam'].",getdate()),:value1)");
+$stmt->execute(array("value1" =>$_POST["comment"] ));
 
 
-$stmt->execute(array(":value1" => $_SESSION['voornaam'].$_SESSION['achternaam'],"value2" =>$_POST["comment"] ));
-
-$result = $stmt->fetch();
-if(!empty($result)){
-
-
-}
 
 
 

@@ -13,6 +13,4 @@ try {
 } catch(PDOException $e) {
     echo "Er ging iets mis met de database.<br>";   echo "De melding is {$e->getMessage()}<br><br>";
 }
-
-
 ?>
