@@ -13,16 +13,19 @@ session_start();
 
 require_once '../php/databaseconnection.php';
 $naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
-$stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
-                                VALUES ('" . $naam . "',getdate()),':value1')");
-$stmt->execute(array(":value1" => $_POST['comment']));
-//$result = $stmt->fetch();
-//
-//if(!empty($stmt)) {
-//
-//    header("Location: ../php/gastboek.php");
-//    die();
-//}
+$today = date('Y-m-d');
+$bericht = $_POST["comment"];
+try {
+    $stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
+                                VALUES (?,?,?)");
+    $stmt->execute(array($naam, $today,$bericht));
 
+    header("Location: ../php/gastboek.php");
+    exit;
+} catch (PDOException $e) {
+    echo "Er is iets mis gegaan. ";
+    header("Location: ../php/gastboek.php");
+    exit;
+}
 
 ?>
