@@ -37,14 +37,14 @@ function roepComments()
 {
 
     require_once '../php/databaseconnection.php';
-    echo '<div class="comments">';
+
     echo '<h2 > Laatste berichten </h2 >';
 
     $query = $dbh->query('SELECT top 5 * FROM gastenboek ');
     while ($r = $query->fetch()) {
         echo "<div>" . $r["naam"] . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>' . '<hr/>';
     }
-    echo ' </div>';
+
 }
 
 function zoekFilm()

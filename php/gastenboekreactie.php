@@ -12,13 +12,10 @@
 session_start();
 
 require_once '../php/databaseconnection.php';
-$naam = $_SESSION['voornaam']." ".$_SESSION['achternaam'];
+$naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
 $stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
-                                VALUES ('".$naam."',getdate()),':value1')");
-$stmt->execute("value1");$_POST["comment"];
-
-
-
+                                VALUES ('" . $naam . "',getdate()),':value1')");
+$stmt->execute(array(":value1" => $_POST['comment']));
 
 
 ?>

@@ -36,27 +36,28 @@ include 'functies.php';
 </header>
 <main>
     <div class="cover">
-        <h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
-
-
-        <?php
-
-        if (isset($_SESSION['voornaam'])) {
-            echo '<div class="invoerveld">';
-            echo '  Plaats uw reactie om:' . "<br>" . date("Y/m/d") . "<br>";
-            print_r($_SESSION['voornaam']);
-            echo " ";
-            print_r($_SESSION['achternaam']);
-            gastenBoekInvoer();
-            echo '</div>';
-            roepComments();
-
-        } else {
-            echo '<h1> gelieve eerst in te loggen</h1>';
-            roepComments();
-        }
-        ?>
-
+        <div class="gastenboek">
+            <h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
+            <?php
+            if (isset($_SESSION['voornaam'])) {
+                echo '<div class="invoerveld">';
+                echo '  Plaats uw reactie om:' . "<br>" . date("Y/m/d") . "<br>";
+                print_r($_SESSION['voornaam']);
+                echo " ";
+                print_r($_SESSION['achternaam']);
+                gastenBoekInvoer();
+                echo '</div>';
+                echo '<div class="commentswel">';
+                roepComments();
+                echo ' </div>';
+            } else {
+                echo '<h1>Gelieve eerst in te loggen</h1>';
+                echo '<div class="commentsniet">';
+                roepComments();
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
 </main>
 <footer>
