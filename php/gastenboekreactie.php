@@ -16,6 +16,13 @@ $naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
 $stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
                                 VALUES ('" . $naam . "',getdate()),':value1')");
 $stmt->execute(array(":value1" => $_POST['comment']));
+//$result = $stmt->fetch();
+//
+//if(!empty($stmt)) {
+//
+//    header("Location: ../php/gastboek.php");
+//    die();
+//}
 
 
 ?>
