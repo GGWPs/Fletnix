@@ -64,5 +64,6 @@ include 'functies.php';
     </div>
 </footer>
 </body>
+</html>
 
 
