@@ -38,6 +38,19 @@ require_once '../php/databaseconnection.php';
 
     ?>
         <h3> "Nieuw" </h3>
+        <?php
+        $data = $dbh->query("select * from totale_films  ");
+
+        $overzicht = "";
+        while ($row = $data->fetch()) {
+//        "<img src='Image/".$row['cover_image']."' />
+//        $overzicht .= "{$row['cover_image']}
+//    <p>{$row['title']}</p>";}
+            echo "<img src='Image/" . $row['cover_image'] . "' />";
+            echo "<p>" . $row['title'] . "</p>";
+        }
+
+        ?>
     </div>
 
 
