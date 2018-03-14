@@ -18,7 +18,19 @@ function printFooter2(){
 function printCopyright(){
     include '../php/copyright.php';
 }
+function gastenBoekInvoer(){
 
+    echo '<form method = "post" action = "gastenboekreactie.php"';
+  //  print_r($_SESSION['voornaam']);
+
+  //  print_r($_SESSION['achternaam']);
+    echo '"        plaats uw reactie om:    "'."<br>".date("Y/m/d")  . "<br>";
+    echo '<textarea name="comment" id="" cols="30" rows="10" required placeholder="Laat hier uw reactie achter"></textarea>';
+    echo '<input type="submit" class="button2" value="Plaatsen">';
+    echo '</form>';
+
+
+}
 function zoekFilm(){
 
     require_once '../php/databaseconnection.php';

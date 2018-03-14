@@ -46,11 +46,11 @@ include 'functies.php';
                     <option value="Premium">Elite €11.99</option>
                 </select>
                 <input type="email" required name="email" required placeholder="Email">
-<!--                --><?php
+<?php
 //                if ($_SESSION['case'] == 'email') {
 //                    echo "<h3 class = 'error'>Uw email is al in gebruik! Wachtwoord vergeten?</h3>";
 //                }
-//                ?>
+?>
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
