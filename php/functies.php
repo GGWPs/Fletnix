@@ -42,7 +42,7 @@ function roepComments()
 
     $query = $dbh->query('SELECT top 10 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
-        echo "<div>" . $r["naam"] . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>' . '<hr/>';
+        echo "<div class='commenttext'>" . $r["naam"] . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>';
     }
 
 }

@@ -41,15 +41,14 @@ include 'functies.php';
             <?php
             if (isset($_SESSION['voornaam'])) {
                 echo '<div class="invoerveld">';
-                echo '  Plaats uw reactie om:' . "<br>" . date("Y/m/d") . "<br>";
-                print_r($_SESSION['voornaam']);
-                echo " ";
-                print_r($_SESSION['achternaam']);
+                echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s") . "<br>";
+                echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
                 gastenBoekInvoer();
                 echo '</div>';
                 echo '<div class="commentswel">';
                 roepComments();
                 echo ' </div>';
+
             } else {
                 echo '<h1>Gelieve eerst in te loggen</h1>';
                 echo '<div class="commentsniet">';
