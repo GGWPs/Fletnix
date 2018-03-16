@@ -32,8 +32,7 @@ require_once '../php/databaseconnection.php';
                 $titel= $_GET['titel'];
                 echo"<label for='titel'>Zoeken op titel: </label>";
                 echo "<input type='text' id='titel' name='filmtitel' value='$titel'>";
-            }
-            else{
+            } else{
                 echo "<label for='titel'>Zoeken op titel: </label>";
                 echo "<input type='text' id='titel' name='filmtitel'>";
             }
@@ -41,8 +40,7 @@ require_once '../php/databaseconnection.php';
                 $regisseur=$_GET['regisseur'];
                 echo "<label for='regisseur'>Zoeken op regisseur: </label>";
                 echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
-            }
-            else{
+            }  else{
                 echo "<label for='regisseur'>Zoeken op regisseur: </label>";
                 echo "<input type='text' id='regisseur' name='filmregisseur'>";
             }
@@ -50,8 +48,7 @@ require_once '../php/databaseconnection.php';
                 $publicatiejaar = $_GET ['publicatiejaar'];
                 echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
                 echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2050'>";
-            }
-            else{
+            } else{
                 echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
                 echo "<input type='number' id=publicatiejaar' name='publicatiejaar' min='1900' max='2050'>";
             }
@@ -90,33 +87,14 @@ require_once '../php/databaseconnection.php';
         }
         if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
             $i = $_SESSION['movies'];
-            echo '<div><p> U heeft gezocht op filmtitel: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
+            echo '<div><p> U heeft gezocht op film: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
             tekenFilms($i);
             echo '</div></div>';
         }
     } else {
-        header('Location:aanmeldpagina.php?return=filmoverzicht.php');
+        header('Location:aanmeldpagina.php');
     }
     ?>
-
-<!--    <h2>Alle films</h2> <br> <br>-->
-<!--    <div class="filmposters">-->
-<!---->
-<!--        <p> "Actie!" </p>-->
-<!--        --><?php
-//        $data = $dbh->query("select top 6 * from actie_films  ");
-//
-//        $overzicht = "";
-//        while ($row = $data->fetch()) {
-//
-//            $titel = $row['title'];
-//            $afbeeldingnaam = $row['cover_image'];
-//            $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
-//            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
-//        }
-//
-//        ?>
-<!--        </div>-->
     </div>
 
 

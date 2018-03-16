@@ -11,7 +11,7 @@ if (isset($_SESSION['voornaam'])){
     echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
         </button>";
     echo "  <div class=\"dropdown\">
-        <button class=\"dropbtn\" onclick='Filmoverzicht.php'>Films</button>
+        <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Films</button>
         <div class=\"dropdown-content\">
             <a href=\"filmoverzicht.php\">Actie</a>
             <a href=\"filmoverzicht.php\">Comedy</a>
