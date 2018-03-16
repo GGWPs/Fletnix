@@ -1,12 +1,13 @@
 <!--/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
 <!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 1-->
+<!-- * Versie: 2-->
 <!-- * Datum: 16 maart 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!--
-<!-- *
+<!--    statische html code verwijdert
+<!-- * functie gemaakt overal. Oproep via generieke functie
+zoeken toegevoegd
 <!--*/-->
 
 <?php
@@ -71,8 +72,8 @@ require_once '../php/databaseconnection.php';
     <?php
     if (isset ($_SESSION['voornaam'])) {
         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-            $statement = "SELECT movie_id,cover_image, title FROM totale_films";
-            $query = $dbh->prepare($statement);
+            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            $query = $dbh->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);

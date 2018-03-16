@@ -36,11 +36,11 @@ require_once '../php/databaseconnection.php';
         <?php  printHeaderKnoppen(); ?>
     </header>
     <div class="index-container">
-        <h1>Actie filmoverzicht</h1>
+        <h1>Drama filmoverzicht</h1>
         <div class="index-item">
             <?php
-            $statement = "SELECT movie_id,cover_image, title FROM actie_films";
-            $query = $dbh->prepare($statement);
+            $select = "SELECT movie_id,cover_image, title FROM drama_films";
+            $query = $dbh->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);

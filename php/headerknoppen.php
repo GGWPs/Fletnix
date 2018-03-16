@@ -24,9 +24,9 @@ if (isset($_SESSION['voornaam'])){
     echo "  <div class=\"dropdown\">
         <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Films</button>
         <div class=\"dropdown-content\">
-            <a href=\"filmoverzicht.php\">Actie</a>
-            <a href=\"filmoverzicht.php\">Comedy</a>
-            <a href=\"filmoverzicht.php\">Drama</a>
+            <a href=\"filmoverzichtactie.php\">Actie</a>
+            <a href=\"filmoverzichtcomedy.php\">Comedy</a>
+            <a href=\"filmoverzichtdrama.php\">Drama</a>
         </div>
     </div>";
     print_r($_SESSION['voornaam']);
