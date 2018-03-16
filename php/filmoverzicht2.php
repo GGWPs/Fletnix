@@ -46,7 +46,7 @@ require_once '../php/databaseconnection.php';
     ?>
         <p> "Actie!" </p>
         <?php
-        $data = $dbh->query("select * from actie_films  ");
+        $data = $dbh->query("select top 6 * from actie_films  ");
 
         $overzicht = "";
         while ($row = $data->fetch()) {
