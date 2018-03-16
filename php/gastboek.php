@@ -2,7 +2,7 @@
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
 <!-- * Auteur: Kaene en Ivan-->
 <!-- * Versie: 1-->
-<!-- * Datum: 14 maart 2018-->
+<!-- * Datum: 16 maart 2018-->
 <!---->
 <!-- * Aangepast:-->
 <!-- *Gastenboek is alleen voor de herkansing dus deze hele pagina is "nieuw"
@@ -51,7 +51,7 @@ include 'functies.php';
                 echo ' </div>';
 
             } else {
-                echo '<div class="ttiel"><h1>Gelieve eerst in te loggen</h1></div>';
+                echo '<div class="titel"><h1>Gelieve eerst in te loggen</h1></div>';
                 echo '<div class="commentsniet">';
                 roepComments();
                 echo '</div>';
