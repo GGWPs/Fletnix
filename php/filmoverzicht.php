@@ -74,11 +74,11 @@ require_once '../php/databaseconnection.php';
             $filmtitel = "%" . $_POST['filmtitel'] . "%";
             $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
             $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
-            $statement = "SELECT Movie.movie_id, cover_image
+            $statement = "SELECT totale_films.movie_id, cover_image
                                             FROM totale_films
-                                            INNER JOIN Movie_Director md on Movie.movie_id=md.movie_id 
+                                            INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 
-                                            WHERE  p.firstname + ' ' + p.lastname LIKE ? AND Movie.title LIKE ? AND Movie.publication_year LIKE ? ORDER BY Movie.publication_year DESC";
+                                            WHERE  p.firstname + ' ' + p.lastname LIKE ? AND totale_films.title LIKE ? AND totale_films.publication_year LIKE ? ORDER BY totale_films.publication_year DESC";
             $query = $dbh->prepare($statement);
             $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
             $i = $query->fetchAll();
@@ -91,7 +91,7 @@ require_once '../php/databaseconnection.php';
         if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
             $i = $_SESSION['movies'];
             echo '<div><p> U heeft gezocht op filmtitel: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
-            movieloop($i);
+            tekenFilms($i);
             echo '</div></div>';
         }
     } else {

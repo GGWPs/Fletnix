@@ -62,23 +62,6 @@ function roepComments(){
 
 }
 
-function zoekFilm()
-{
-
-    require_once '../php/databaseconnection.php';
-    $zoek = $_POST["zoekFunctie"];
-    $sql = "select top 30 * from Movie where title like '%.$zoek.%' and movie_id in (select movie_id from Movie where movie_id = 300231 or movie_id = 300230 or movie_id = 300232 or movie_id = 412321
-    or movie_id = 311506 or movie_id = 412323 or movie_id = 412322 or movie_id = 146822 or movie_id = 112290 or movie_id = 267038 or movie_id = 412324 
-    or movie_id = 176711 or movie_id = 207992 ) ";
-    echo "<h2>U zocht op $zoek" . '</h2>' . '<br>';
-    foreach ($dbh->query($sql) as $row) {
-        print $row['title'] . "\t";
-        print $row['description'] . "\t";
-        echo "</br>";
-    }
-
-
-}
 
 /*
  *
@@ -99,11 +82,10 @@ function tekenFilms ($i)
 {
     $resultaat="";
     foreach ($i as $film) {
-        $foto = $film['cover_image'];
-        $films = $film['movie_id'];
-        $titel = $film['title'];
-        $resultaat.= '<a href="../php/afspelen.php?movieid='. $films . '">
-        <img src="../afbeeldingen/films/'.$foto.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p>
+        $fotoloc = $film['cover_image'];
+        $filmid = $film['movie_id'];
+        $resultaat.= '<a href="../php/afspelen.php?movieid='. $filmid . '">
+        <img src="../afbeeldingen/films/'.$fotoloc.'" width="200" height="150"
         </a>';
     }
     echo $resultaat;
