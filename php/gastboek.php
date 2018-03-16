@@ -26,16 +26,16 @@ include 'functies.php';
 
 </head>
 <body>
-<header>
-    <div class="logoheader">
-        <?php printHeaderLogo(); ?>
-    </div>
-    <div class="headerbuttons">
-        <?php printHeaderKnoppen(); ?>
-    </div>
-</header>
+
 <main>
-    <div class="cover">
+    <header>
+        <div class="logoheader">
+            <?php printHeaderLogo(); ?>
+        </div>
+        <div class="headerbuttons">
+            <?php printHeaderKnoppen(); ?>
+        </div>
+    </header>
         <div class="gastenboek">
             <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
                 <h2> Laatste berichten </h2></div>

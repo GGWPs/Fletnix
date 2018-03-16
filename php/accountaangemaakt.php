@@ -36,9 +36,8 @@ include 'functies.php';
     </div>
 </header>
 <main>
-    <div class="cover">
         <div class="login">
-            <<a href="filmoverzicht.php"img src="../afbeeldingen/loading.gif" alt="Loading">
+            <a href="filmoverzicht.php" img src="../afbeeldingen/loading.gif" alt="Loading">
             <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier</a>  <h3>om aan te melden!</h3>
             <?php header( "refresh:5;url=filmoverzicht.php" ); ?>
         </div>
