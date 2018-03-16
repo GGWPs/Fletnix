@@ -32,21 +32,23 @@ require_once '../php/databaseconnection.php';
 //        "<img src='Image/".$row['cover_image']."' />
 //        $overzicht .= "{$row['cover_image']}
 //    <p>{$row['title']}</p>";}
-        echo "<img src='Image/" . $row['cover_image'] . "' />";
+        $titel = $row['title'];
+//        echo "<img src=""../afbeeldingen/films/" . $titel . ".png"" >";
+        echo '<img src="afbeeldingen/films/'.$titel.'.png" >';
         echo "<p>" . $row['title'] . "</p>";
     }
 
     ?>
-        <h3> "Nieuw" </h3>
+        <p> "Actie!" </p>
         <?php
-        $data = $dbh->query("select * from totale_films  ");
+        $data = $dbh->query("select * from actie_films  ");
 
         $overzicht = "";
         while ($row = $data->fetch()) {
 //        "<img src='Image/".$row['cover_image']."' />
 //        $overzicht .= "{$row['cover_image']}
 //    <p>{$row['title']}</p>";}
-            echo "<img src='Image/" . $row['cover_image'] . "' />";
+            echo "<img src='afbeeldingen/" . $row['title'] . ".png' />";
             echo "<p>" . $row['title'] . "</p>";
         }
 

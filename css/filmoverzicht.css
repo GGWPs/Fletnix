@@ -103,3 +103,7 @@ h2{
     flex-direction: column;
     justify-content: center;
 }
+
+.cover {
+    background: rgba(255,255,255,0.4);
+}
