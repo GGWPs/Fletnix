@@ -56,8 +56,7 @@ require_once '../php/databaseconnection.php';
             $titel = $row['title'];
             $afbeeldingnaam = $row['cover_image'];
             $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
-            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'" </div>>';
-            echo "<p>" . $titel . "</p>";
+            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
         }
 
         ?>
