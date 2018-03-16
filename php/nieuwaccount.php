@@ -58,7 +58,7 @@ $land = "Netherlands";
         header("Location: ../php/accountaangemaakt.php");
         exit;
     } catch (PDOException $e) {
-        echo 'Uw account bestaat al. Klik <a href="../php/abonnement.php">hier</a>  om terug te gaan\'';
+        echo 'Er bestaat al een account met deze gegevens. Klik <a href="../php/abonnement.php">Hier</a>  om terug te gaan\'';
 //. $e->getMessage()
     }
 

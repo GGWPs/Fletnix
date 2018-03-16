@@ -23,11 +23,7 @@ require_once '../php/databaseconnection.php';
     <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
-        <h2>alle films</h2><br> <br>
-        <div class="filmposters">
-
-
-
+    <div class="cover">
     <?php
     $data = $dbh->query("select * from totale_films ");
 
