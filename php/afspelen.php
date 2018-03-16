@@ -1,6 +1,6 @@
 <?php
 include 'functies.php';
-
+require_once '../php/databaseconnection.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,19 +18,58 @@ include 'functies.php';
 </head>
 <body>
 <header>
-    <div class="logoheader">
-        <?php printHeaderLogo(); ?>
-    </div>
-    <div class="headerbuttons">
-        <?php printHeaderKnoppen(); ?>
-    </div>
+    <?php printHeaderLogo(); ?>
+    <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
-    <div class="trailer_video">
-        <video controls>
-            <source src="../videos/trailer_avengers_infinity_war.mp4" type="video/mp4">
-        </video>
-    </div>
+
+    <?php
+
+    $movieid= $_GET['movieid'];
+    $beschrijving = "SELECT title, duration, description, publication_year, price, cover_image, URL FROM Movie WHERE movie_id=?";
+    $query = $dbh->prepare($beschrijving);
+    $query->execute([$movieid]);
+    $gegevens = $query->fetchAll();
+    $afbeeldingnaam = $gegevens [0]['cover_image'];
+    $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
+    $cast= "SELECT firstname+ ' ' +lastname AS Name, role FROM Movie_Cast INNER JOIN Person ON Movie_Cast.person_id=Person.person_id WHERE movie_id=?";
+    $query=$dbh->prepare($cast);
+    $query->execute([$movieid]);
+    $gegevenscast=$query->fetchAll();
+    $regisseur= "SELECT firstname+ ' ' +lastname AS Name FROM Movie_Director INNER JOIN Person ON Movie_Director.person_id=Person.person_id WHERE movie_id=?";
+    $query=$dbh->prepare($regisseur);
+    $query->execute([$movieid]);
+    $gegevensregisseur=$query->fetchAll();
+    echo $gegevens[0]['title'].'</h1>';
+    echo '<img src="'.$afbeeldinglocatie.'" width="450" height="350"';
+    echo '<p>Speeltijd: '.$gegevens[0]['duration'].'</p>';
+    echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p>';
+    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p>';
+    echo '<p>Prijs: '.$gegevens[0]['price'].'</p>';
+    echo '<iframe width="600" height="400" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe>';
+    echo '<h2>Cast</h2>';
+    $casttabel = '';
+    $casttabel .= '<table> <tr><th>Naam</th><th>Role</th></tr>';
+    if(!empty($gegevenscast)){
+        for ($i = 0; $i < count($gegevenscast); $i++) {
+            $casttabel .= "<tr>";
+            $casttabel .= "<th>" . $gegevenscast[$i][0] . "</th>";
+            $casttabel .= "<td>" . $gegevenscast[$i][1] . "</td>";
+            $casttabel .= "</tr>";
+        }
+    }
+    if(!empty($gegevensregisseur)){
+        $casttabel .= "<tr>";
+        $casttabel .= "<th>". $gegevensregisseur [0][0]. "</th>";
+        $casttabel .= "<td>Regisseur</td>";
+        $casttabel .= "</tr>";
+    }
+    $casttabel .= '</table>';
+    echo $casttabel;
+    ?>
+
+
+
 </main>
 <footer>
     <div class="footer">

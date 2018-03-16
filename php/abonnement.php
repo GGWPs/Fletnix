@@ -57,16 +57,9 @@ include 'functies.php';
                 <?php
                 require_once '../php/databaseconnection.php';
 
-                //$sql = mysqli_query($connection, "SELECT username FROM users");
-//                $sql = "select country_name FROM Country";
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
-//                    print $row['country_name'] . "\t";
                     echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
-//                    echo '<option value="land">'.$row.'</option>';
                 }
-//                while ($row = $sql->fetch_assoc()) {
-//                    echo "<option value=\"land1\">" . $row['country_name'] . "</option>";
-//                }
                 ?>
                 </select>
                 <input type="date" name="geboortejaar" required placeholder="Geboortejaar">
@@ -115,5 +108,4 @@ include 'functies.php';
     </div>
 </footer>
 </body>
-
 </html>

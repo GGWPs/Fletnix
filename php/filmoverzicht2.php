@@ -31,14 +31,12 @@ require_once '../php/databaseconnection.php';
 
     $overzicht = "";
     while ($row = $data->fetch()) {
-//        "<img src='Image/".$row['cover_image']."' />
-//        $overzicht .= "{$row['cover_image']}
-//    <p>{$row['title']}</p>";}
+        $movieid = $row['movie_id'];
         $titel = $row['title'];
         $afbeeldingnaam = $row['cover_image'];
         $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
-//        echo "<img src=""../afbeeldingen/films/" . $titel . ".png"" >";
-        echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
+
+        echo '<div class=filmposter> <a href="../php/afspelen.php?movieid='.$movieid.'"> <img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"></a><p>'.$titel . '</p></div>';
     }
 
     ?>
