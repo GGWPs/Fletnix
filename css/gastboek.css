@@ -1,9 +1,28 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 1-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - Alles is nieuw aangemaakt. -->
+<!--*/-->
+
+
+h2{
+    text-align: end;
+}
+.cover {
+    opacity: 0.8;
+}
 
 .gastenboek {
+    min-height: 600px;
     height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
@@ -14,6 +33,7 @@
     padding: 0.5em;
     color: #dc0505;
     text-align: start;
+    font-size: 1.1vw;
 }
 
 form {
@@ -24,17 +44,25 @@ form {
 }
 
 .commentswel {
-     width: 55%;
+    width: 55%;
     justify-content: space-around;
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 .commentswel div {
     width: 30%;
-    height: 30%;
+    height: 32%;
     background: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-wrap: wrap;
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    white-space: pre-wrap;
+    margin:1%;
 }
 
 .commentsniet {
@@ -42,14 +70,33 @@ form {
     height: 100%;
     justify-content: space-around;
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
 }
 
 .commentsniet div {
-    width: 10%;
-    height: 15%;
+    width: 30%;
+    height: 32%;
     background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+    white-space: pre-wrap;
+    margin:1%;
 }
 
-.commenttext{
+.commenttext {
     color: #dc0505;
+    text-align: start;
+    vertical-align: middle;
+    font-size: 1vw;
+
+    }
+.titel{
+    width:80%;
+    height: 10%;
 }

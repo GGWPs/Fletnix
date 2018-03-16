@@ -20,8 +20,8 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
-    <link rel="stylesheet" href="../css/gastboek.css"
-    <link rel="icon" href="../afbeeldingen/favicon.ico"/>
+    <link rel="stylesheet" href="../css/gastboek.css">
+    <link rel="icon" href="../afbeeldingen/favicon.ico">
     <title>Fletnix</title>
 
 </head>
@@ -37,12 +37,13 @@ include 'functies.php';
 <main>
     <div class="cover">
         <div class="gastenboek">
-            <h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
+            <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
+                <h2> Laatste berichten </h2></div>
             <?php
             if (isset($_SESSION['voornaam'])) {
                 echo '<div class="invoerveld">';
-                echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s") . "<br>";
-                echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
+                echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s")."<br>";
+                echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'] ;
                 gastenBoekInvoer();
                 echo '</div>';
                 echo '<div class="commentswel">';
@@ -50,7 +51,7 @@ include 'functies.php';
                 echo ' </div>';
 
             } else {
-                echo '<h1>Gelieve eerst in te loggen</h1>';
+                echo '<div class="ttiel"><h1>Gelieve eerst in te loggen</h1></div>';
                 echo '<div class="commentsniet">';
                 roepComments();
                 echo '</div>';

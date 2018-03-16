@@ -1,3 +1,12 @@
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 1-->
+<!-- * Datum: 16 maart 2018-->
+<!---->
+<!-- * Aangepast: alles is nieuw.-->
+<!---->
+
+
 <?php
 
 function connectDB(){
@@ -45,7 +54,7 @@ function gastenBoekInvoer()
 {
 
     echo '<form method = "post" action = "gastenboekreactie.php">';
-    echo '<textarea name="comment" id="" cols="30" rows="10" required placeholder="Laat hier uw reactie achter"></textarea>';
+    echo '<textarea name="comment" id="" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>';
     echo '<input type="submit" class="button2" value="Plaatsen">';
     echo '</form>';
 }
@@ -55,11 +64,11 @@ function roepComments()
 
     require_once '../php/databaseconnection.php';
 
-    echo '<h2 > Laatste berichten </h2 >';
 
-    $query = $dbh->query('SELECT top 10 naam,datum,bericht FROM gastenboek order by datum desc');
+
+    $query = $dbh->query('SELECT top 7 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
-        echo "<div class='commenttext'>" . $r["naam"] . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>';
+        echo "<div class='commenttext'>" . $r["naam"] ." plaatste om". '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>';
     }
 
 }
