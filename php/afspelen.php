@@ -33,7 +33,7 @@ require_once '../php/databaseconnection.php';
     <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
-
+<div class = afspelen>
     <?php
 
     $movieid= $_GET['movieid'];
@@ -52,10 +52,10 @@ require_once '../php/databaseconnection.php';
     $query->execute([$movieid]);
     $gegevensregisseur=$query->fetchAll();
     echo $gegevens[0]['title'].'</h1>';
-    echo '<img src="'.$afbeeldinglocatie.'" width="450" height="350"';
+    echo '<img src="'.$afbeeldinglocatie.'" width="400" height="300"';
     echo '<p>Speeltijd: '.$gegevens[0]['duration'].'</p>';
     echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p>';
-    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p>';
+    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p><br>';
     echo '<iframe width="600" height="400" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe>';
     echo '<h2>Cast</h2>';
     $casttabel = '';
@@ -77,7 +77,7 @@ require_once '../php/databaseconnection.php';
     $casttabel .= '</table>';
     echo $casttabel;
     ?>
-
+</div>
 
 
 </main>
