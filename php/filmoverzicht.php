@@ -18,45 +18,105 @@ require_once '../php/databaseconnection.php';
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-<header>
-    <?php printHeaderLogo(); ?>
-    <?php  printHeaderKnoppen(); ?>
-</header>
 <main>
-    <h2>Alle films</h2> <br> <br>
-    <div class="filmposters">
+    <header>
+        <?php printHeaderLogo(); ?>
+        <?php  printHeaderKnoppen(); ?>
+    </header>
+    <div class="index-container">
+    <h1>Filmoverzicht</h1>
+    <div class="index-item">
+        <form action="filmoverzicht.php" method="post">
+            <?php
+            if(isset($_GET['titel'])&& !empty($_GET['titel'])){
+                $titel= $_GET['titel'];
+                echo"<label for='titel'>Zoeken op titel: </label>";
+                echo "<input type='text' id='titel' name='filmtitel' value='$titel'>";
+            }
+            else{
+                echo "<label for='titel'>Zoeken op titel: </label>";
+                echo "<input type='text' id='titel' name='filmtitel'>";
+            }
+            if(isset($_GET['regisseur'])&& !empty($_GET['regisseur'])){
+                $regisseur=$_GET['regisseur'];
+                echo "<label for='regisseur'>Zoeken op regisseur: </label>";
+                echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
+            }
+            else{
+                echo "<label for='regisseur'>Zoeken op regisseur: </label>";
+                echo "<input type='text' id='regisseur' name='filmregisseur'>";
+            }
+            if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
+                $publicatiejaar = $_GET ['publicatiejaar'];
+                echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
+                echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2050'>";
+            }
+            else{
+                echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
+                echo "<input type='number' id=publicatiejaar' name='publicatiejaar' min='1900' max='2050'>";
+            }
+            ?>
+            <input type="submit" id="zoeken" value="Zoeken" name="verzending">
+        </form>
+    </div>
 
     <?php
-    $data = $dbh->query("select * from totale_films ");
+    if (isset ($_SESSION['voornaam'])) {
+        if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
+            $statement = "SELECT movie_id,cover_image, title FROM totale_films";
+            $query = $dbh->prepare($statement);
+            $query->execute();
+            $i = $query->fetchAll();
+            tekenFilms($i);
 
-    $overzicht = "";
-    while ($row = $data->fetch()) {
-        $movieid = $row['movie_id'];
-        $titel = $row['title'];
-        $afbeeldingnaam = $row['cover_image'];
-        $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
-
-        echo '<div class=filmposter> <a href="../php/afspelen.php?movieid='.$movieid.'"> <img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"></a><p>'.$titel . '</p></div>';
-    }
-
-    ?>
-        <p> "Actie!" </p>
-        <?php
-        $data = $dbh->query("select top 6 * from actie_films  ");
-
-        $overzicht = "";
-        while ($row = $data->fetch()) {
-//        "<img src='Image/".$row['cover_image']."' />
-//        $overzicht .= "{$row['cover_image']}
-//    <p>{$row['title']}</p>";}
-            $titel = $row['title'];
-            $afbeeldingnaam = $row['cover_image'];
-            $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
-            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
         }
+        if (isset($_POST['verzending'])) {
+            $filmtitel = "%" . $_POST['filmtitel'] . "%";
+            $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
+            $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
+            $statement = "SELECT Movie.movie_id, cover_image
+                                            FROM totale_films
+                                            INNER JOIN Movie_Director md on Movie.movie_id=md.movie_id 
+                                            INNER JOIN Person p on p.person_id=md.person_id 
+                                            WHERE  p.firstname + ' ' + p.lastname LIKE ? AND Movie.title LIKE ? AND Movie.publication_year LIKE ? ORDER BY Movie.publication_year DESC";
+            $query = $dbh->prepare($statement);
+            $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
+            $i = $query->fetchAll();
+            $_SESSION['movies'] = $i;
+            $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
+            $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
+            $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
+            header('Location:filmoverzicht.php?zoek=result&titel='.$_POST["filmtitel"].'&regisseur='.$_POST["filmregisseur"].'&publicatiejaar='.$_POST["publicatiejaar"].'');
+        }
+        if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
+            $i = $_SESSION['movies'];
+            echo '<div><p> U heeft gezocht op filmtitel: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
+            movieloop($i);
+            echo '</div></div>';
+        }
+    } else {
+        header('Location:aanmeldpagina.php?return=filmoverzicht.php');
+    }
+    ?>
 
-        ?>
-        </div>
+<!--    <h2>Alle films</h2> <br> <br>-->
+<!--    <div class="filmposters">-->
+<!---->
+<!--        <p> "Actie!" </p>-->
+<!--        --><?php
+//        $data = $dbh->query("select top 6 * from actie_films  ");
+//
+//        $overzicht = "";
+//        while ($row = $data->fetch()) {
+//
+//            $titel = $row['title'];
+//            $afbeeldingnaam = $row['cover_image'];
+//            $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
+//            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
+//        }
+//
+//        ?>
+<!--        </div>-->
     </div>
 
 

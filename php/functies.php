@@ -44,8 +44,7 @@ function printCopyright()
     include '../php/copyright.php';
 }
 
-function gastenBoekInvoer()
-{
+function gastenBoekInvoer(){
 
     echo '<form method = "post" action = "gastenboekreactie.php">';
     echo '<textarea name="comment" id="" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>';
@@ -53,11 +52,8 @@ function gastenBoekInvoer()
     echo '</form>';
 }
 
-function roepComments()
-{
-
+function roepComments(){
     $dbh = connectData();
-
 
     $query = $dbh->query('SELECT top 7 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
@@ -84,7 +80,10 @@ function zoekFilm()
 
 }
 
-
+/*
+ *
+ *laad landen in voor bij abbonement keuze
+ */
 function laadLanden(){
 
         $dbh = connectData();
@@ -94,6 +93,20 @@ function laadLanden(){
                 }
 
 
+}
+
+function tekenFilms ($i)
+{
+    $resultaat="";
+    foreach ($i as $film) {
+        $foto = $film['cover_image'];
+        $films = $film['movie_id'];
+        $titel = $film['title'];
+        $resultaat.= '<a href="../php/afspelen.php?movieid='. $films . '">
+        <img src="../afbeeldingen/films/'.$foto.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p>
+        </a>';
+    }
+    echo $resultaat;
 }
 
 ?>
