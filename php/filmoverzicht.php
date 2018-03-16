@@ -28,7 +28,7 @@ include 'functies.php';
             <h1>Populaire opkomende film:</h1>
             <div>
                 <a href="../html/avengers_infinity_war.html">
-                    <img src="../afbeeldingen/filmoverzicht/avengers-infinity-war.jpg" alt="Avengers Afinity war"
+                    <img src="../afbeeldingen/films/avengers-infinity-war.jpg" alt="Avengers Afinity war"
                          class="populair_afbeelding_filmoverzicht"/>
                 </a>
             </div>
@@ -62,7 +62,7 @@ include 'functies.php';
 
         <div class="afbeelding_filmoverzicht_blok">
             <p>Avengers Infinity War</p>
-            <a href="../html/avengers_infinity_war.html"> <img src="../afbeeldingen/filmoverzicht/avengers-infinity-war.jpg"
+            <a href="../html/avengers_infinity_war.html"> <img src="../afbeeldingen/films/avengers-infinity-war.jpg"
                                                                alt="Avengers Infinity War"
                                                                title="Avengers Afinity war (2018)"
                                                                class="afbeeldingen_filmoverzicht"/></a>
