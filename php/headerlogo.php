@@ -1,3 +1,14 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene-->
+<!-- * Versie: 1-->
+<!-- * Datum: 14 maart 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- Geen aanpassingen
+<!-- *
+<!--*/-->
+
 <?php
 /**
  * Created by PhpStorm.
