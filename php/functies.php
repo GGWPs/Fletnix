@@ -56,8 +56,7 @@ function gastenBoekInvoer()
 function roepComments()
 {
 
-    require_once '../php/databaseconnection.php';
-
+    $dbh = connectData();
 
 
     $query = $dbh->query('SELECT top 7 naam,datum,bericht FROM gastenboek order by datum desc');
