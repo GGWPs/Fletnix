@@ -8,21 +8,15 @@
 
 
 <?php
-
+require_once '../php/databaseconnection.php';
 function connectDB(){
-    $hostname = "localhost";
-    //$dbname = "FLETNIX_DOCENT2";
-    //$password = "Hacker11";
-    $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
-    $username = "sa";
-
-    try {
-        $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        echo "Er ging iets mis met de database.<br>";   echo "De melding is {$e->getMessage()}<br><br>";
-    }
+    $dbh = connectData();
+//    try {
+//        $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
+//        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//    } catch(PDOException $e) {
+//        echo "Er ging iets mis met de database.<br>";   echo "De melding is {$e->getMessage()}<br><br>";
+//    }
 }
 
 function printHeaderLogo()
@@ -93,29 +87,14 @@ function zoekFilm()
 
 
 function laadLanden(){
-    $hostname = "localhost";
-    //$dbname = "FLETNIX_DOCENT2";
-    //$password = "Hacker11";
-    $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
-    $username = "sa";
 
-    try {
-        $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        echo "Er ging iets mis met de database.<br>";   echo "De melding is {$e->getMessage()}<br><br>";
-    }
+        $dbh = connectData();
 
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
                     echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
                 }
 
 
-}
-
-function laadFilm(){
-    header("location:aanmeldpagina.php?".$_POST = movie_id);
 }
 
 ?>

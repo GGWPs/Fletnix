@@ -45,7 +45,6 @@ require_once '../php/databaseconnection.php';
     echo '<p>Speeltijd: '.$gegevens[0]['duration'].'</p>';
     echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p>';
     echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p>';
-    echo '<p>Prijs: '.$gegevens[0]['price'].'</p>';
     echo '<iframe width="600" height="400" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe>';
     echo '<h2>Cast</h2>';
     $casttabel = '';

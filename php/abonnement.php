@@ -6,7 +6,7 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - Required bij html invoervelden toegevoegd-->
-<!-- * - Query toegevoegd aan land
+<!-- * - Query toegevoegd aan land, landen roept ie op via functie
 <!--*/-->
 <?php
 include 'functies.php';
@@ -55,11 +55,7 @@ include 'functies.php';
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
                 <?php
-                require_once '../php/databaseconnection.php';
-
-                foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
-                    echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
-                }
+                laadLanden();
                 ?>
                 </select>
                 <input type="date" name="geboortejaar" required placeholder="Geboortejaar">
