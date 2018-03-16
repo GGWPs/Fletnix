@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!--
 <!-- * functie gemaakt overal. Oproep via generieke functie
-zoeken toegevoegd
+genre
 <!--*/-->
 
 <?php
