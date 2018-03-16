@@ -1,3 +1,15 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 1-->
+<!-- * Datum: 16 februari 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - aangepast-->
+<!-- * - Geen aanpassingen
+<!--*/-->
+
+
 <?php
 include 'functies.php';
 

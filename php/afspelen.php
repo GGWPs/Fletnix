@@ -1,3 +1,14 @@
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 1-->
+<!-- * Datum: 16 maart 2018-->
+<!---->
+<!-- * Aangepast:-->
+<!-- *Volledig nieuw (voorheen hadden we nog een afspelen.html)
+<!-- *
+<!--*/-->
+
 <?php
 include 'functies.php';
 require_once '../php/databaseconnection.php';
