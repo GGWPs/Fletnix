@@ -23,7 +23,11 @@ require_once '../php/databaseconnection.php';
     <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
-    <div class="cover">
+        <h2>alle films</h2><br> <br>
+        <div class="filmposters">
+
+
+
     <?php
     $data = $dbh->query("select * from totale_films ");
 
@@ -36,8 +40,7 @@ require_once '../php/databaseconnection.php';
         $afbeeldingnaam = $row['cover_image'];
         $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
 //        echo "<img src=""../afbeeldingen/films/" . $titel . ".png"" >";
-        echo '<img src="'.$afbeeldinglocatie.'" width="300" height="200" alt="'.$titel.'">';
-        echo "<p>" . $row['title'] . "</p>";
+        echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'"><p>'.$titel . '</p></div>';
     }
 
     ?>
@@ -50,11 +53,15 @@ require_once '../php/databaseconnection.php';
 //        "<img src='Image/".$row['cover_image']."' />
 //        $overzicht .= "{$row['cover_image']}
 //    <p>{$row['title']}</p>";}
-            echo "<img src='afbeeldingen/" . $row['title'] . ".png' />";
-            echo "<p>" . $row['title'] . "</p>";
+            $titel = $row['title'];
+            $afbeeldingnaam = $row['cover_image'];
+            $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
+            echo '<div class=filmposter><img src="'.$afbeeldinglocatie.'" width="200" height="150" alt="'.$titel.'" </div>>';
+            echo "<p>" . $titel . "</p>";
         }
 
         ?>
+        </div>
     </div>
 
 
