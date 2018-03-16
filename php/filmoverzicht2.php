@@ -24,7 +24,6 @@ require_once '../php/databaseconnection.php';
 </header>
 <main>
     <div class="cover">
-        <img src="../afbeeldingen/films/It.png" width="200" height="50" alt="It">
     <?php
     $data = $dbh->query("select * from totale_films ");
 
@@ -37,7 +36,7 @@ require_once '../php/databaseconnection.php';
         $afbeeldingnaam = $row['cover_image'];
         $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
 //        echo "<img src=""../afbeeldingen/films/" . $titel . ".png"" >";
-        echo '<img src="'.$afbeeldinglocatie.'">';
+        echo '<img src="'.$afbeeldinglocatie.'" width="300" height="200" alt="'.$titel.'">';
         echo "<p>" . $row['title'] . "</p>";
     }
 
