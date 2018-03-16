@@ -7,6 +7,8 @@ $dbname = "FLETNIX_DOCENT";
 $password = "fojmBNHfMyYjHB6boNcZ";
 $username = "sa";
 
+
+
 try {
     $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

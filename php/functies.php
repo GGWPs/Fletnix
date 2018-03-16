@@ -1,12 +1,6 @@
 <?php
 
 function connectDB(){
-    $hostname = "localhost";
-    //$dbname = "FLETNIX_DOCENT2";
-    //$password = "Hacker11";
-    $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
-    $username = "sa";
 
     try {
         $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
@@ -103,10 +97,6 @@ function laadLanden(){
                 }
 
 
-}
-
-function laadFilm(){
-    header("location:aanmeldpagina.php?".$_POST = movie_id);
 }
 
 ?>
