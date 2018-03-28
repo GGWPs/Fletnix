@@ -28,7 +28,6 @@ include 'functies.php';
 <body>
 
 <main>
-    <div class="cover">
         <header>
             <div class="logoheader">
                 <?php printHeaderLogo(); ?>
@@ -60,7 +59,7 @@ include 'functies.php';
             ?>
         </div>
     </div>
-    </divcover>
+
 </main>
 <footer>
     <div class="footer">

@@ -83,7 +83,7 @@ require_once '../php/databaseconnection.php';
             $filmtitel = "%" . $_POST['filmtitel'] . "%";
             $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
             $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
-            $statement = "SELECT totale_films.movie_id, cover_image
+            $statement = "SELECT distinct totale_films.movie_id, cover_image, totale_films.publication_year
                                             FROM totale_films
                                             INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 

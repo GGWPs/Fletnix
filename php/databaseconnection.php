@@ -11,10 +11,10 @@
 
 <?php
 $hostname = "localhost";
-//$dbname = "FLETNIX_DOCENT2";
-//$password = "Hacker11";
-    $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
+$dbname = "FLETNIX_DOCENT2";
+$password = "Hacker11";
+//    $dbname = "FLETNIX_DOCENT";
+//    $password = "fojmBNHfMyYjHB6boNcZ";
 $username = "sa";
 
 
@@ -29,10 +29,10 @@ try {
 
 function connectData(){
     $hostname = "localhost";
-    //$dbname = "FLETNIX_DOCENT2";
-    //$password = "Hacker11";
-    $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
+    $dbname = "FLETNIX_DOCENT2";
+    $password = "Hacker11";
+//    $dbname = "FLETNIX_DOCENT";
+//    $password = "fojmBNHfMyYjHB6boNcZ";
     $username = "sa";
 
     return $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
