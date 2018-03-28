@@ -1,4 +1,5 @@
-<!--/*-->
+<!--
+/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
 <!-- * Auteur: Kaene en Ivan-->
 <!-- * Versie: 1-->
@@ -6,17 +7,19 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - Alles is nieuw aangemaakt. -->
-<!--*/-->
-h1{
+<!--*/
+-->
+h1 {
     text-align: end;
     color: black;
 }
 
-h2{
+h2 {
     text-align: end;
 }
+
 .cover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .gastenboek {
@@ -65,7 +68,7 @@ form {
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* IE */
     white-space: pre-wrap;
-    margin:1%;
+    margin: 1%;
 }
 
 .commentsniet {
@@ -89,7 +92,7 @@ form {
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* IE */
     white-space: pre-wrap;
-    margin:1%;
+    margin: 1%;
 }
 
 .commenttext {
@@ -98,8 +101,9 @@ form {
     vertical-align: middle;
     font-size: 1vw;
 
-    }
-.titel{
-    width:80%;
+}
+
+.titel {
+    width: 80%;
     height: 10%;
 }

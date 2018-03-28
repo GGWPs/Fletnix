@@ -9,6 +9,10 @@
 <!--*/-->
 
 
+body {
+    background: black;
+}
+
 .cover {
     background-image: url("../afbeeldingen/fletnix-index-achtergrond.jpg");
     height: 85%;
@@ -93,7 +97,4 @@ tr:hover {
     border-color: white;
     background-color: black;
 }
-
-
-
 

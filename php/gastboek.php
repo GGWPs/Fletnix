@@ -28,22 +28,23 @@ include 'functies.php';
 <body>
 
 <main>
-    <header>
-        <div class="logoheader">
-            <?php printHeaderLogo(); ?>
-        </div>
-        <div class="headerbuttons">
-            <?php printHeaderKnoppen(); ?>
-        </div>
-    </header>
+    <div class="cover">
+        <header>
+            <div class="logoheader">
+                <?php printHeaderLogo(); ?>
+            </div>
+            <div class="headerbuttons">
+                <?php printHeaderKnoppen(); ?>
+            </div>
+        </header>
         <div class="gastenboek">
             <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
                 <h2> Laatste berichten </h2></div>
             <?php
             if (isset($_SESSION['voornaam'])) {
                 echo '<div class="invoerveld">';
-                echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s")."<br>";
-                echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'] ;
+                echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s") . "<br>";
+                echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
                 gastenBoekInvoer();
                 echo '</div>';
                 echo '<div class="commentswel">';
@@ -59,6 +60,7 @@ include 'functies.php';
             ?>
         </div>
     </div>
+    </divcover>
 </main>
 <footer>
     <div class="footer">

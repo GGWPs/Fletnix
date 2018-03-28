@@ -47,15 +47,14 @@ $land = "Netherlands";
 //date("Y-m-d") ;
 //new DateTime($_POST["geboortejaar"]);
 
-//$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
-//         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land, null)";
-    try {
-//        $sql = $dbh->query("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
-//         values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
+$sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land, null)";
+try {
+        $sql = $dbh->query("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+         values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
 
 
-
-        header("Location: ../php/accountaangemaakt.php");
+    header("Location: ../php/accountaangemaakt.php");
         exit;
     } catch (PDOException $e) {
         echo 'Er bestaat al een account met deze gegevens. Klik <a href="../php/abonnement.php">Hier</a>  om terug te gaan\'';
