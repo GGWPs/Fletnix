@@ -66,3 +66,16 @@ require_once '../php/databaseconnection.php';
     </footer>
 </body>
 </html>
+
+/php/filmoverzicht.php?page_id=1
+
+<?php
+
+switch($_GET['page_id'])
+{
+    case 1:
+        include("php/filmoverzicht.php");
+        break;
+}
+
+?>
