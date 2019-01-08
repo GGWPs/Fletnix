@@ -10,8 +10,6 @@
 <!--*/-->
 <?php
 include 'functies.php';
-//test
-
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +53,6 @@ include 'functies.php';
     </div>
     </div>
     ';
-
-
     }
     ?>
 

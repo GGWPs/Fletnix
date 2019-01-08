@@ -10,15 +10,9 @@
 <!--*/-->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: Lenovo
- * Date: 12-3-2018
- * Time: 16:19
- */
-
+echo '<div>';
 if (isset($_SESSION['voornaam'])){
-    echo '<h2>Menu</h2>
+    echo    '<h2>Menu</h2>
             <img src="../afbeeldingen/nav.png" width="50px" height="50px" class="navigatie">
                 <a href="../php/filmoverzicht.php">Home</a> 
                 <a href="filmoverzicht.php"> Genre</a> 
@@ -26,7 +20,7 @@ if (isset($_SESSION['voornaam'])){
                 <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>
             ';
 } else {
-    echo '<h2>Menu</h2>
+    echo    '<h2>Menu</h2>
             <img src="../afbeeldingen/nav.png" width="50px" height="50px" class="navigatie">
                 <a href="../php/index.php">Home</a> 
                 <a href="filmoverzicht.php"> Genre</a> 
@@ -34,5 +28,9 @@ if (isset($_SESSION['voornaam'])){
                 <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>
             ';
 }
-
+echo '</div>';
+    echo    '<div><h2>Contact</h2>
+            <img src="../afbeeldingen/informatie.png" width="50px" height="50px" class="informatie">
+            <p>[T] 0612345678<br>[E] I.Miladinovic@live.nl<br>Fletnix BV<br>Technovium<br>Nijmegen, Nederland</p>
+            </div>';
 ?>

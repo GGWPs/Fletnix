@@ -11,8 +11,10 @@ zoeken toegevoegd
 <!--*/-->
 
 <?php
-include 'functies.php';
-require_once '../php/databaseconnection.php';
+
+include "functies.php";
+require_once 'databaseconnection.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +75,7 @@ require_once '../php/databaseconnection.php';
     if (isset ($_SESSION['voornaam'])) {
         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
             $select = "SELECT movie_id,cover_image, title FROM totale_films";
-            $query = $dbh->prepare($select);
+            $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);
@@ -88,7 +90,7 @@ require_once '../php/databaseconnection.php';
                                             INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 
                                             WHERE  p.firstname + ' ' + p.lastname LIKE ? AND totale_films.title LIKE ? AND totale_films.publication_year LIKE ? ORDER BY totale_films.publication_year DESC";
-            $query = $dbh->prepare($statement);
+            $query = verbindDatabase()->prepare($statement);
             $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
             $i = $query->fetchAll();
             $_SESSION['movies'] = $i;
@@ -115,9 +117,6 @@ require_once '../php/databaseconnection.php';
     <div class="footer">
         <div class="footer1">
             <?php printFooter1();?>
-        </div>
-        <div class="footer2">
-            <?php printFooter2();?>
         </div>
     </div>
     <div class="bottom">

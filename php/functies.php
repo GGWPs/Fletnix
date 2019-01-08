@@ -8,16 +8,7 @@
 
 
 <?php
-require_once '../php/databaseconnection.php';
-function connectDB(){
-    $dbh = connectData();
-//    try {
-//        $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
-//        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    } catch(PDOException $e) {
-//        echo "Er ging iets mis met de database.<br>";   echo "De melding is {$e->getMessage()}<br><br>";
-//    }
-}
+
 
 function printHeaderLogo()
 {
@@ -53,7 +44,7 @@ function gastenBoekInvoer(){
 }
 
 function roepComments(){
-    $dbh = connectData();
+    $dbh = verbindDatabase();
 
     $query = $dbh->query('SELECT top 7 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
@@ -69,7 +60,7 @@ function roepComments(){
  */
 function laadLanden(){
 
-        $dbh = connectData();
+        $dbh = verbindDatabase();
 
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
                     echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
