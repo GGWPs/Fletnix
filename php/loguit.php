@@ -6,8 +6,8 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- *Ggeen aanpassingen
-<!-- *
-<!--*/-->
+<!- *
+<!-*/-->
 
 <?php
 

@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
 <!-- * - headers aangepast zodat ze via functies gaan en include.
-<!--*/-->
+</-->
 <?php
 include 'functies.php';
 ?>

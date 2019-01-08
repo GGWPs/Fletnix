@@ -6,8 +6,8 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- *Gastenboek is alleen voor de herkansing dus deze hele pagina is "nieuw"
-<!-- *
-<!--*/-->
+<!- *
+<!-*/-->
 <?php
 include 'functies.php';
 ?>

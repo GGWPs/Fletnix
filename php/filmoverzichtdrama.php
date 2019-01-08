@@ -6,9 +6,9 @@
 <!---->
 <!-- * Aangepast:-->
 <!--
-<!-- * functie gemaakt overal. Oproep via generieke functie
+<!- * functie gemaakt overal. Oproep via generieke functie
 genre
-<!--*/-->
+<!-*/-->
 
 <?php
 include 'functies.php';

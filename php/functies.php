@@ -8,6 +8,9 @@
 
 
 <?php
+require_once '../php/databaseconnection.php';
+
+
 
 
 function printHeaderLogo()
@@ -59,13 +62,11 @@ function roepComments(){
  *laad landen in voor bij abbonement keuze
  */
 function laadLanden(){
-
-        $dbh = verbindDatabase();
+    $dbh = verbindDatabase();
 
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
                     echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
                 }
-
 
 }
 

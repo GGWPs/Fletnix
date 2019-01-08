@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
 <!-- * - header toegevoegd die terug gaat en gebruiker laat weten dat gegevens onjuist zijn
-<!--*/-->
+</-->
 
 <?php
 session_start();

@@ -6,8 +6,8 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- *Volledig nieuw (voorheen hadden we nog een afspelen.html)
-<!-- *
-<!--*/-->
+<!- *
+<!-*/-->
 
 <?php
 include 'functies.php';

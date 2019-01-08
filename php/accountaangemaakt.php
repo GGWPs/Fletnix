@@ -6,8 +6,8 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- *hele pagina is nieuw"
-<!-- *
-<!--*/-->
+<!- *
+<!-*/-->
 
 <?php
 include 'functies.php';

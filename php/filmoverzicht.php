@@ -6,9 +6,9 @@
 <!---->
 <!-- * Aangepast:-->
 <!--    statische html code verwijdert
-<!-- * functie gemaakt overal. Oproep via generieke functie
+<!- * functie gemaakt overal. Oproep via generieke functie
 zoeken toegevoegd
-<!--*/-->
+<!-*/-->
 
 <?php
 

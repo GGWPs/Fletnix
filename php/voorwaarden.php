@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
 <!-- * - Geen aanpassingen
-<!--*/-->
+<!-*/-->
 
 
 <?php

@@ -6,8 +6,8 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- *uiterlijk aanpassingen
-<!-- *
-<!--*/-->
+<!- *
+<!-*/-->
 
 <?php
 echo '<div>';

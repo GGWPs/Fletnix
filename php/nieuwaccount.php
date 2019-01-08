@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
 <!-- * - wachtwoord check verbeterd
-<!--*/-->
+<!-*/-->
 
 <?php
 session_start();

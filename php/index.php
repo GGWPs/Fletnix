@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
 <!-- * - header opgeroepen via functie
-<!--*/-->
+<!-*/-->
 <?php
 include 'functies.php';
 ?>

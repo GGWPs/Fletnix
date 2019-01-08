@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - Required bij html invoervelden toegevoegd-->
 <!-- * - Zoek query aangepast
-<!--*/-->
+<!-*/-->
 <?php
 include 'functies.php';
 ?>

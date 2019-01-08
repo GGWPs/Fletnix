@@ -7,7 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - Required bij html invoervelden toegevoegd-->
 <!-- * - Query toegevoegd aan land, landen roept ie op via functie
-<!--*/-->
+<!-*/-->
 <?php
 include 'functies.php';
 
