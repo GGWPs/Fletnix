@@ -40,7 +40,7 @@ require_once '../php/databaseconnection.php';
         <div class="index-item">
             <?php
             $statement = "SELECT movie_id,cover_image, title FROM actie_films";
-            $query = $dbh->prepare($statement);
+            $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);
@@ -77,5 +77,4 @@ switch($_GET['page_id'])
         include("php/filmoverzicht.php");
         break;
 }
-
 ?>

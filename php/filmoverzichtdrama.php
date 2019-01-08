@@ -40,13 +40,11 @@ require_once '../php/databaseconnection.php';
         <div class="index-item">
             <?php
             $select = "SELECT movie_id,cover_image, title FROM drama_films";
-            $query = $dbh->prepare($select);
+            $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);
             ?>
-
-
             </div>
 
 

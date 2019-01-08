@@ -79,7 +79,6 @@ require_once 'databaseconnection.php';
             $query->execute();
             $i = $query->fetchAll();
             tekenFilms($i);
-
         }
         if (isset($_POST['verzending'])) {
             $filmtitel = "%" . $_POST['filmtitel'] . "%";
