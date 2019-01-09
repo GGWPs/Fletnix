@@ -45,7 +45,7 @@ require_once '../php/databaseconnection.php';
             tekenFilms($i);
             ?>
             </div>
-
+    </div>
 
 </main>
 <footer>

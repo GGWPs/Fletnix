@@ -11,10 +11,8 @@ zoeken toegevoegd
 <!-*/-->
 
 <?php
-
 include "functies.php";
 require_once 'databaseconnection.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -41,34 +39,30 @@ require_once 'databaseconnection.php';
     <div class="index-item">
         <form action="filmoverzicht.php" method="post">
             <?php
+            echo "<label for='titel'>Zoeken op titel: </label>";
             if(isset($_GET['titel'])&& !empty($_GET['titel'])){
                 $titel= $_GET['titel'];
-                echo"<label for='titel'>Zoeken op titel: </label>";
                 echo "<input type='text' id='titel' name='filmtitel' value='$titel'>";
             } else{
-                echo "<label for='titel'>Zoeken op titel: </label>";
                 echo "<input type='text' id='titel' name='filmtitel'>";
             }
+            echo "<label for='regisseur'>Zoeken op regisseur: </label>";
             if(isset($_GET['regisseur'])&& !empty($_GET['regisseur'])){
                 $regisseur=$_GET['regisseur'];
-                echo "<label for='regisseur'>Zoeken op regisseur: </label>";
                 echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
             }  else{
-                echo "<label for='regisseur'>Zoeken op regisseur: </label>";
                 echo "<input type='text' id='regisseur' name='filmregisseur'>";
             }
+            echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
             if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
                 $publicatiejaar = $_GET ['publicatiejaar'];
-                echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
-                echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2050'>";
+                echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2030'>";
             } else{
-                echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
                 echo "<input type='number' id=publicatiejaar' name='publicatiejaar' min='1900' max='2050'>";
             }
             ?>
             <input type="submit" id="zoeken" value="Zoeken" name="verzending">
         </form>
-    </div>
 
     <?php
     if (isset ($_SESSION['voornaam'])) {
@@ -103,10 +97,12 @@ require_once 'databaseconnection.php';
             tekenFilms($i);
             echo '</div></div>';
         }
+
     } else {
         header('Location:aanmeldpagina.php');
     }
     ?>
+    </div>
     </div>
 
 
