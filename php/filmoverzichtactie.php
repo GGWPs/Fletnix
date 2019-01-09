@@ -20,7 +20,6 @@ require_once '../php/databaseconnection.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
-
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Filmoverzicht</title>
     <link rel="stylesheet" href="../css/basisstijlen.css">
@@ -38,7 +37,7 @@ require_once '../php/databaseconnection.php';
         <h1>Actie filmoverzicht</h1>
         <div class="index-item">
             <?php
-            $statement = "SELECT movie_id,cover_image, title FROM actie_films";
+            $select = "SELECT movie_id,cover_image, title FROM actie_films";
             $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
@@ -66,7 +65,6 @@ require_once '../php/databaseconnection.php';
 </body>
 </html>
 
-/php/filmoverzicht.php?page_id=1
 
 <?php
 
