@@ -98,3 +98,7 @@ tr:hover {
     background-color: black;
 }
 
+.meldingTekst{
+    font-size: large;
+    color: red;
+}

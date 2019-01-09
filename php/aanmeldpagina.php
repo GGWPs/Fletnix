@@ -5,9 +5,8 @@
 <!-- * Datum: 16 februari 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!-- * - aangepast-->
 <!-- * - headers aangepast zodat ze via functies gaan en include.
-</-->
+<!--*/-->
 <?php
 include 'functies.php';
 ?>
@@ -26,7 +25,8 @@ include 'functies.php';
 </head>
 <body>
 <header>
-    <?php printHeader(); ?>
+    <?php printHeaderLogo(); ?>
+    <?php  printHeaderKnoppen(); ?>
 </header>
 <main>
 
@@ -39,13 +39,13 @@ include 'functies.php';
     <div class="login">
         <h1>Inloggen</h1>
         <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">';
-             if (isset($_GET["msg"]) && $_GET["msg"] == "fout") {
-                 echo "Uw gegevens worden niet herkent!";
-             }
+        if (isset($_GET["msg"]) && $_GET["msg"] == "fout") {
+            echo '<div class="meldingTekst">Uw gegevens worden niet herkent!</div>';
+        }
         echo '</br>
-        <form method="POST" action="testlogin.php">
-            <input type="text" placeholder="Email" name="gebruikersnaam">
-            <input type="password" placeholder="Wachtwoord" name="password">
+        <form method="POST" action="testlogin.php" >
+            <input type="text" placeholder="Gebruikersnaam" name="gebruikersnaam">
+            <input type="password" placeholder="Wachtwoord" name="wachtwoord">
             <input type="submit" class="submit-button" value="Log in">
         </form>
         <a href="abonnement.php"><h4>Nog geen account? klik dan hier</h4></a>
