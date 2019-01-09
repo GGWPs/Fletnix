@@ -22,7 +22,7 @@ require_once '../php/databaseconnection.php';
     <link rel="stylesheet" href="../css/basisstijlen.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/filmoverzicht.css">
+    <link rel="stylesheet" href="../css/afspelen.css">
 
     <title>Afspelen</title>
 </head>
@@ -31,6 +31,7 @@ require_once '../php/databaseconnection.php';
     <?php printHeader(); ?>
 </header>
 <main>
+    <div class="cover">
 <div class = afspelen>
     <?php
     $movieid= $_GET['movieid'];
@@ -76,7 +77,7 @@ require_once '../php/databaseconnection.php';
     ?>
 </div>
 
-
+    </div>
 </main>
 <footer>
     <div class="footer">

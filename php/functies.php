@@ -82,9 +82,9 @@ function tekenFilms ($i)
     foreach ($i as $film) {
         $fotoloc = $film['cover_image'];
         $filmid = $film['movie_id'];
-        $resultaat.= '<div class="films"><a href="../php/afspelen.php?movieid='. $filmid . '">
+        $resultaat.= '<a href="../php/afspelen.php?movieid='. $filmid . '">
         <img src="../afbeeldingen/films/'.$fotoloc.'" width="150" height="100"
-        </a></div>';
+        </a>';
     }
     echo $resultaat;
 }

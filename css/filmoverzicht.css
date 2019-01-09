@@ -21,24 +21,6 @@ h2{
     text-align: center;
 }
 
-.populaire_film img {
-    float: left;
-    width: 20%;
-    height: 37.5%;
-    margin: 30px;
-}
-
-.trailer_button {
-    background-color: #dc0505;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-
-}
 
 .filmoverzicht {
     padding: 1%;
@@ -48,52 +30,7 @@ h2{
     flex-flow: row wrap;
 }
 
-.afbeelding_filmoverzicht_blok {
-    text-align: center;
-    width: 12%;
-    height: 15%;
-    margin: 10px;
-}
 
-.afbeeldingen_filmoverzicht {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-}
-
-
-/*avengers infinity war pagina*/
-.film_pagina{
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.poster_links{
-    float:left;
-    background-color: #dc0505;
-    height:100%;
-    width:50%;
-}
-
-.poster_film_pagina{
-    margin:3%;
-    width: 50%;
-    height:80%;
-}
-
-
-.afspelen{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-
-}
-
-.trailer_poster{
-}
 .center_tekst {
     color:white;
     position: absolute;
@@ -124,15 +61,6 @@ h2{
     display: flex;
 }
 
-.filmposters {
-    border: 50px;
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
 
 /*!**/
@@ -174,6 +102,7 @@ h2{
     justify-content: space-around;
 }
 
+/* Film covers */
 .index-item img {
     margin:5px 10px;
     width:auto;
@@ -192,51 +121,53 @@ h2{
     -ms-transform:scale(1.5); /* IE 9 */
     -o-transform:scale(1.5); /* Opera */
     transform:scale(1.5);
+    box-shadow: 10px 10px 5px #000000;
+    -moz-box-shadow: 0px 10px 5px black;
+    -webkit-box-shadow: 0px 10px 5px black;
 }
 
+
 .index-item form{
-    display:flex;
-    flex-direction: row;
-    margin-left:10px;
+display:flex;
+flex-direction: row;
+margin-left:10px;
 }
 
 .index-item label,input {
-    margin-right:5px;
+margin-right:5px;
 }
 
 .index-container h1 {
-    color: black;
-    padding-bottom: 5px;
-    border: 5px black;
-    border-style: solid none;
-    margin: 5px 10px;
-    background: darkred;
+color: black;
+padding-bottom: 5px;
+border: 5px black;
+border-style: solid none;
+margin: 5px 10px;
+background: darkred;
 }
 
 .index-text {
-    height: 99.5%;
-    width: 100%;
-    position: absolute;
-    z-index: 3;
-    text-align: center;
+height: 99.5%;
+width: 100%;
+position: absolute;
+z-index: 3;
+text-align: center;
 }
 
 .index-text p {
-    font-size: 20px;
-    margin: 5% 20px;
-    color: #e0e0e0;
+font-size: 20px;
+margin: 5% 20px;
+color: #e0e0e0;
 }
 
 .index-text h2 {
-    font-size: 30px;
-    margin: 50px 20px;
-    color: rgb(158, 154, 117);
+font-size: 30px;
+margin: 50px 20px;
+color: rgb(158, 154, 117);
 }
 
 .index-text a {
-    color: indianred;
+color: indianred;
 }
 
-.films image {
 
-}
