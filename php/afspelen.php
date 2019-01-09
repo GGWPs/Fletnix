@@ -13,7 +13,6 @@
 include 'functies.php';
 require_once '../php/databaseconnection.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -34,20 +33,19 @@ require_once '../php/databaseconnection.php';
 <main>
 <div class = afspelen>
     <?php
-
     $movieid= $_GET['movieid'];
     $beschrijving = "SELECT title, duration, description, publication_year, price, cover_image, URL FROM Movie WHERE movie_id=?";
-    $query = $dbh->prepare($beschrijving);
+    $query = verbindDatabase()->prepare($beschrijving);
     $query->execute([$movieid]);
     $gegevens = $query->fetchAll();
     $afbeeldingnaam = $gegevens [0]['cover_image'];
     $afbeeldinglocatie = "../afbeeldingen/films/".$afbeeldingnaam;
     $cast= "SELECT firstname+ ' ' +lastname AS Name, role FROM Movie_Cast INNER JOIN Person ON Movie_Cast.person_id=Person.person_id WHERE movie_id=?";
-    $query=$dbh->prepare($cast);
+    $query= verbindDatabase()->prepare($cast);
     $query->execute([$movieid]);
     $gegevenscast=$query->fetchAll();
     $regisseur= "SELECT firstname+ ' ' +lastname AS Name FROM Movie_Director INNER JOIN Person ON Movie_Director.person_id=Person.person_id WHERE movie_id=?";
-    $query=$dbh->prepare($regisseur);
+    $query=verbindDatabase()->prepare($regisseur);
     $query->execute([$movieid]);
     $gegevensregisseur=$query->fetchAll();
     echo $gegevens[0]['title'].'</h1>';
