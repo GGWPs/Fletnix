@@ -11,6 +11,12 @@
 require_once '../php/databaseconnection.php';
 
 
+//samenvoeging header functies, vorige kunnen weg als alles vlekkeloos gaat
+function printHeader()
+{
+    include '../php/headerlogo.php';
+    include '../php/headerknoppen.php';
+}
 
 
 function printHeaderLogo()

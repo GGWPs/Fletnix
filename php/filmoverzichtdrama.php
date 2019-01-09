@@ -32,8 +32,7 @@ require_once '../php/databaseconnection.php';
 <body>
 <main>
     <header>
-        <?php printHeaderLogo(); ?>
-        <?php  printHeaderKnoppen(); ?>
+        <?php printHeader(); ?>
     </header>
     <div class="index-container">
         <h1>Drama filmoverzicht</h1>

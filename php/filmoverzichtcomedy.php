@@ -32,8 +32,7 @@ require_once '../php/databaseconnection.php';
 <body>
 <main>
     <header>
-        <?php printHeaderLogo(); ?>
-        <?php  printHeaderKnoppen(); ?>
+        <?php printHeader(); ?>
     </header>
     <div class="index-container">
         <h1>Comedy filmoverzicht</h1>
@@ -45,8 +44,6 @@ require_once '../php/databaseconnection.php';
             $i = $query->fetchAll();
             tekenFilms($i);
             ?>
-
-
             </div>
 
 

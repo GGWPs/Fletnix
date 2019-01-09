@@ -30,8 +30,7 @@ include 'functies.php';
 <body>
 <div class="cover">
     <header>
-        <?php printHeaderLogo(); ?>
-        <?php  printHeaderKnoppen(); ?>
+        <?php printHeader(); ?>
     </header>
     <div class="voorwaarden">
 

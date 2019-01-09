@@ -26,8 +26,7 @@ include 'functies.php';
 </head>
 <body>
 <header>
-    <?php printHeaderLogo(); ?>
-    <?php  printHeaderKnoppen(); ?>
+    <?php printHeader(); ?>
 </header>
 <main>
     <h1>Zoekresultaten</h1>

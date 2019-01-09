@@ -31,8 +31,7 @@ include 'functies.php';
 <!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
 <!--de website/videodienst mogen jullie aanpassen.-->
 <header>
-      <?php printHeaderLogo(); ?>
-      <?php  printHeaderKnoppen(); ?>
+      <?php printHeader(); ?>
 </header>
 <main>
     <div class="cover">
