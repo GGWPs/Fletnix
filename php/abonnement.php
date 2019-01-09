@@ -96,6 +96,7 @@
 <main>
     <div class="cover">
 
+
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -134,12 +135,7 @@
 </main>
 <footer>
     <div class="footer">
-        <div class="footer1">
-            <?php printFooter1(); ?>
-        </div>
-        <div class="footer2">
-            <?php printFooter2(); ?>
-        </div>
+            <?php printFooter();?>
     </div>
     <div class="bottom">
         <?php printCopyright(); ?>

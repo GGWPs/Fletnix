@@ -52,7 +52,7 @@ require_once '../php/databaseconnection.php';
 <footer>
     <div class="footer">
         <div class="footer1">
-            <?php printFooter1();?>
+            <?php printFooter();?>
         </div>
         <div class="footer2">
             <?php printFooter2();?>

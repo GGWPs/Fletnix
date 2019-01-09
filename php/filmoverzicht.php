@@ -93,9 +93,9 @@ require_once 'databaseconnection.php';
         }
         if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
             $i = $_SESSION['movies'];
-            echo '<div><p> U heeft gezocht op film: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
+            echo '<p> U heeft gezocht op film: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
             tekenFilms($i);
-            echo '</div></div>';
+            echo '</div>';
         }
 
     } else {
@@ -109,9 +109,7 @@ require_once 'databaseconnection.php';
 </main>
 <footer>
     <div class="footer">
-        <div class="footer1">
-            <?php printFooter1();?>
-        </div>
+            <?php printFooter();?>
     </div>
     <div class="bottom">
         <?php printCopyright();?>

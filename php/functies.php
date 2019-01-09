@@ -37,33 +37,17 @@ function checkUniekGebruikersnaam($gebruikersnaam){
     }
 }
 
-//samenvoeging header functies, vorige kunnen weg als alles vlekkeloos gaat
 function printHeader()
 {
     include '../php/headerlogo.php';
     include '../php/headerknoppen.php';
 }
 
-
-function printHeaderLogo()
+function printFooter()
 {
-    include '../php/headerlogo.php';
+    include '../php/footer.php';
 }
 
-function printHeaderKnoppen()
-{
-    include '../php/headerknoppen.php';
-}
-
-function printFooter1()
-{
-    include '../php/footer1.php';
-}
-
-function printFooter2()
-{
-    include '../php/footer2.php';
-}
 
 function printCopyright()
 {
@@ -108,9 +92,9 @@ function tekenFilms ($i)
     foreach ($i as $film) {
         $fotoloc = $film['cover_image'];
         $filmid = $film['movie_id'];
-        $resultaat.= '<div class="films"><a href="../php/afspelen.php?movieid='. $filmid . '">
+        $resultaat.= '<a href="../php/afspelen.php?movieid='. $filmid . '">
         <img src="../afbeeldingen/films/'.$fotoloc.'" width="150" height="100"
-        </a></div>';
+        </a>';
     }
     echo $resultaat;
 }
