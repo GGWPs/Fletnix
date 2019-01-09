@@ -11,33 +11,17 @@
 require_once '../php/databaseconnection.php';
 
 
-//samenvoeging header functies, vorige kunnen weg als alles vlekkeloos gaat
 function printHeader()
 {
     include '../php/headerlogo.php';
     include '../php/headerknoppen.php';
 }
 
-
-function printHeaderLogo()
+function printFooter()
 {
-    include '../php/headerlogo.php';
+    include '../php/footer.php';
 }
 
-function printHeaderKnoppen()
-{
-    include '../php/headerknoppen.php';
-}
-
-function printFooter1()
-{
-    include '../php/footer1.php';
-}
-
-function printFooter2()
-{
-    include '../php/footer2.php';
-}
 
 function printCopyright()
 {

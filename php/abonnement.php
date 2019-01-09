@@ -91,12 +91,7 @@ include 'functies.php';
 </main>
 <footer>
     <div class="footer">
-        <div class="footer1">
-            <?php printFooter1();?>
-        </div>
-        <div class="footer2">
-            <?php printFooter2();?>
-        </div>
+            <?php printFooter();?>
     </div>
     <div class="bottom">
         <?php printCopyright();?>
