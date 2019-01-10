@@ -17,7 +17,7 @@ require_once 'databaseconnection.php';
 $stmt = verbindDatabase()->prepare("SELECT * FROM Customer WHERE user_name = :value1 AND password = :value2");
 
 
-$stmt->execute(array(":value1" => $_POST["gebruikersnaam"], ":value2" => $_POST["password"]));
+$stmt->execute(array(":value1" => $_POST["gebruikersnaam"], ":value2" => $_POST["wachtwoord"]));
 
 $result = $stmt->fetch();
 if(!empty($result)){

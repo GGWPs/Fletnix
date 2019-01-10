@@ -1,15 +1,41 @@
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
 <!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 1-->
-<!-- * Datum: 16 maart 2018-->
+<!-- * Versie: 2-->
+<!-- * Datum: 09/01/2019-->
 <!---->
-<!-- * Aangepast: alles is nieuw.-->
+<!-- * Aangepast: checkUnieks toegevoegd-->
 <!---->
 
 
 <?php
 require_once '../php/databaseconnection.php';
 
+function checkUniekEmail($email){
+    $query = "select customer_mail_address from Customer where customer_mail_address = :customer_mail_address";
+    $sql = verbindDatabase()->prepare($query);
+    $sql->execute(array(
+        ":customer_mail_address" => $email));
+    $row = $sql->rowCount();
+    if ($row == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+function checkUniekGebruikersnaam($gebruikersnaam){
+    $query = "select user_name from customer where user_name = :user_name";
+    $sql = verbindDatabase()->prepare($query);
+    $sql->execute(array(
+        ":user_name" => $gebruikersnaam));
+    $row = $sql->rowCount();
+    if ($row == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 function printHeader(){
     include '../php/headerlogo.php';
@@ -69,6 +95,21 @@ function tekenFilms ($i)
         </a>';
     }
     echo $resultaat;
+}
+
+function stripInvoer($invoer)
+{
+    $invoer = trim($invoer);
+    $invoer = stripslashes($invoer);
+    $invoer = htmlspecialchars($invoer);
+    return $invoer;
+}
+
+function stripInvoerCorrect ($invoer)
+{
+    if(stripInvoer($invoer) == $invoer)
+        return true;
+
 }
 
 ?>
