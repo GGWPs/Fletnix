@@ -30,12 +30,14 @@ if (isset($_SESSION['voornaam'])){
             <a href=\"filmoverzicht.php?page_id=4\">Drama</a>
         </div>
     </div>";
+   /* echo "<p>"; */
     print_r($_SESSION['voornaam']); echo " "; print_r($_SESSION['achternaam']);
     echo "  op ";
     setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
     echo strftime('%A %e %B', time());
     echo ", ingelogd sinds ";
     print_r($_SESSION['logintijd']);
+ /*   echo "</p>"; */
     echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='loguit.php'\">Loguit
         </button> </div>";
 }
@@ -44,7 +46,7 @@ else {
         </button>";
     echo " <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
         </button>";
-    echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='abonnement.php'\">Maak een account
+    echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='registreren.php'\">Maak een account
         </button> </div>";
 }
 

@@ -19,7 +19,7 @@
 
 session_start();
 if (isset($_SESSION['voornaam'])){
-    echo ' <div class="logoheader"> <a href="filmoverzicht.php"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50" alt="Fletnix logo"></a> </div>';
+    echo ' <div class="logoheader"> <a href="filmoverzicht.php?page_id=1"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50" alt="Fletnix logo"></a> </div>';
 } else {
     echo ' <div class="logoheader"> <a href="index.php"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50"
                                   alt="Fletnix logo"></a> </div>';

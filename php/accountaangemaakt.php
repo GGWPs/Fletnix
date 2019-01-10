@@ -32,9 +32,9 @@ include 'functies.php';
 </header>
 <main>
         <div class="login">
-            <a href="filmoverzicht.php" img src="../afbeeldingen/loading.gif" alt="Loading">
+            <a href="filmoverzicht.php?page_id=1" img src="../afbeeldingen/loading.gif" alt="Loading">
             <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier</a>  <h3>om aan te melden!</h3>
-            <?php header( "refresh:5;url=filmoverzicht.php" ); ?>
+            <?php header( "refresh:5;url=filmoverzicht.php?page_id=1" ); ?>
         </div>
     </div>
 </main>

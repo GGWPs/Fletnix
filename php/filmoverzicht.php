@@ -32,32 +32,52 @@ require_once 'databaseconnection.php';
 <body>
 <main>
     <header>
-        <?php printHeader(); ?>
+        <?php printHeader();
+        switch($_GET['page_id'])
+        {
+            case 1:
+                $select = "SELECT movie_id,cover_image, title FROM totale_films";
+                $overzicht = "Filmoverzicht";
+                break;
+            case 2:
+                $select = "SELECT movie_id,cover_image, title FROM actie_films";
+                $overzicht = "Actie Filmoverzicht";
+                break;
+            case 3:
+                $select = "SELECT movie_id,cover_image, title FROM comedy_films";
+                $overzicht = "Comedy Filmoverzicht";
+                break;
+            case 4:
+                $select = "SELECT movie_id,cover_image, title FROM drama_films";
+                $overzicht = "Drama Filmoverzicht";
+                break;
+        }
+        ?>
     </header>
     <div class="index-container">
-    <h1>Filmoverzicht</h1>
+        <?php echo "<h1>$overzicht</h1>" ?>
         <form action="filmoverzicht.php" method="post">
             <?php
             echo "<label for='titel'>Zoeken op titel: </label>";
             if(isset($_GET['titel'])&& !empty($_GET['titel'])){
                 $titel= $_GET['titel'];
-                echo "<input type='text' id='titel' name='filmtitel' value='$titel'>";
+                echo "<input type='text' id='titel' name='filmtitel' placevalue='$titel'>";
             } else{
-                echo "<input type='text' id='titel' name='filmtitel'>";
+                echo "<input type='text' id='titel' name='filmtitel' placeholder='Titel'>";
             }
-            echo "<label for='regisseur'>Zoeken op regisseur: </label>";
+
             if(isset($_GET['regisseur'])&& !empty($_GET['regisseur'])){
                 $regisseur=$_GET['regisseur'];
                 echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
             }  else{
-                echo "<input type='text' id='regisseur' name='filmregisseur'>";
+                echo "<input type='text' id='regisseur' name='filmregisseur' placeholder='Regisseur'>";
             }
-            echo "<label for='publicatiejaar'>Zoeken op jaar: </label>";
+
             if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
                 $publicatiejaar = $_GET ['publicatiejaar'];
                 echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2030'>";
             } else{
-                echo "<input type='number' id=publicatiejaar' name='publicatiejaar' min='1900' max='2050'>";
+                echo "<input type='number' id=publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2050'>";
             }
             ?>
             <input type="submit" id="zoeken" value="Zoeken" name="verzending">
@@ -66,24 +86,6 @@ require_once 'databaseconnection.php';
     <?php
     if (isset ($_SESSION['voornaam'])) {
         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-            if($_GET['page_id'] == null){
-
-            }
-            switch($_GET['page_id'])
-            {
-                case 1:
-                    $select = "SELECT movie_id,cover_image, title FROM totale_films";
-                    break;
-                case 2:
-                    $select = "SELECT movie_id,cover_image, title FROM actie_films";
-                    break;
-                case 3:
-                    $select = "SELECT movie_id,cover_image, title FROM comedy_films";
-                    break;
-                case 4:
-                    $select = "SELECT movie_id,cover_image, title FROM drama_films";
-                    break;
-            }
             $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();

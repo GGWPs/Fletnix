@@ -86,14 +86,29 @@ h2{
     border: 3px solid black;
     margin: 1% 16% calc(25px + 1%);
     padding: 0 1% 0 1%;
-    background: darkred;
+    background: black;
     flex-wrap: wrap;
 }
 
 .index-container p {
     margin: 5px 10px;
-    color: black;
+    color: white;
 }
+
+.index-container label {
+    color: white;
+}
+
+.index-container h1 {
+    color: white;
+    padding-bottom: 5px;
+    border: 5px black;
+    border-style: solid none;
+    margin: 5px 10px;
+    background: black;
+}
+
+
 
 .index-item {
     display: flex;
@@ -135,17 +150,11 @@ margin-left:10px;
 }
 
 .index-item label,input {
-margin-right:5px;
+margin-right:3px;
+
 }
 
-.index-container h1 {
-color: black;
-padding-bottom: 5px;
-border: 5px black;
-border-style: solid none;
-margin: 5px 10px;
-background: darkred;
-}
+
 
 .index-text {
 height: 99.5%;
@@ -172,10 +181,15 @@ color: indianred;
 }
 
 input[type=text] {
-    width: 20%;
     border: none;
+    width: 10%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
+input[type=text]:focus {
+    width: 20%;
+}
 
 input[type=number]{
     width: 8%;

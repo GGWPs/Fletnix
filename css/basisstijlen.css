@@ -15,7 +15,7 @@ body {
 
 .cover {
     background-image: url("../afbeeldingen/fletnix-index-achtergrond.jpg");
-    height: 85%;
+    height: 75%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

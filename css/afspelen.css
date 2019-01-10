@@ -1,15 +1,8 @@
 /* voor afspelen.php */
-.cover {
-    background-image: url("../afbeeldingen/fletnix-index-achtergrond.jpg");
-    height: 85%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 .afspelen{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
+    background-color: rgba(127, 127, 127, 0.6);
 }

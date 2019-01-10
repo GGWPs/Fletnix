@@ -26,7 +26,7 @@ if(!empty($result)){
     $_SESSION['achternaam'] = $result["lastname"];
     setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
     $_SESSION['logintijd'] = date("H:i") ;
-    header("Location: ../php/filmoverzicht.php");
+    header("Location: ../php/filmoverzicht.php?page_id=1");
     die();
 }
 else

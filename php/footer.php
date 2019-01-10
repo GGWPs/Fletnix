@@ -14,7 +14,7 @@ echo '<div class="footer1">';
 if (isset($_SESSION['voornaam'])){
     echo    '<h2>Menu</h2>
             <img src="../afbeeldingen/nav.png" width="50px" height="50px" class="navigatie">
-                <a href="../php/filmoverzicht.php">Home</a> 
+                <a href="../php/filmoverzicht.php?page_id=1">Home</a> 
                 <a href="filmoverzicht.php"> Genre</a> 
                 <a href="overons.php"> Over ons</a>  
                 <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>

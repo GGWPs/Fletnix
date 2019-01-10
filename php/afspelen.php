@@ -31,7 +31,6 @@ require_once '../php/databaseconnection.php';
     <?php printHeader(); ?>
 </header>
 <main>
-    <div class="cover">
 <div class = afspelen>
     <?php
     $movieid= $_GET['movieid'];
@@ -77,7 +76,6 @@ require_once '../php/databaseconnection.php';
     ?>
 </div>
 
-    </div>
 </main>
 <footer>
     <div class="footer">

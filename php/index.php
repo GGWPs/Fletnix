@@ -35,7 +35,6 @@ include 'functies.php';
 </header>
 <main>
     <div class="cover">
-        <div class="PAGE">
             <div class="tekst">
                 <h1>Welkom bij Fletnix. Voor iedereen die van films houdt!</h1>
                 <button class="button2" type="button" onclick="window.location.href='abonnement.php'">Abonneer nu!
@@ -110,7 +109,6 @@ include 'functies.php';
         <!--wie de doelgroep is. Je kan de doelgroep ook benoemen (bijvoorbeeld in de-->
         <!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
         <!--de website/videodienst mogen jullie aanpassen.-->
-    </div>
 </main>
 <footer>
     <div class="footer">

@@ -6,7 +6,7 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - headers aangepast zodat ze via functies gaan en include.
-<!--*/-->
+<!-*/-->
 <?php
 include 'functies.php';
 ?>
@@ -28,10 +28,9 @@ include 'functies.php';
     <?php printHeader(); ?>
 </header>
 <main>
-
     <?php
     if (isset($_SESSION['voornaam'])){
-        header("Location: filmoverzicht.php");
+        header("Location: filmoverzicht.php?page_id=1");
     } else {
         echo '
     <div class="cover">
@@ -42,7 +41,7 @@ include 'functies.php';
             echo '<div class="meldingTekst">Uw gegevens worden niet herkent!</div>';
         }
         echo '</br>
-        <form method="POST" action="testlogin.php" >
+        <form method="POST" action="login.php" >
             <input type="text" placeholder="Gebruikersnaam" name="gebruikersnaam">
             <input type="password" placeholder="Wachtwoord" name="wachtwoord">
             <input type="submit" class="submit-button" value="Log in">
