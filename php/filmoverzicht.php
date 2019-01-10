@@ -1,14 +1,14 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 2-->
-<!-- * Datum: 16 maart 2018-->
-<!---->
-<!-- * Aangepast:-->
-<!--    statische html code verwijdert
-<!- * functie gemaakt overal. Oproep via generieke functie
-zoeken toegevoegd
-<!-*/-->
+<!--
+    Team: Kaene Peters en Ivan Miladinovic
+    Auteur: Kaene en Ivan
+    Versie: 1
+ *  Datum: 10/01/2019
+
+     Aangepast:
+        Html en php code beter gescheiden
+        Switch toegevoegd, zoekopties verbeterd en de pagina ziet er beter uit kwa css en structuur.
+ *
+-->
 
 <?php
 include "functies.php";
@@ -19,8 +19,7 @@ require_once 'databaseconnection.php';
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Filmoverzicht</title>
     <link rel="stylesheet" href="../css/basisstijlen.css">
@@ -33,8 +32,7 @@ require_once 'databaseconnection.php';
 <main>
     <header>
         <?php printHeader();
-        switch($_GET['page_id'])
-        {
+        switch ($_GET['page_id']) {
             case 1:
                 $select = "SELECT movie_id,cover_image, title FROM totale_films";
                 $overzicht = "Filmoverzicht";
@@ -51,51 +49,59 @@ require_once 'databaseconnection.php';
                 $select = "SELECT movie_id,cover_image, title FROM drama_films";
                 $overzicht = "Drama Filmoverzicht";
                 break;
+            default:
+                $select = "SELECT movie_id,cover_image, title FROM totale_films";
+                $overzicht = "Filmoverzicht";
+                break;
         }
         ?>
     </header>
     <div class="index-container">
-        <?php echo "<h1>$overzicht</h1>" ?>
+        <h1> <?php echo $overzicht ?></h1>
         <form action="filmoverzicht.php" method="post">
+            <label for='titel'>Zoeken op titel: </label>
             <?php
-            echo "<label for='titel'>Zoeken op titel: </label>";
-            if(isset($_GET['titel'])&& !empty($_GET['titel'])){
-                $titel= $_GET['titel'];
-                echo "<input type='text' id='titel' name='filmtitel' placevalue='$titel'>";
-            } else{
+            if (isset($_GET['titel']) && !empty($_GET['titel'])) {
+                $titel = $_GET['titel'];
+                echo "<input type='text' id='titel' name='filmtitel' value='$titel'>";
+            } else {
                 echo "<input type='text' id='titel' name='filmtitel' placeholder='Titel'>";
             }
-            echo "<label for='regisseur'>Regisseur: </label>";
-            if(isset($_GET['regisseur'])&& !empty($_GET['regisseur'])){
-                $regisseur=$_GET['regisseur'];
-                echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
-            }  else{
-                echo "<input type='text' id='regisseur' name='filmregisseur' placeholder='Regisseur'>";
-            }
-            echo "<label for='publicatiejaar'> Jaar: </label>";
-            if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
-                $publicatiejaar = $_GET ['publicatiejaar'];
-                echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2030'>";
-            } else{
-                echo "<input type='number' id=publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2050'>";
-            }
             ?>
-            <input type="submit" id="zoeken" value="Zoeken" name="verzending">
+            <label for='regisseur'> Regisseur: <label>;
+                    <?php
+                    if (isset($_GET['regisseur']) && !empty($_GET['regisseur'])) {
+                        $regisseur = $_GET['regisseur'];
+                        echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
+                    } else {
+                        echo "<input type='text' id='regisseur' name='filmregisseur' placeholder='Regisseur'>";
+                    }
+                    ?>
+                    <label for='publicatiejaar'> Jaar: </label>";
+                    <?php
+                    if (isset($_GET['publicatiejaar']) && !empty($_GET['publicatiejaar'])) {
+                        $publicatiejaar = $_GET ['publicatiejaar'];
+                        echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar.' min='1900' max='2030'>";
+                    } else {
+                        echo "<input type='number' id=publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2050'>";
+                    }
+                    ?>
+                    <input type="submit" id="zoeken" value="Zoeken" name="verzending">
         </form>
         <div class="index-item">
-    <?php
-    if (isset ($_SESSION['voornaam'])) {
-        if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-            $query = verbindDatabase()->prepare($select);
-            $query->execute();
-            $i = $query->fetchAll();
-            tekenFilms($i);
-        }
-        if (isset($_POST['verzending'])) {
-            $filmtitel = "%" . $_POST['filmtitel'] . "%";
-            $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
-            $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
-            $statement = "SELECT distinct totale_films.movie_id, cover_image, totale_films.publication_year
+            <?php
+            if (isset ($_SESSION['voornaam'])) {
+                if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
+                    $query = verbindDatabase()->prepare($select);
+                    $query->execute();
+                    $i = $query->fetchAll();
+                    tekenFilms($i);
+                }
+                if (isset($_POST['verzending'])) {
+                    $filmtitel = "%" . $_POST['filmtitel'] . "%";
+                    $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
+                    $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
+                    $statement = "SELECT distinct totale_films.movie_id, cover_image, totale_films.publication_year
                                             FROM totale_films
                                             INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 
@@ -124,10 +130,10 @@ require_once 'databaseconnection.php';
                     if ($_SESSION['zoekjaarinfo'] == null) {
                         $stuk3 = " ";
                     } else {
-                        $stuk3 = ' en publicatiejaar:  '. $_SESSION['zoekjaarinfo'];
+                        $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                     }
                     $i = $_SESSION['movies'];
-                    echo '<p>' . $stuk1 .  $stuk2 . $stuk3  . ' </p><div class="index-item">';
+                    echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">';
                     tekenFilms($i);
                     echo '</div>';
                 }
@@ -138,9 +144,11 @@ require_once 'databaseconnection.php';
             ?>
         </div>
     </div>
+
+
 </main>
 <footer>
-        <?php printFooter(); ?>
+    <?php printFooter(); ?>
 </footer>
 </body>
 </html>
