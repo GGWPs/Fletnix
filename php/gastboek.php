@@ -29,12 +29,7 @@ include 'functies.php';
 
 <main>
         <header>
-            <div class="logoheader">
-                <?php printHeaderLogo(); ?>
-            </div>
-            <div class="headerbuttons">
-                <?php printHeaderKnoppen(); ?>
-            </div>
+            <?php printHeader(); ?>
         </header>
         <div class="gastenboek">
             <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>

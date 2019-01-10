@@ -28,12 +28,7 @@ include 'functies.php';
 </head>
 <body>
 <header>
-    <div class="logoheader">
-        <?php printHeaderLogo(); ?>
-    </div>
-    <div class="headerbuttons">
-        <?php printHeaderKnoppen(); ?>
-    </div>
+    <?php printHeader(); ?>
 </header>
 <main>
         <div class="login">

@@ -8,15 +8,16 @@
 <!-- * - Functie toegevoegd. -->
 <!--*/-->
 <?php
+
 //preconditie: -
 //postconditie: Deze functie geeft een databasehandler terug
 function verbindDatabase()
 {
     $hostname = "localhost";
-//    $password = "Hacker11";
     $dbname = "FLETNIX_DOCENT";
-    $password = "fojmBNHfMyYjHB6boNcZ";
     $username = "sa";
+    $password = "a119af9915";
+
     try {
         $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,5 +27,4 @@ function verbindDatabase()
     }
     return $dbh;
 }
-
 ?>
