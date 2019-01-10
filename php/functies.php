@@ -11,14 +11,12 @@
 require_once '../php/databaseconnection.php';
 
 
-function printHeader()
-{
+function printHeader(){
     include '../php/headerlogo.php';
     include '../php/headerknoppen.php';
 }
 
-function printFooter()
-{
+function printFooter(){
     include '../php/footer.php';
 }
 

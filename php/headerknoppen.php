@@ -24,14 +24,13 @@ if (isset($_SESSION['voornaam'])){
     echo "  <div class=\"dropdown\">
         <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Films</button>
         <div class=\"dropdown-content\">
+            <a href=\"filmoverzicht.php\">Alles</a>
             <a href=\"filmoverzichtactie.php\">Actie</a>
             <a href=\"filmoverzichtcomedy.php\">Comedy</a>
             <a href=\"filmoverzichtdrama.php\">Drama</a>
         </div>
     </div>";
-    print_r($_SESSION['voornaam']);
-    echo " ";
-    print_r($_SESSION['achternaam']);
+    print_r($_SESSION['voornaam']); echo " "; print_r($_SESSION['achternaam']);
     echo "  op ";
     setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
     echo strftime('%A %e %B', time());
