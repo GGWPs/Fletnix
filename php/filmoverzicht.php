@@ -65,14 +65,14 @@ require_once 'databaseconnection.php';
             } else{
                 echo "<input type='text' id='titel' name='filmtitel' placeholder='Titel'>";
             }
-
+            echo "<label for='regisseur'>Regisseur: </label>";
             if(isset($_GET['regisseur'])&& !empty($_GET['regisseur'])){
                 $regisseur=$_GET['regisseur'];
                 echo "<input type='text' id='regisseur' name='filmregisseur' value='$regisseur'>";
             }  else{
                 echo "<input type='text' id='regisseur' name='filmregisseur' placeholder='Regisseur'>";
             }
-
+            echo "<label for='publicatiejaar'> Jaar: </label>";
             if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
                 $publicatiejaar = $_GET ['publicatiejaar'];
                 echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2030'>";
@@ -142,12 +142,7 @@ require_once 'databaseconnection.php';
 
 </main>
 <footer>
-    <div class="footer">
         <?php printFooter(); ?>
-    </div>
-    <div class="bottom">
-        <?php printCopyright(); ?>
-    </div>
 </footer>
 </body>
 </html>

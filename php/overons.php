@@ -47,12 +47,7 @@ include 'functies.php';
 </div>
 </main>
 <footer>
-    <div class="footer">
             <?php printFooter();?>
-    </div>
-    <div class="bottom">
-        <?php printCopyright();?>
-    </div>
 </footer>
 </body>
 </html>

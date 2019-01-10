@@ -5,7 +5,7 @@
 <!-- * Datum: 14 maart 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!-- *geen aanpassingen
+<!-- Geen aanpassingen
 <!- *
 <!-*/-->
 
@@ -14,8 +14,17 @@
  * Created by PhpStorm.
  * User: Lenovo
  * Date: 12-3-2018
- * Time: 16:18
+ * Time: 16:14
  */
+
+session_start();
+if (isset($_SESSION['voornaam'])){
+    echo ' <div class="logoheader"> <a href="filmoverzicht.php?page_id=1"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50" alt="Fletnix logo"></a> </div>';
+} else {
+    echo ' <div class="logoheader"> <a href="index.php"> <img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50"
+                                  alt="Fletnix logo"></a> </div>';
+}
+
 
 if (isset($_SESSION['voornaam'])){
 //    echo $_POST['firstname'] ;
@@ -30,14 +39,14 @@ if (isset($_SESSION['voornaam'])){
             <a href=\"filmoverzicht.php?page_id=4\">Drama</a>
         </div>
     </div>";
-   /* echo "<p>"; */
+    /* echo "<p>"; */
     print_r($_SESSION['voornaam']); echo " "; print_r($_SESSION['achternaam']);
     echo "  op ";
     setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
     echo strftime('%A %e %B', time());
     echo ", ingelogd sinds ";
     print_r($_SESSION['logintijd']);
- /*   echo "</p>"; */
+    /*   echo "</p>"; */
     echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='loguit.php'\">Loguit
         </button> </div>";
 }

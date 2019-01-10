@@ -38,8 +38,7 @@ function checkUniekGebruikersnaam($gebruikersnaam){
 }
 
 function printHeader(){
-    include '../php/headerlogo.php';
-    include '../php/headerknoppen.php';
+    include '../php/header.php';
 }
 
 function printFooter(){
@@ -47,10 +46,6 @@ function printFooter(){
 }
 
 
-function printCopyright()
-{
-    include '../php/copyright.php';
-}
 
 function gastenBoekInvoer(){
 

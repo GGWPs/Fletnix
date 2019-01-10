@@ -10,7 +10,8 @@
 <!-*/-->
 
 <?php
-echo '<div class="footer1">';
+
+echo '<div class="footer"><div class="footer1">';
 if (isset($_SESSION['voornaam'])){
     echo    '<h2>Menu</h2>
             <img src="../afbeeldingen/nav.png" width="50px" height="50px" class="navigatie">
@@ -33,7 +34,10 @@ echo '</div>';
 echo    '<div class="footer2"><h2>Contact</h2>
     <img src="../afbeeldingen/informatie.png" width="50px" height="50px" class="informatie">
     <p>[T] 0612345678<br>[E] I.Miladinovic@live.nl<br>Fletnix BV<br>Technovium<br>Nijmegen, Nederland</p>
-</div>';
+</div></div>';
 
+echo '<div class="bottom">';
+echo "<p>&copy;", date("Y"), "- Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
+echo '</div>';
 
 ?>
