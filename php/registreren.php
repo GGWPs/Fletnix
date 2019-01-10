@@ -71,7 +71,7 @@
                 header("Location: ../php/accountaangemaakt.php");
                 exit;
             } catch (PDOException $e) {
-                echo 'Er bestaat al een account met deze gegevens. Klik <a href="../php/abonnement.php">Hier</a>  om terug te gaan\'';
+                echo 'Er bestaat al een account met deze gegevens. Klik <a href="../php/registreren.php">Hier</a>  om terug te gaan';
             }
         } else {
             if (!checkUniekEmail($email)) {

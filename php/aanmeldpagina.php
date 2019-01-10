@@ -47,7 +47,7 @@ include 'functies.php';
             <input type="password" placeholder="Wachtwoord" name="wachtwoord">
             <input type="submit" class="submit-button" value="Log in">
         </form>
-        <a href="abonnement.php"><h4>Nog geen account? klik dan hier</h4></a>
+        <a href="registreren.php"><h4>Nog geen account? klik dan hier</h4></a>
     </div>
     </div>
     ';

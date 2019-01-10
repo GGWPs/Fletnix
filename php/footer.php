@@ -1,11 +1,11 @@
 <!--/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
 <!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 1-->
-<!-- * Datum: 16 maart 2018-->
+<!-- * Versie: 2-->
+<!-- * Datum: 10 januari 2019-->
 <!---->
 <!-- * Aangepast:-->
-<!-- *uiterlijk aanpassingen
+<!-- *samenvoeging twee footers bestanden
 <!- *
 <!-*/-->
 

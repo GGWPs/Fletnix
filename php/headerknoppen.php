@@ -22,12 +22,12 @@ if (isset($_SESSION['voornaam'])){
     echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
         </button>";
     echo "  <div class=\"dropdown\">
-        <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Films</button>
+        <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Genres</button>
         <div class=\"dropdown-content\">
-            <a href=\"filmoverzicht.php\">Alles</a>
-            <a href=\"filmoverzichtactie.php\">Actie</a>
-            <a href=\"filmoverzichtcomedy.php\">Comedy</a>
-            <a href=\"filmoverzichtdrama.php\">Drama</a>
+            <a href=\"filmoverzicht.php?page_id=1\">Alles</a>
+            <a href=\"filmoverzicht.php?page_id=2\">Actie</a>
+            <a href=\"filmoverzicht.php?page_id=3\">Comedy</a>
+            <a href=\"filmoverzicht.php?page_id=4\">Drama</a>
         </div>
     </div>";
     print_r($_SESSION['voornaam']); echo " "; print_r($_SESSION['achternaam']);

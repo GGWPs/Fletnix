@@ -6,7 +6,7 @@
 .logoheader {
     width:20%;
     justify-content: flex-start;
-    height:100%;
+    height:5%;
 }
 
 .header-button {
@@ -17,8 +17,16 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+
     height:100%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .header-button {
+        height:49%;
+    }
+}
+
 button:hover{
     background-color: #fa1e1e;
 }

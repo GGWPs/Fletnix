@@ -36,7 +36,6 @@ require_once 'databaseconnection.php';
     </header>
     <div class="index-container">
     <h1>Filmoverzicht</h1>
-    <div class="index-item">
         <form action="filmoverzicht.php" method="post">
             <?php
             echo "<label for='titel'>Zoeken op titel: </label>";
@@ -53,7 +52,7 @@ require_once 'databaseconnection.php';
             }  else{
                 echo "<input type='text' id='regisseur' name='filmregisseur'>";
             }
-            echo "<label for='publicatiejaar'>Zoeken op publicatiejaar: </label>";
+            echo "<label for='publicatiejaar'>Zoeken op jaar: </label>";
             if(isset($_GET['publicatiejaar'])&& !empty($_GET['publicatiejaar'])){
                 $publicatiejaar = $_GET ['publicatiejaar'];
                 echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar' min='1900' max='2030'>";
@@ -63,11 +62,28 @@ require_once 'databaseconnection.php';
             ?>
             <input type="submit" id="zoeken" value="Zoeken" name="verzending">
         </form>
-
+        <div class="index-item">
     <?php
     if (isset ($_SESSION['voornaam'])) {
         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            if($_GET['page_id'] == null){
+
+            }
+            switch($_GET['page_id'])
+            {
+                case 1:
+                    $select = "SELECT movie_id,cover_image, title FROM totale_films";
+                    break;
+                case 2:
+                    $select = "SELECT movie_id,cover_image, title FROM actie_films";
+                    break;
+                case 3:
+                    $select = "SELECT movie_id,cover_image, title FROM comedy_films";
+                    break;
+                case 4:
+                    $select = "SELECT movie_id,cover_image, title FROM drama_films";
+                    break;
+            }
             $query = verbindDatabase()->prepare($select);
             $query->execute();
             $i = $query->fetchAll();
@@ -104,6 +120,8 @@ require_once 'databaseconnection.php';
     ?>
     </div>
     </div>
+
+
 
 
 </main>
