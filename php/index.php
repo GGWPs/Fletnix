@@ -31,16 +31,14 @@ include 'functies.php';
 <!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
 <!--de website/videodienst mogen jullie aanpassen.-->
 <header>
-      <?php printHeader(); ?>
+    <?php printHeader(); ?>
 </header>
 <main>
     <div class="cover">
         <div class="PAGE">
             <div class="tekst">
-                <h1>Welkom bij Fletnix. Waar jongelui hun leven kunnen verwoesten. Nummer 2 op het gebied van
-                    films!</h1>
-                <button class="button2" type="button" onclick="window.location.href='abonnement.php'">Verwoest mijn
-                    leven
+                <h1>Welkom bij Fletnix. Voor iedereen die van films houdt!</h1>
+                <button class="button2" type="button" onclick="window.location.href='abonnement.php'">Abonneer nu!
                 </button>
             </div>
             <div class="prijsLijst">
@@ -48,7 +46,7 @@ include 'functies.php';
                 <h1>Prijzen</h1>
                 <table>
                     <tr>
-                        <th></th>
+                        <th>Abonnement:</th>
                         <th>Basis</th>
                         <th>Pro</th>
                         <th>Elite</th>
@@ -116,10 +114,10 @@ include 'functies.php';
 </main>
 <footer>
     <div class="footer">
-            <?php printFooter();?>
+        <?php printFooter(); ?>
     </div>
     <div class="bottom">
-        <?php printCopyright();?>
+        <?php printCopyright(); ?>
     </div>
 </footer>
 </body>

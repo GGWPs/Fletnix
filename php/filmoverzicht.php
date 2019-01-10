@@ -98,39 +98,53 @@ require_once 'databaseconnection.php';
                                             INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 
                                             WHERE  p.firstname + ' ' + p.lastname LIKE ? AND totale_films.title LIKE ? AND totale_films.publication_year LIKE ? ORDER BY totale_films.publication_year DESC";
-            $query = verbindDatabase()->prepare($statement);
-            $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
-            $i = $query->fetchAll();
-            $_SESSION['movies'] = $i;
-            $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
-            $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
-            $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
-            header('Location:filmoverzicht.php?zoek=result&titel='.$_POST["filmtitel"].'&regisseur='.$_POST["filmregisseur"].'&publicatiejaar='.$_POST["publicatiejaar"].'');
-        }
-        if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
-            $i = $_SESSION['movies'];
-            echo '<p> U heeft gezocht op film: '.$_SESSION['zoektitelinfo'].' - regisseur: '.$_SESSION['zoekregisseurinfo'].' - en publicatiejaar: '.$_SESSION['zoekjaarinfo'].' </p><div class="index-item">';
-            tekenFilms($i);
-            echo '</div>';
-        }
+                    $query = verbindDatabase()->prepare($statement);
+                    $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
+                    $i = $query->fetchAll();
+                    $_SESSION['movies'] = $i;
+                    $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
+                    $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
+                    $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
+                    header('Location:filmoverzicht.php?zoek=result&titel=' . $_POST["filmtitel"] . '&regisseur=' . $_POST["filmregisseur"] . '&publicatiejaar=' . $_POST["publicatiejaar"] . '');
+                }
+                if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
 
-    } else {
-        header('Location:aanmeldpagina.php');
-    }
-    ?>
+                    if ($_SESSION['zoektitelinfo'] == null) {
+                        $stuk1 = "";
+                    } else {
+                        $stuk1 = 'U heeft gezocht op titel: ' . $_SESSION['zoektitelinfo'];
+                    }
+                    if ($_SESSION['zoekregisseurinfo'] == null) {
+                        $stuk2 = " ";
+                    } else {
+                        $stuk2 = ', regisseur: ' . $_SESSION['zoekregisseurinfo'];
+                    }
+                    if ($_SESSION['zoekjaarinfo'] == null) {
+                        $stuk3 = " ";
+                    } else {
+                        $stuk3 = ' en publicatiejaar:  '. $_SESSION['zoekjaarinfo'];
+                    }
+                    $i = $_SESSION['movies'];
+                    echo '<p>' . $stuk1 .  $stuk2 . $stuk3  . ' </p><div class="index-item">';
+                    tekenFilms($i);
+                    echo '</div>';
+                }
+
+            } else {
+                header('Location:aanmeldpagina.php');
+            }
+            ?>
+        </div>
     </div>
-    </div>
-
-
 
 
 </main>
 <footer>
     <div class="footer">
-            <?php printFooter();?>
+        <?php printFooter(); ?>
     </div>
     <div class="bottom">
-        <?php printCopyright();?>
+        <?php printCopyright(); ?>
     </div>
 </footer>
 </body>

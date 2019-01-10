@@ -78,16 +78,13 @@
                 global $emailError;
                 $emailError = "Deze Email is al in gebruik.";
             }
-            if (!checkUniekGebruikersnaam($email)) {
+            if (!checkUniekGebruikersnaam($gebruikersnaam)) {
                 global $gebruikersnaamError;
-                $gebruikersnaamError = "Deze Gebruikersnaam is al in gebruik.";
+                $gebruikersnaamError = "Deze gebruikersnaam is al in gebruik.";
             }
             if ($wachtwoord != $wachtwoord2) {
                 global $wachtwoordError;
                 $wachtwoordError = "Wachtwoorden komen niet overeen.";
-            } else {
-                global $vergetenInTeVullen;
-                $vergetenInTeVullen = "U bent vergeten iets in te vullen.";
             }
         }
     }
@@ -107,8 +104,6 @@
                 </select>
                 <span class="meldingTekst"><?php echo $emailError; ?></span>
                 <input type="email" required name="email" required placeholder="Email">
-                <span class="meldingTekst"><?php echo $gebruikersnaamError; ?></span>
-                <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in">
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
@@ -123,6 +118,8 @@
                     <option value="Amex">Amex</option>
                 </select>
                 <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
+                <span class="meldingTekst"><?php echo $gebruikersnaamError; ?></span>
+                <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in">
                 <span class="meldingTekst"><?php echo $wachtwoordError; ?></span>
                 <input type="password" name="wachtwoord" required placeholder="Wachtwoord">
                 <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
