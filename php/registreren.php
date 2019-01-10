@@ -7,6 +7,7 @@
 <!-- * Aangepast:-->
 <!-- * - Required bij html invoervelden toegevoegd-->
 <!-- * - Query toegevoegd aan land, landen roept ie op via functie
+<!-* maxJaar, checkt nu op minimale leeftijd van 12 jaar.
 <!-*/-->
 <!DOCTYPE html>
 <html lang="nl">
@@ -27,7 +28,7 @@
     include 'functies.php';
     printHeader();
     if (isset($_SESSION['voornaam'])) {
-        header("Location: filmoverzicht.php");
+        header("Location: filmoverzicht.php?page_id=1");
     }
     $emailError = "";
     $gebruikersnaamError = "";
@@ -88,12 +89,12 @@
             }
         }
     }
+    $time = new DateTime('now');
+    $maxJaar = $time->modify('-12 year')->format('Y-m-d');
     ?>
 </header>
 <main>
     <div class="cover">
-
-
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -111,7 +112,7 @@
                     laadLanden();
                     ?>
                 </select>
-                <input type="date" name="geboortejaar" required placeholder="Geboortejaar">
+                <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01" max="<?php echo $maxJaar ?>" >
                 <select name="betaalMethode" required>
                     <option value="Mastercard">Mastercard</option>
                     <option value="Visa">Visa</option>

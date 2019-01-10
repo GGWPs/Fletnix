@@ -28,10 +28,10 @@ include 'functies.php';
     <title>Voorwaarden</title>
 </head>
 <body>
+<header>
+    <?php printHeader(); ?>
+</header>
 <div class="cover">
-    <header>
-        <?php printHeader(); ?>
-    </header>
     <div class="voorwaarden">
 
         <h1>Gebruiksvoorwaarden van Flexnix</h1>
@@ -59,7 +59,7 @@ include 'functies.php';
             </li>
             <li><strong>Flexnix-service</strong>
                 <ul style="list-style: none;">
-                    <li>4.1. Je moet minimaal achttien jaar zijn of meerderjarig in je provincie, regio of land om lid te worden van de Flexnix-service. Minderjarigen mogen alleen gebruikmaken van de service onder toezicht van een volwassene.</li>
+                    <li>4.1. Je moet minimaal twaalf jaar zijn of meerderjarig in je provincie, regio of land om lid te worden van de Flexnix-service. Minderjarigen mogen alleen gebruikmaken van de service onder toezicht van een volwassene.</li>
                     <li>4.2. De Flexnix-service en alle content die via onze service wordt bekeken, zijn uitsluitend bestemd voor je eigen persoonlijke en niet-commerciële gebruik. Tijdens je Flexnix-lidmaatschap verlenen we je een beperkte, niet-exclusieve, niet-overdraagbare licentie om de Flexnix-service te gebruiken en Flexnix-content te bekijken. Met uitzondering van voornoemde beperkte licentie wordt er geen recht, eigendom of belang aan jou overgedragen. Je stemt ermee in om de service niet te gebruiken voor openbare vertoningen.</li>
                     <li>4.3. Je mag Flexnix-content primair bekijken in het land waar je je account hebt geopend, en alleen op geografische locaties waar we onze service bieden en deze content in licentie hebben verstrekt. De beschikbare content die kan worden bekeken, kan verschillend zijn naargelang de geografische locatie en zal van tijd tot tijd wijzigen. Het aantal apparaten waarop je tegelijkertijd titels kunt kijken, is afhankelijk van het soort abonnement dat je hebt gekozen en staat vermeld op de pagina 'Mijn account'.</li>
                     <li>4.4. Flexnix wijzigt de service, waaronder de contentcatalogus, regelmatig. Bovendien testen we voortdurend diverse aspecten van onze service, waaronder onze website, gebruikersinterfaces, promoties en beschikbaarheid van Flexnix-content. Je kunt je op elk gewenst moment afmelden voor deze tests door naar de pagina 'Mijn account' te gaan en de instellingen voor 'Testdeelname' te wijzigen.</li>
@@ -81,7 +81,7 @@ include 'functies.php';
             </li>
         </ol>
 
-        <p>Laatst bijgewerkt: 1 januari 2017</p>
+        <p>Laatst bijgewerkt: 1 januari 2019</p>
 
     </div>
 </div>

@@ -19,7 +19,7 @@ require_once 'databaseconnection.php';
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
 
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Filmoverzicht</title>
@@ -138,8 +138,6 @@ require_once 'databaseconnection.php';
             ?>
         </div>
     </div>
-
-
 </main>
 <footer>
         <?php printFooter(); ?>

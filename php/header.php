@@ -27,10 +27,9 @@ if (isset($_SESSION['voornaam'])){
 
 
 if (isset($_SESSION['voornaam'])){
-//    echo $_POST['firstname'] ;
     echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
-        </button>";
-    echo "  <div class=\"dropdown\">
+        </button>   
+        <div class=\"dropdown\">
         <button class=\"dropbtn\" type=\"button\" onclick='Filmoverzicht.php'>Genres</button>
         <div class=\"dropdown-content\">
             <a href=\"filmoverzicht.php?page_id=1\">Alles</a>
@@ -52,10 +51,8 @@ if (isset($_SESSION['voornaam'])){
 }
 else {
     echo " <div class=\"headerbuttons\"> <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='gastboek.php'\">Gastboek
-        </button>";
-    echo " <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
-        </button>";
-    echo "  <button class=\"header-button\" type=\"button\" onclick=\"window.location.href='registreren.php'\">Maak een account
+        </button><button class=\"header-button\" type=\"button\" onclick=\"window.location.href='aanmeldpagina.php'\">Login
+        </button><button class=\"header-button\" type=\"button\" onclick=\"window.location.href='registreren.php'\">Maak een account
         </button> </div>";
 }
 
