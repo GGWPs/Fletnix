@@ -29,7 +29,6 @@ require_once 'databaseconnection.php';
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-<main>
     <header>
         <?php printHeader();
         switch ($_GET['page_id']) {
@@ -56,10 +55,12 @@ require_once 'databaseconnection.php';
         }
         ?>
     </header>
+    <main>
+        <div class="cover">
     <div class="index-container">
         <h1> <?php echo $overzicht ?></h1>
         <form action="filmoverzicht.php" method="post">
-            <label for='titel'>Zoeken op titel: </label>
+            <label for='titel'>Zoeken op: </label>
             <?php
             if (isset($_GET['titel']) && !empty($_GET['titel'])) {
                 $titel = $_GET['titel'];
@@ -68,7 +69,6 @@ require_once 'databaseconnection.php';
                 echo "<input type='text' id='titel' name='filmtitel' placeholder='Titel'>";
             }
             ?>
-            <label for='regisseur'> Regisseur: <label>;
                     <?php
                     if (isset($_GET['regisseur']) && !empty($_GET['regisseur'])) {
                         $regisseur = $_GET['regisseur'];
@@ -77,7 +77,6 @@ require_once 'databaseconnection.php';
                         echo "<input type='text' id='regisseur' name='filmregisseur' placeholder='Regisseur'>";
                     }
                     ?>
-                    <label for='publicatiejaar'> Jaar: </label>";
                     <?php
                     if (isset($_GET['publicatiejaar']) && !empty($_GET['publicatiejaar'])) {
                         $publicatiejaar = $_GET ['publicatiejaar'];
@@ -144,6 +143,7 @@ require_once 'databaseconnection.php';
             ?>
         </div>
     </div>
+        </div>
 
 
 </main>

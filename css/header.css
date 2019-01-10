@@ -25,9 +25,15 @@ a {
     height:100%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) and (min-width:452px) {
     .header-button {
         height:49%;
+    }
+}
+
+@media only screen and (max-width: 452px) {
+    .header-button {
+        height:25%;
     }
 }
 

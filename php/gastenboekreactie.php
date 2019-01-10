@@ -16,6 +16,8 @@ $naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
 $today = date("Y-m-d H:i:s");
 $bericht = $_POST["comment"];
 try {
+    $dbh = verbindDatabase();
+
     $stmt = $dbh->prepare("insert into Gastenboek (naam,datum,bericht) 
                                 VALUES (?,?,?)");
     $stmt->execute(array($naam, $today,$bericht));

@@ -48,18 +48,14 @@ h2{
     background-color: #dc0505;
 }
 
-.achtergrond {
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+.cover {
+    background-image: url("../afbeeldingen/fletnix-index-achtergrond.jpg");
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.cover {
-    background: rgba(255,255,255,0.4);
-    display: flex;
-}
 
 
 
@@ -86,7 +82,7 @@ h2{
     border: 3px solid black;
     margin: 1% 16% calc(25px + 1%);
     padding: 0 1% 0 1%;
-    background: black;
+    background: rgba(0,0,0,0.7);
     flex-wrap: wrap;
 }
 
