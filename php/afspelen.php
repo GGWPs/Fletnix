@@ -48,15 +48,15 @@ require_once '../php/databaseconnection.php';
     $query=verbindDatabase()->prepare($regisseur);
     $query->execute([$movieid]);
     $gegevensregisseur=$query->fetchAll();
-    echo $gegevens[0]['title'].'</h1>';
-    echo '<img src="'.$afbeeldinglocatie.'" width="400" height="300"';
+    echo '<div class="titelPoster"><h1>'.$gegevens[0]['title'].'</h1>';
+    echo '<img src="'.$afbeeldinglocatie.'" width="400" height="300">';
     echo '<p>Speeltijd: '.$gegevens[0]['duration'].'</p>';
-    echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p>';
-    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p><br>';
-    echo '<iframe width="600" height="400" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe>';
-    echo '<h2>Cast</h2>';
+    echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p><br>';
+    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p><br></div>';
+    echo '<div class="resp-container"><iframe class="resp-iframe" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe></div>';
+    echo '<div class="cast"><h2>Cast</h2>';
     $casttabel = '';
-    $casttabel .= '<table> <tr><th>Naam</th><th>Role</th></tr>';
+    $casttabel .= '<table> <tr><th>Naam</th><th>Rol</th></tr>';
     if(!empty($gegevenscast)){
         for ($i = 0; $i < count($gegevenscast); $i++) {
             $casttabel .= "<tr>";
@@ -71,7 +71,7 @@ require_once '../php/databaseconnection.php';
         $casttabel .= "<td>Regisseur</td>";
         $casttabel .= "</tr>";
     }
-    $casttabel .= '</table>';
+    $casttabel .= '</table></div>';
     echo $casttabel;
     ?>
 </div>
