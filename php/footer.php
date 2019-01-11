@@ -14,13 +14,13 @@
         <h2>Menu</h2>
         <?php
         if (isset($_SESSION['voornaam'])) {
-            echo '     <img src="../afbeeldingen/nav.png" width="50" height="50" class="navigatie">
+            echo '<img src="../afbeeldingen/nav.png" alt="nav.png" width="50" height="50" class="navigatie">
                 <a href="../php/filmoverzicht.php?page_id=1">Home</a> 
                 <a href="filmoverzicht.php"> Genre</a> 
                 <a href="overons.php"> Over ons</a>  
                 <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>';
         } else {
-            echo '  <img src="../afbeeldingen/nav.png" width="50" height="50" class="navigatie">
+            echo '  <img src="../afbeeldingen/nav.png" alt="nav.png" width="50" height="50" class="navigatie">
                 <a href="../php/index.php">Home</a> 
                 <a href="filmoverzicht.php"> Genre</a> 
                 <a href="overons.php"> Over ons</a>  

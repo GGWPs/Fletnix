@@ -50,7 +50,7 @@ function printFooter(){
 function gastenBoekInvoer(){
 
     echo '<form method = "post" action = "gastenboekreactie.php">';
-    echo '<textarea name="comment" id="" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>';
+    echo '<textarea name="comment" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>';
     echo '<input type="submit" class="button2" value="Plaatsen">';
     echo '</form>';
 }
@@ -74,7 +74,7 @@ function laadLanden(){
     $dbh = verbindDatabase();
 
                 foreach ($dbh ->query( $sql = "select country_name FROM Country") as $row) {
-                    echo "<option value=\"land1\">" . $row['country_name'] . "\t" . "</option>";
+                    echo '<option value="land1"> '. $row["country_name"] .'</option>';
                 }
 
 }
@@ -86,7 +86,7 @@ function tekenFilms ($i)
         $fotoloc = $film['cover_image'];
         $filmid = $film['movie_id'];
         $resultaat.= '<a href="../php/afspelen.php?movieid='. $filmid . '">
-        <img src="../afbeeldingen/films/'.$fotoloc.'" width="150" height="100"
+        <img src="../afbeeldingen/films/'.$fotoloc.'" width="150" height="100">
         </a>';
     }
     echo $resultaat;
