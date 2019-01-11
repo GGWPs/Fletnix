@@ -104,7 +104,6 @@ function stripInvoerCorrect ($invoer)
 {
     if(stripInvoer($invoer) == $invoer)
         return true;
-
 }
 
 ?>
