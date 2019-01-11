@@ -1,14 +1,16 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 2-->
-<!-- * Datum: 16 februari 2018-->
-<!---->
-<!-- * Aangepast:-->
-<!-- * - Required bij html invoervelden toegevoegd-->
-<!-- * - Query toegevoegd aan land, landen roept ie op via functie
-<!-* maxJaar, checkt nu op minimale leeftijd van 12 jaar.
-<!-*/-->
+<!--
+    * Team: Kaene Peters en Ivan Miladinovic
+    * Auteur: Kaene en Ivan-
+     Versie: 2
+    * Datum: 16 februari 2018
+
+    * Aangepast:
+    * - Required bij html invoervelden toegevoegd
+    * - Query toegevoegd aan land, landen roept ie op via functie
+    * maxJaar, checkt nu op minimale leeftijd van 12 jaar.
+    Data invoer aangepast met een functie dataMagInsertedWorden, hashing toegevoegd
+-->
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -37,11 +39,11 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'databaseconnection.php';
         if (isset($_POST["abonnement"]) AND $_POST["abonnement"] != '' AND isset($_POST["email"]) AND $_POST["email"] != ''
-            AND isset($_POST["gebruikersnaam"]) AND stripInvoer($_POST["gebruikersnaam"]) == $_POST["gebruikersnaam"] AND $_POST["gebruikersnaam"] != ''
+            AND isset($_POST["gebruikersnaam"]) AND $_POST["gebruikersnaam"] != ''
             AND isset($_POST["voornaam"]) AND $_POST["voornaam"] != '' AND isset($_POST["achternaam"]) AND $_POST["achternaam"] != ''
             AND isset($_POST["land"]) AND $_POST["land"] != '' AND isset($_POST["rekeningnummer"]) AND $_POST["rekeningnummer"] != ''
             AND isset($_POST["wachtwoord"]) AND $_POST["wachtwoord"] != '' AND isset($_POST["wachtwoord2"]) AND $_POST["wachtwoord2"] != ''
-            AND stripInvoer($_POST["wachtwoord"]) == $_POST["wachtwoord2"]) {
+            AND stripInvoer($_POST["wachtwoord"]) == $_POST["wachtwoord2"] AND stripInvoer($_POST["gebruikersnaam"]) == $_POST["gebruikersnaam"]) {
             $invoerCorrect = true;
         } else {
             $invoerCorrect = false;
@@ -61,14 +63,13 @@
         $land = "Netherlands";
 
 
-        if ($invoerCorrect && checkUniekEmail($email) && checkUniekGebruikersnaam($gebruikersnaam) && $wachtwoord == $wachtwoord2) {
-            $sql = "insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
-         values (:email,:voornaam,:achternaam,:betaalmethode,:rekeningnummer,:abonnement,:datumregistratie,null,:gebruikersnaam,:wachtwoord, :land, null)";
+        if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
             try {
-                $sql = verbindDatabase()->query("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
-         values ('$email','$voornaam','$achternaam','$betaalMethode','$rekeningnummer','$abonnement','$subscription_start',null,'$gebruikersnaam','$wachtwoord', '$land', null)");
+                $hash=password_hash($wachtwoord, PASSWORD_DEFAULT);
+                $data = verbindDatabase()->prepare("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
+         Values (?,?,?,?,?,?,?,?,?,?,?,?)");
 
-
+                $data->execute(array($email,$voornaam,$achternaam,$betaalMethode,$rekeningnummer,$abonnement,$subscription_start,null,$gebruikersnaam,$hash, $land, null));
                 header("Location: ../php/accountaangemaakt.php");
                 exit;
             } catch (PDOException $e) {
@@ -83,14 +84,33 @@
                 global $gebruikersnaamError;
                 $gebruikersnaamError = "Deze gebruikersnaam is al in gebruik.";
             }
-            if ($wachtwoord != $wachtwoord2) {
+            if (stripInvoer($wachtwoord)) {
+                global $wachtwoordError;
+                $wachtwoordError = "Dit is geen juist wachtwoord, u mag geen .";
+
+            } elseif ($wachtwoord != $wachtwoord2) {
                 global $wachtwoordError;
                 $wachtwoordError = "Wachtwoorden komen niet overeen.";
             }
+
         }
+
     }
+    /* Dit haalt de huidige jaar op en haalt er twaalf jaar eraf zodat alleen twaalfjarige zich kunnen registeren */
     $time = new DateTime('now');
     $maxJaar = $time->modify('-12 year')->format('Y-m-d');
+
+
+    $land_options = null;
+    try {
+        $data2 = verbindDatabase()->prepare("select country_name FROM Country");
+        $data2->execute();
+    } catch (PDOException $e) {
+        $error = $e;
+    }
+    while($country = $data2->fetch()){
+        $land_options .= '<option value="land1"> '.$country["country_name"].'</option>';
+    }
     ?>
 </header>
 <main>
@@ -108,11 +128,10 @@
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
-                    <?php
-                    laadLanden();
-                    ?>
+                    <?=$land_options?>
                 </select>
-                <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01" max="<?php echo $maxJaar ?>" >
+                <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01"
+                       max="<?php echo $maxJaar ?>">
                 <select name="betaalMethode" required>
                     <option value="Mastercard">Mastercard</option>
                     <option value="Visa">Visa</option>
@@ -132,7 +151,7 @@
     </div>
 </main>
 <footer>
-            <?php printFooter();?>
+    <?php printFooter(); ?>
 </footer>
 </body>
 </html>

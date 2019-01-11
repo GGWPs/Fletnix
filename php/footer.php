@@ -6,6 +6,7 @@
 
      Aangepast:
     samenvoeging twee footers bestanden, link aangepast
+    Beter leesbaar gemaakt
  *
 -->
 

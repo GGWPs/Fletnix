@@ -94,8 +94,8 @@ require_once 'databaseconnection.php';
                 if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
                     $query = verbindDatabase()->prepare($select);
                     $query->execute();
-                    $i = $query->fetchAll();
-                    tekenFilms($i);
+                    $filmSelectie = $query->fetchAll();
+                    tekenFilms($filmSelectie);
                 }
                 if (isset($_POST['verzending'])) {
                     $filmtitel = "%" . $_POST['filmtitel'] . "%";
@@ -108,8 +108,8 @@ require_once 'databaseconnection.php';
                                             WHERE  p.firstname + ' ' + p.lastname LIKE ? AND totale_films.title LIKE ? AND totale_films.publication_year LIKE ? ORDER BY totale_films.publication_year desc , totale_films.title asc";
                     $query = verbindDatabase()->prepare($statement);
                     $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
-                    $i = $query->fetchAll();
-                    $_SESSION['movies'] = $i;
+                    $filmSelectie = $query->fetchAll();
+                    $_SESSION['movies'] = $filmSelectie;
                     $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
                     $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
                     $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
@@ -131,9 +131,9 @@ require_once 'databaseconnection.php';
                     } else {
                         $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                     }
-                    $i = $_SESSION['movies'];
+                    $filmSelectie = $_SESSION['movies'];
                     echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">';
-                    tekenFilms($i);
+                    tekenFilms($filmSelectie);
                     echo '</div>';
                 }
             } else {
