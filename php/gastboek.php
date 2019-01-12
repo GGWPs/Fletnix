@@ -2,7 +2,7 @@
     * Auteur: Kaene en Ivan
      * Versie: 2
     * Datum: 11/01/2019
-    *
+    * Divs weggehaald en code iets efficiënter gemaakt
 -->
 
 <?php

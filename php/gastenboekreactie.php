@@ -1,13 +1,9 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene-->
-<!-- * Versie: 1-->
-<!-- * Datum: 14 maart 2018-->
-<!---->
-<!-- * Aangepast:-->
-<!-- *Gastenboek is alleen voor de herkansing dus deze hele pagina is "nieuw"
-<!- *
-<!-*/-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic
+    * Auteur: Kaene en Ivan
+     * Versie: 2
+    * Datum: 16/01/2019
+    * geen aanpassingen
+-->
 <?php
 session_start();
 

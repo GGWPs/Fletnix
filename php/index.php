@@ -1,13 +1,9 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 2-->
-<!-- * Datum: 16 februari 2018-->
-<!---->
-<!-- * Aangepast:-->
-<!-- * - aangepast-->
-<!-- * - header opgeroepen via functie
-<!-*/-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic
+    * Auteur: Kaene en Ivan
+     * Versie: 2
+    * Datum: 11/01/2019
+    * Divs weggehaald en code iets efficiënter gemaakt
+-->
 <?php
 include 'functies.php';
 ?>

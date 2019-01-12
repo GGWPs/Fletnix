@@ -1,8 +1,9 @@
 <!-- * Team: Kaene Peters en Ivan Miladinovic
     * Auteur: Kaene en Ivan
      * Versie: 2
-    * Datum: 11/01/2019
+    * Datum: 16/01/2019
     * Aangepast: checkUnieks , dataMagInsertedWorden toegevoegd
+    Stripinvoer ,laadLanden functie aangepast
 -->
 
 
