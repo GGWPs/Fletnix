@@ -109,18 +109,22 @@
     <div class="cover">
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
-            <form method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
+            <form method="post" action="
+            <?= $_SERVER['PHP_SELF']
+            ?>">
                 <select name="abonnement">
                     <option value="Basic">Basis €4.99</option>
                     <option value="Pro">Pro €7.99</option>
                     <option value="Premium">Elite €11.99</option>
                 </select>
-                <span class="meldingTekst"><?= $emailError ?></span>
+                <span class="meldingTekst">
+                    <?= $emailError
+                    ?></span>
                 <input type="email" required name="email" required placeholder="Email">
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
-                    <?= $land_options ?>
+                    <?php $land_options ?>
                 </select>
                 <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01"
                        max="<?= $maxJaar ?>">
@@ -137,7 +141,6 @@
                 <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
                 <span class="meldingTekst"><?= $vergetenInTeVullen ?></span>
                 <input type="submit" class="button2" value="Registreer">
-
             </form>
         </div>
     </div>
