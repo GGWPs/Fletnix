@@ -26,7 +26,6 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
-<body>
     <?php printHeader(); ?>
 <main>
     <div class="cover">
@@ -43,5 +42,4 @@ include 'functies.php';
     </div>
 </main>
 <?php printFooter(); ?>
-</body>
 </html>

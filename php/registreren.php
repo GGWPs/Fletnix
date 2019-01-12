@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="../css/inlogenregis.css">
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
-<body>
     <?php
     include 'functies.php';
     printHeader();
@@ -141,5 +140,4 @@
     </div>
 </main>
 <?php printFooter(); ?>
-</body>
 </html>

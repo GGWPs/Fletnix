@@ -25,7 +25,6 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/inlogenregis.css">
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
-<body>
     <?php printHeader();
     if (isset($_SESSION['voornaam'])) {
         header("Location: filmoverzicht.php?page_id=1.php");
@@ -53,6 +52,5 @@ include 'functies.php';
 
 </main>
 <?php printFooter(); ?>
-</body>
 
 </html>

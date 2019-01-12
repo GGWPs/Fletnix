@@ -35,3 +35,4 @@
     <p>&copy;<?php echo date("Y") ?> - Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
 </div>;
 </footer>
+</body>

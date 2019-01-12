@@ -24,7 +24,6 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/inlogenregis.css">
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
-<body>
     <?php printHeader(); ?>
 <main>
     <h1>Zoekresultaten</h1>
@@ -36,5 +35,4 @@ include 'functies.php';
 </main>
 </main>
 <?php printFooter(); ?>
-</body>
 </html>

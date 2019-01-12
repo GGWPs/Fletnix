@@ -4,6 +4,7 @@
     * Datum: 16/01/2019
     * Code veel verbeterd vooral veel echo's verminderd
 -->
+<body>
 <header>
 <div class="logoheader">
     <?php

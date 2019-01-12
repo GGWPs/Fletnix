@@ -22,7 +22,7 @@ include 'functies.php';
     <title>Fletnix</title>
 
 </head>
-<body>
+
 
 <main>
         <?php printHeader(); ?>

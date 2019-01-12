@@ -28,7 +28,6 @@ require_once 'databaseconnection.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
-<body>
     <?php printHeader();
     $select = "SELECT movie_id,cover_image, title FROM totale_films";
     $overzicht = "Filmoverzicht";
@@ -142,9 +141,6 @@ require_once 'databaseconnection.php';
             </div>
         </div>
     </div>
-
-
 </main>
 <?php printFooter(); ?>
-</body>
 </html>
