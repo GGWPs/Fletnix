@@ -49,9 +49,7 @@ include 'functies.php';
     </div>
 
 </main>
-<footer>
-    <?php printFooter(); ?>
-</footer>
+<?php printFooter(); ?>
 </body>
 </html>
 

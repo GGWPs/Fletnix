@@ -9,7 +9,7 @@
     Beter leesbaar gemaakt
  *
 -->
-
+<footer>
 <div class="footer">
     <div class="footer1">
         <h2>Menu</h2>
@@ -34,3 +34,4 @@
 <div class="bottom">';
     <p>&copy;<?php echo date("Y") ?> - Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
 </div>;
+</footer>

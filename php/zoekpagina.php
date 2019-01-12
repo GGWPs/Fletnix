@@ -22,7 +22,7 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
     <link rel="stylesheet" href="../css/inlogenregis.css">
-    <link rel="icon" href="../afbeeldingen/favicon.ico" />
+    <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
 <body>
 <header>
@@ -31,13 +31,12 @@ include 'functies.php';
 <main>
     <h1>Zoekresultaten</h1>
     <div class="zoekresultaten">
-    <?php
-    zoekFilm();
-    ?>
+        <?php
+        zoekFilm();
+        ?>
     </div>
 </main>
-<footer>
-            <?php printFooter();?>
-</footer>
+</main>
+<?php printFooter(); ?>
 </body>
 </html>

@@ -101,8 +101,6 @@ include 'functies.php';
         </div>
 
 </main>
-<footer>
         <?php printFooter(); ?>
-</footer>
 </body>
 </html>
