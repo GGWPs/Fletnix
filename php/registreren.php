@@ -65,11 +65,11 @@
 
         if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
             try {
-                $hash=password_hash($wachtwoord, PASSWORD_DEFAULT);
+                $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
                 $data = verbindDatabase()->prepare("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
          Values (?,?,?,?,?,?,?,?,?,?,?,?)");
 
-                $data->execute(array($email,$voornaam,$achternaam,$betaalMethode,$rekeningnummer,$abonnement,$subscription_start,null,$gebruikersnaam,$hash, $land, null));
+                $data->execute(array($email, $voornaam, $achternaam, $betaalMethode, $rekeningnummer, $abonnement, $subscription_start, null, $gebruikersnaam, $hash, $land, null));
                 header("Location: ../php/accountaangemaakt.php");
                 exit;
             } catch (PDOException $e) {
@@ -96,7 +96,7 @@
         }
 
     }
-    /* Dit haalt de huidige jaar op en haalt er twaalf jaar eraf zodat alleen twaalfjarige zich kunnen registeren */
+    /* Dit haalt het huidige jaar op en haalt er twaalf jaar eraf zodat alleen ouder dan 12 jaar oud kunnen registeren */
     $time = new DateTime('now');
     $maxJaar = $time->modify('-12 year')->format('Y-m-d');
 
@@ -115,12 +115,12 @@
                     <option value="Pro">Pro €7.99</option>
                     <option value="Premium">Elite €11.99</option>
                 </select>
-                <span class="meldingTekst"><?php echo $emailError ?></span>
+                <span class="meldingTekst"><?= $emailError ?></span>
                 <input type="email" required name="email" required placeholder="Email">
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
                 <select name="land" required>
-                    <?=$land_options?>
+                    <?= $land_options ?>
                 </select>
                 <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01"
                        max="<?= $maxJaar ?>">
