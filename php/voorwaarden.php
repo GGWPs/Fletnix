@@ -28,9 +28,7 @@ include 'functies.php';
     <title>Voorwaarden</title>
 </head>
 <body>
-<header>
     <?php printHeader(); ?>
-</header>
 <div class="cover">
     <div class="voorwaarden">
 

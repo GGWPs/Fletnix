@@ -29,7 +29,6 @@ require_once 'databaseconnection.php';
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-<header>
     <?php printHeader();
     $select = "SELECT movie_id,cover_image, title FROM totale_films";
     $overzicht = "Filmoverzicht";
@@ -58,12 +57,11 @@ require_once 'databaseconnection.php';
         }
     }
     ?>
-</header>
 <main>
     <div class="cover">
         <div class="background">
             <div class="index-container">
-                <h1> <?php echo $overzicht ?></h1>
+                <h1> <?= $overzicht ?></h1>
                 <form action="filmoverzicht.php" method="post">
                     <label for='titel'>Zoeken op: </label>
                     <?php
@@ -83,7 +81,7 @@ require_once 'databaseconnection.php';
                         $publicatiejaar = $_GET ['publicatiejaar'];
                         echo "<input type='number' id='publicatiejaar' name='publicatiejaar' value='$publicatiejaar.' min='1900' max='2030'>";
                     } else {
-                        echo "<input type='number' id='publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2050'>";
+                        echo "<input type='number' id='publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2030'>";
                     }
                     ?>
                     <input type="submit" id="zoeken" value="Zoeken" name="verzending">

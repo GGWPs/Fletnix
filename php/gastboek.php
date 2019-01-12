@@ -25,9 +25,7 @@ include 'functies.php';
 <body>
 
 <main>
-    <header>
         <?php printHeader(); ?>
-    </header>
     <div class="gastenboek">
         <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
             <h2> Laatste berichten </h2></div>

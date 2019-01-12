@@ -26,9 +26,7 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-<header>
     <?php printHeader(); ?>
-</header>
 <main>
     <div class="cover">
         <div class="overons">

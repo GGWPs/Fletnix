@@ -16,19 +16,15 @@ include 'functies.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/knoppen.css">
-
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Fletnix</title>
-
 </head>
 <body>
 <!--Een wervende homepage die duidelijk maakt wat er op deze website te halen valt en-->
 <!--wie de doelgroep is. Je kan de doelgroep ook benoemen (bijvoorbeeld in de-->
 <!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
 <!--de website/videodienst mogen jullie aanpassen.-->
-<header>
     <?php printHeader(); ?>
-</header>
 <main>
     <div class="cover">
         <div class="tekst">

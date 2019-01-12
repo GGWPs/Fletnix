@@ -28,9 +28,7 @@ header("refresh:5;url=filmoverzicht.php?page_id=1");
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
 <body>
-<header>
     <?php printHeader(); ?>
-</header>
 <main>
     <div class="login">
         <a href="filmoverzicht.php?page_id=1"> <img src="../afbeeldingen/loading.gif" alt="Loading"></a>

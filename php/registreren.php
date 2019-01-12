@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-<header>
     <?php
     include 'functies.php';
     printHeader();
@@ -104,7 +103,6 @@
     $land_options = null;
     $land_options = laadLanden($land_options);
     ?>
-</header>
 <main>
     <div class="cover">
         <div class="invoerveld">

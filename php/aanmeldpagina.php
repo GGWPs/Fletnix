@@ -26,13 +26,11 @@ include 'functies.php';
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
 <body>
-<header>
     <?php printHeader();
     if (isset($_SESSION['voornaam'])) {
         header("Location: filmoverzicht.php?page_id=1.php");
     }
     ?>
-</header>
 <main>
     <div class="cover">
         <div class="login">

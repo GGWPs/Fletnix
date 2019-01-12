@@ -4,6 +4,7 @@
     * Datum: 16/01/2019
     * Code veel verbeterd vooral veel echo's verminderd
 -->
+<header>
 <div class="logoheader">
     <?php
     session_start();
@@ -34,3 +35,4 @@
     </button>
 </div>
 </div>
+</header>
