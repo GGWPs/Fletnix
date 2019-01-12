@@ -71,9 +71,18 @@ function roepComments()
  *
  *laad landen in voor bij abbonement keuze
  */
-function laadLanden()
+function laadLanden($land_options)
 {
-
+    try {
+        $data2 = verbindDatabase()->prepare("select country_name FROM Country");
+        $data2->execute();
+    } catch (PDOException $e) {
+        $error = $e;
+    }
+    while($country = $data2->fetch()){
+        $land_options .= '<option value="land1"> '.$country["country_name"].'</option>';
+    }
+    return $land_options;
 }
 
 /* Tekent de covers op de filmoverzicht pagina*/

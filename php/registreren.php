@@ -60,7 +60,7 @@
         $wachtwoord = $_POST["wachtwoord"];
         $wachtwoord2 = $_POST["wachtwoord2"];
         $subscription_start = date("Y-m-d");
-        $land = "Netherlands";
+        $land = $_POST["land"];;
 
 
         if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
@@ -102,28 +102,20 @@
 
 
     $land_options = null;
-    try {
-        $data2 = verbindDatabase()->prepare("select country_name FROM Country");
-        $data2->execute();
-    } catch (PDOException $e) {
-        $error = $e;
-    }
-    while($country = $data2->fetch()){
-        $land_options .= '<option value="land1"> '.$country["country_name"].'</option>';
-    }
+    $land_options = laadLanden($land_options);
     ?>
 </header>
 <main>
     <div class="cover">
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
                 <select name="abonnement">
                     <option value="Basic">Basis €4.99</option>
                     <option value="Pro">Pro €7.99</option>
                     <option value="Premium">Elite €11.99</option>
                 </select>
-                <span class="meldingTekst"><?php echo $emailError; ?></span>
+                <span class="meldingTekst"><?php echo $emailError ?></span>
                 <input type="email" required name="email" required placeholder="Email">
                 <input type="text" name="voornaam" required placeholder="Voornaam">
                 <input type="text" name="achternaam" required placeholder="Achternaam">
@@ -131,19 +123,19 @@
                     <?=$land_options?>
                 </select>
                 <input type="date" name="geboortejaar" required placeholder="Geboortejaar" min="1900-01-01"
-                       max="<?php echo $maxJaar ?>">
+                       max="<?= $maxJaar ?>">
                 <select name="betaalMethode" required>
                     <option value="Mastercard">Mastercard</option>
                     <option value="Visa">Visa</option>
                     <option value="Amex">Amex</option>
                 </select>
                 <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
-                <span class="meldingTekst"><?php echo $gebruikersnaamError; ?></span>
+                <span class="meldingTekst"><?= $gebruikersnaamError ?></span>
                 <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in">
-                <span class="meldingTekst"><?php echo $wachtwoordError; ?></span>
+                <span class="meldingTekst"><?= $wachtwoordError ?></span>
                 <input type="password" name="wachtwoord" required placeholder="Wachtwoord">
                 <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
-                <span class="meldingTekst"><?php echo $vergetenInTeVullen; ?></span>
+                <span class="meldingTekst"><?= $vergetenInTeVullen ?></span>
                 <input type="submit" class="button2" value="Registreer">
 
             </form>

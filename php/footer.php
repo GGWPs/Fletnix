@@ -16,18 +16,15 @@
         <?php
         if (isset($_SESSION['voornaam'])) {
             echo '<img src="../afbeeldingen/nav.png" alt="nav.png" width="50" height="50" class="navigatie">
-                <a href="../php/filmoverzicht.php?page_id=1">Home</a> 
-                <a href="filmoverzicht.php"> Genre</a> 
-                <a href="overons.php"> Over ons</a>  
-                <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>';
+                <a href="../php/filmoverzicht.php?page_id=1">Home</a>';
         } else {
             echo '  <img src="../afbeeldingen/nav.png" alt="nav.png" width="50" height="50" class="navigatie">
-                <a href="../php/index.php">Home</a> 
-                <a href="filmoverzicht.php"> Genre</a> 
-                <a href="overons.php"> Over ons</a>  
-                <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>';
+                <a href="../php/index.php">Home</a>';
         }
         ?>
+        <a href="filmoverzicht.php"> Genre</a>
+        <a href="overons.php"> Over ons</a>
+        <a href="../php/voorwaarden.php"> Algemene voorwaarden</a>
     </div>
     <div class="footer2"><h2> Contact</h2>
         <img src="../afbeeldingen/informatie.png" alt="informatie.png" width="50" height="50" class="informatie">
