@@ -252,7 +252,6 @@ include 'functies.php';
 
     </div>
 </div>
-</main>
 <?php printFooter(); ?>
 </body>
 </html>

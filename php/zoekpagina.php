@@ -5,7 +5,6 @@
 <!-- * Datum: 16 februari 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!-- * - Required bij html invoervelden toegevoegd-->
 <!-- * - Zoek query aangepast
 <!-*/-->
 <?php
