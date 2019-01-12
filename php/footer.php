@@ -36,5 +36,5 @@
     </div>
 </div>
 <div class="bottom">';
-    <p>&copy;", <?php echo 'date("Y"),' ?> "- Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
+    <p>&copy;<?php echo date("Y") ?> - Ivan Miladinovic - Kaene Peters - FLETNIX</p>";
 </div>;
