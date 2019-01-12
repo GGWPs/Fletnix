@@ -25,9 +25,7 @@ include 'functies.php';
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
 <body>
-<header>
     <?php printHeader(); ?>
-</header>
 <main>
     <h1>Zoekresultaten</h1>
     <div class="zoekresultaten">

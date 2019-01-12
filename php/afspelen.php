@@ -26,9 +26,7 @@ require_once '../php/databaseconnection.php';
     <title>Afspelen</title>
 </head>
 <body>
-<header>
     <?php printHeader(); ?>
-</header>
 <main>
     <div class=afspelen>
         <?php
