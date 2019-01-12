@@ -2,7 +2,7 @@
     Team: Kaene Peters en Ivan Miladinovic
     Auteur: Kaene en Ivan
     Versie: 2
- *  Datum: 10/01/2019
+ *  Datum: 16/01/2019
 
      Aangepast:
     samenvoeging twee footers bestanden, link aangepast
@@ -31,7 +31,7 @@
     </div>
     <div class="footer2"><h2> Contact</h2>
         <img src="../afbeeldingen/informatie.png" alt="informatie.png" width="50" height="50" class="informatie">
-        <p> [T] 0612345678 <br>[E] I . Miladinovic@live . nl <br>Fletnix BV <br>Technovium <br>Nijmegen,
+        <p> [T] 0612345678 <br>[E] I.Miladinovic@live.nl <br>Fletnix BV <br>Technovium <br>Nijmegen,
             Nederland </p>
     </div>
 </div>

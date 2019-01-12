@@ -19,12 +19,13 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $password_from_db = $result["password"];
     if(!isset($password_from_db)){
-        echo "werkt ni";
+        header("location:aanmeldpagina.php?msg=fout");
     } else if(!password_verify($_POST["wachtwoord"],$password_from_db)){ //If the result is empty then there are no users with the submitted username+password
         if($_POST["wachtwoord"] == $password_from_db){
             $hash=password_hash($password_from_db, PASSWORD_DEFAULT);
             $stmt = verbindDatabase()->prepare("UPDATE Customer SET password = :value1 WHERE user_name = :value2");
             $stmt->execute(array(":value1" => $hash,":value2" => $_POST["gebruikersnaam"]));
+
             $_SESSION['voornaam'] = $result["firstname"];
             $_SESSION['achternaam'] = $result["lastname"];
             setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');

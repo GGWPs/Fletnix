@@ -33,19 +33,15 @@ include 'functies.php';
             <h2> Laatste berichten </h2></div>
         <?php
         if (isset($_SESSION['voornaam'])) {
-            echo '<div class="invoerveld">';
-            echo '  Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.' . "<br>" . date("Y-m-d H:i:s") . "<br>";
-            echo $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
+            echo '<div class="invoerveld"> Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.'
+                . "<br>" . date("Y-m-d H:i:s") . "<br>" . $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
             gastenBoekInvoer();
-            echo '</div>';
-            echo '<div class="commentswel">';
+            echo '</div><div class="commentswel">';
             roepComments();
 
         } else {
-            echo '<div class="titel"><h1>Gelieve eerst in te loggen</h1></div>';
-            echo '<div class="commentsniet">';
+            echo '<div class="titel"><h1>Gelieve eerst in te loggen</h1></div><div class="commentsniet">';
             roepComments();
-
         }
         ?>
 

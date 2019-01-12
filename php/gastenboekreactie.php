@@ -13,7 +13,7 @@ session_start();
 
 require_once '../php/databaseconnection.php';
 $naam = $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
-$today = date("Y-m-d H:filmSelectie:s");
+$today = date("Y-m-d H:s");
 $bericht = $_POST["comment"];
 try {
     $dbh = verbindDatabase();
