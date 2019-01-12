@@ -1,13 +1,12 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene-->
-<!-- * Versie: 1-->
-<!-- * Datum: 14 maart 2018-->
-<!---->
-<!-- * Aangepast:-->
-<!-- *Geen aanpassingen
-<!- *
-<!-*/-->
+<!--
+    * Team: Kaene Peters en Ivan Miladinovic
+    * Auteur: Kaene en Ivan-
+     Versie: 2
+    * Datum: 16 februari 2018
+
+    * Aangepast:
+    * -Tekst aangepast geen echte veranderingen
+-->
 
 <?php
 include 'functies.php';
@@ -33,10 +32,11 @@ include 'functies.php';
             <h1>Over ons</h1>
             <img src="../afbeeldingen/ons.PNG" width="300" height="300" alt="Ons">
             <h2>Wie zijn wij?</h2>
-            <p>Wij zijn twee studenten van Hogeschool Arnhem en Nijmegen die Fletnix BV hebben opgericht.</p>
+            <p>Wij zijn twee studenten aan Hogeschool Arnhem / Nijmegen die deze website Fletnix BV hebben
+                opgericht.</p>
             <h2>Wat doen wij?</h2>
-            <p>Fletnix BV is een bedrijf die films/series streamt zodat U deze kan kijken.
-                Dit doen we tegen een lage prijs en zo kunnen we de gebruiker blij maken.
+            <p>Fletnix BV is een bedrijf dat films/series streamt zodat U deze kan kijken.
+                Dit doen we tegen een lage prijs en zo maken we de gebruiker blij.
                 Elke week worden nieuwe films en series toegevoegd aan het assortiment.</p>
         </div>
     </div>
