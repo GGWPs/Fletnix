@@ -41,7 +41,8 @@ include 'functies.php';
             <?php
             if (isset($_GET["msg"]) && $_GET["msg"] == "fout") {
                 echo '<div class="meldingTekst">Uw gegevens worden niet herkent!</div>';
-            } ?>
+            }
+            ?>
             <br>
             <form method="POST" action="login.php">
                 <input type="text" placeholder="Gebruikersnaam" name="gebruikersnaam">

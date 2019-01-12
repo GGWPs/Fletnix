@@ -48,13 +48,27 @@ require_once '../php/databaseconnection.php';
     $query=verbindDatabase()->prepare($regisseur);
     $query->execute([$movieid]);
     $gegevensregisseur=$query->fetchAll();
-    echo '<div class="titelPoster"><h1>'.$gegevens[0]['title'].'</h1>';
-    echo '<img src="'.$afbeeldinglocatie.'" width="400" height="300">';
-    echo '<p>Speeltijd: '.$gegevens[0]['duration'].'</p>';
-    echo '<p>Beschrijving: '.$gegevens[0]['description'].'</p><br>';
-    echo '<p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p><br></div>';
-    echo '<div class="resp-container"><iframe class="resp-iframe" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe></div>';
-    echo '<div class="cast"><h2>Cast</h2>';
+
+    $genres = "select * from Movie_Genre where movie_id =?";
+    $query = verbindDatabase()->prepare($genres);
+    $query->execute([$movieid]);
+    $gegevensgenres = $query->fetchAll();
+
+    echo '<div class="titelPoster"><h1>'.$gegevens[0]['title'].'</h1>
+          <img src="'.$afbeeldinglocatie.'" width="400" height="300">
+          <p>Speeltijd: '.$gegevens[0]['duration'].' minuten</p>
+          <p>Beschrijving: '.$gegevens[0]['description'].'</p>
+          <p>Jaar van publicatie:'.$gegevens[0]['publication_year'].'</p>
+          <p>Genres: ';
+    for ($i = 0; $i < count($gegevensgenres); $i++) {
+        if($i == 0){
+            echo ' '.$gegevensgenres[$i]['genre_name'];
+        }
+        echo ', '.$gegevensgenres[$i]['genre_name'];
+    }
+    echo '</p><br></div> 
+          <div class="resp-container"><iframe class="resp-iframe" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe></div>
+          <div class="cast"><h2>Cast</h2>';
     $casttabel = '';
     $casttabel .= '<table> <tr><th>Naam</th><th>Rol</th></tr>';
     if(!empty($gegevenscast)){

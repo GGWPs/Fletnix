@@ -104,11 +104,6 @@ include 'functies.php';
             </div>
         </div>
 
-
-        <!--Een wervende homepage die duidelijk maakt wat er op deze website te halen valt en-->
-        <!--wie de doelgroep is. Je kan de doelgroep ook benoemen (bijvoorbeeld in de-->
-        <!--ondertitel), extra welkom heten, met leuke statements binnenhalen. Ook de naam van-->
-        <!--de website/videodienst mogen jullie aanpassen.-->
 </main>
 <footer>
         <?php printFooter(); ?>

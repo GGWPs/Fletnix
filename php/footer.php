@@ -31,8 +31,7 @@
     </div>
     <div class="footer2"><h2> Contact</h2>
         <img src="../afbeeldingen/informatie.png" alt="informatie.png" width="50" height="50" class="informatie">
-        <p> [T] 0612345678 <br>[E] I.Miladinovic@live.nl <br>Fletnix BV <br>Technovium <br>Nijmegen,
-            Nederland </p>
+        <p> [T] 0612345678 <br>[E] info@fletnix.nl <br>Fletnix BV <br>Technovium <br>Nijmegen, Nederland</p>
     </div>
 </div>
 <div class="bottom">';
