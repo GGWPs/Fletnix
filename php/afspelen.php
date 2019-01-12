@@ -1,11 +1,11 @@
 <!--/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 1-->
-<!-- * Datum: 16 maart 2018-->
+<!-- * Auteur: Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 januari 2019-->
 <!---->
 <!-- * Aangepast:-->
-<!-- *Volledig nieuw (voorheen hadden we nog een afspelen.html)
+<!-- * fatsoenlijke CSS, genres bijgevoegd
 <!- *
 <!-*/-->
 
@@ -23,7 +23,6 @@ require_once '../php/databaseconnection.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/afspelen.css">
-
     <title>Afspelen</title>
 </head>
 <body>
@@ -58,7 +57,7 @@ require_once '../php/databaseconnection.php';
           <img src="'.$afbeeldinglocatie.'" width="400" height="300">
           <p>Speeltijd: '.$gegevens[0]['duration'].' minuten</p>
           <p>Beschrijving: '.$gegevens[0]['description'].'</p>
-          <p>Jaar van publicatie:'.$gegevens[0]['publication_year'].'</p>
+          <p>Jaar van publicatie: '.$gegevens[0]['publication_year'].'</p>
           <p>Genres: ';
     for ($i = 0; $i < count($gegevensgenres); $i++) {
         if($i == 0){
@@ -68,7 +67,8 @@ require_once '../php/databaseconnection.php';
     }
     echo '</p><br></div> 
           <div class="resp-container"><iframe class="resp-iframe" src="'. $gegevens[0]['URL'].'" allowfullscreen></iframe></div>
-          <div class="cast"><h2>Cast</h2>';
+          <div class="cast">';
+    echo '<h2>Cast</h2>';
     $casttabel = '';
     $casttabel .= '<table> <tr><th>Naam</th><th>Rol</th></tr>';
     if(!empty($gegevenscast)){
