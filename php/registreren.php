@@ -24,42 +24,41 @@
     <link rel="stylesheet" href="../css/inlogenregis.css">
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
-<body>
-<?php
-include 'functies.php';
-printHeader();
-if (isset($_SESSION['voornaam'])) {
-    header("Location: filmoverzicht.php?page_id=1");
-}
-$emailError = "";
-$gebruikersnaamError = "";
-$wachtwoordError = "";
-$vergetenInTeVullen = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once 'databaseconnection.php';
-    if (isset($_POST["abonnement"]) AND $_POST["abonnement"] != '' AND isset($_POST["email"]) AND $_POST["email"] != ''
-        AND isset($_POST["gebruikersnaam"]) AND $_POST["gebruikersnaam"] != ''
-        AND isset($_POST["voornaam"]) AND $_POST["voornaam"] != '' AND isset($_POST["achternaam"]) AND $_POST["achternaam"] != ''
-        AND isset($_POST["land"]) AND $_POST["land"] != '' AND isset($_POST["rekeningnummer"]) AND $_POST["rekeningnummer"] != ''
-        AND isset($_POST["wachtwoord"]) AND $_POST["wachtwoord"] != '' AND isset($_POST["wachtwoord2"]) AND $_POST["wachtwoord2"] != ''
-        AND stripInvoer($_POST["wachtwoord"]) == $_POST["wachtwoord2"] AND stripInvoer($_POST["gebruikersnaam"]) == $_POST["gebruikersnaam"]) {
-        $invoerCorrect = true;
-    } else {
-        $invoerCorrect = false;
+    <?php
+    include 'functies.php';
+    printHeader();
+    if (isset($_SESSION['voornaam'])) {
+        header("Location: filmoverzicht.php?page_id=1");
     }
-    $abonnement = $_POST["abonnement"];
-    $email = $_POST["email"];
-    $voornaam = $_POST["voornaam"];
-    $achternaam = $_POST["achternaam"];
-    $land = $_POST["land"];
-    $geboortejaar = date("Y-m-d");
-    $betaalMethode = $_POST["betaalMethode"];
-    $rekeningnummer = $_POST["rekeningnummer"];
-    $gebruikersnaam = $_POST["gebruikersnaam"];
-    $wachtwoord = $_POST["wachtwoord"];
-    $wachtwoord2 = $_POST["wachtwoord2"];
-    $subscription_start = date("Y-m-d");
-    $land = $_POST["land"];;
+    $emailError = "";
+    $gebruikersnaamError = "";
+    $wachtwoordError = "";
+    $vergetenInTeVullen = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        require_once 'databaseconnection.php';
+        if (isset($_POST["abonnement"]) AND $_POST["abonnement"] != '' AND isset($_POST["email"]) AND $_POST["email"] != ''
+            AND isset($_POST["gebruikersnaam"]) AND $_POST["gebruikersnaam"] != ''
+            AND isset($_POST["voornaam"]) AND $_POST["voornaam"] != '' AND isset($_POST["achternaam"]) AND $_POST["achternaam"] != ''
+            AND isset($_POST["land"]) AND $_POST["land"] != '' AND isset($_POST["rekeningnummer"]) AND $_POST["rekeningnummer"] != ''
+            AND isset($_POST["wachtwoord"]) AND $_POST["wachtwoord"] != '' AND isset($_POST["wachtwoord2"]) AND $_POST["wachtwoord2"] != ''
+            AND stripInvoer($_POST["wachtwoord"]) == $_POST["wachtwoord2"] AND stripInvoer($_POST["gebruikersnaam"]) == $_POST["gebruikersnaam"]) {
+            $invoerCorrect = true;
+        } else {
+            $invoerCorrect = false;
+        }
+        $abonnement = $_POST["abonnement"];
+        $email = $_POST["email"];
+        $voornaam = $_POST["voornaam"];
+        $achternaam = $_POST["achternaam"];
+        $land = $_POST["land"];
+        $geboortejaar = date("Y-m-d");
+        $betaalMethode = $_POST["betaalMethode"];
+        $rekeningnummer = $_POST["rekeningnummer"];
+        $gebruikersnaam = $_POST["gebruikersnaam"];
+        $wachtwoord = $_POST["wachtwoord"];
+        $wachtwoord2 = $_POST["wachtwoord2"];
+        $subscription_start = date("Y-m-d");
+        $land = $_POST["land"];;
 
 
     if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
@@ -142,5 +141,4 @@ $land_options = laadLanden($land_options);
     </div>
 </main>
 <?php printFooter(); ?>
-</body>
 </html>

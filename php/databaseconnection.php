@@ -1,12 +1,13 @@
-<!--/*-->
-<!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Kaene en Ivan-->
-<!-- * Versie: 2-->
-<!-- * 08/01/2019-->
-<!---->
-<!-- * Aangepast:-->
-<!-- * - Functie toegevoegd. -->
-<!--*/-->
+<!--
+    Team: Kaene Peters en Ivan Miladinovic
+    Auteur: Kaene en Ivan
+    Versie: 1
+ *  Datum: 10/01/2019
+
+    Aangepast:
+  * Kleine aanpassing en in functie gezet.
+ *
+-->
 <?php
 
 //preconditie: -
@@ -16,7 +17,7 @@ function verbindDatabase()
     $hostname = "localhost";
     $dbname = "FLETNIX_DOCENT";
     $username = "sa";
-    $password = "a119af9915";
+    $password = "fojmBNHfMyYjHB6boNcZ";
 
     try {
         $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");

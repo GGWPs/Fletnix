@@ -27,7 +27,6 @@ include 'functies.php';
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
     <title>Voorwaarden</title>
 </head>
-<body>
     <?php printHeader(); ?>
 <div class="cover">
     <div class="voorwaarden">
@@ -253,5 +252,4 @@ include 'functies.php';
     </div>
 </div>
 <?php printFooter(); ?>
-</body>
 </html>

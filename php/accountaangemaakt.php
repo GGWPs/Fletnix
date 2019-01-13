@@ -27,7 +27,6 @@ header("refresh:5;url=filmoverzicht.php?page_id=1");
     <link rel="stylesheet" href="../css/inlogenregis.css">
     <link rel="icon" href="../afbeeldingen/favicon.ico"/>
 </head>
-<body>
     <?php printHeader(); ?>
 <main>
     <div class="login">
@@ -37,5 +36,4 @@ header("refresh:5;url=filmoverzicht.php?page_id=1");
     </div>
 </main>
 <?php printFooter(); ?>
-</body>
 </html>

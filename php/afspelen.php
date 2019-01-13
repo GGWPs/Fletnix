@@ -25,7 +25,6 @@ require_once '../php/databaseconnection.php';
     <link rel="stylesheet" href="../css/afspelen.css">
     <title>Afspelen</title>
 </head>
-<body>
     <?php printHeader(); ?>
 <main>
     <div class=afspelen>
@@ -90,5 +89,4 @@ require_once '../php/databaseconnection.php';
 
 </main>
 <?php printFooter(); ?>
-</body>
 </html>
