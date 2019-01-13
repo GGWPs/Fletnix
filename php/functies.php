@@ -122,4 +122,30 @@ function dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $ww1, $w
     }
 }
 
+function tekenCast($movieid){
+    $cast = "SELECT firstname+ ' ' +lastname AS Name, role FROM Movie_Cast INNER JOIN Person ON Movie_Cast.person_id=Person.person_id WHERE movie_id=?";
+    $query = verbindDatabase()->prepare($cast);
+    $query->execute([$movieid]);
+    $gegevenscast = $query->fetchAll();
+
+    $casttabel = '<div class="cast"><h2>Cast</h2><table>
+                  <tr><th>Naam</th><th>Rol</th></tr>';
+    if (!empty($gegevenscast)) {
+        for ($i = 0; $i < count($gegevenscast); $i++) {
+            $casttabel .= "<tr>";
+            $casttabel .= "<th>" . $gegevenscast[$i][0] . "</th>";
+            $casttabel .= "<td>" . $gegevenscast[$i][1] . "</td>";
+            $casttabel .= "</tr>";
+        }
+    }
+    if (!empty($gegevensregisseur)) {
+        $casttabel .= "<tr>";
+        $casttabel .= "<th>" . $gegevensregisseur [0][0] . "</th>";
+        $casttabel .= "<td>Regisseur</td>";
+        $casttabel .= "</tr>";
+    }
+    $casttabel .= '</table></div>';
+    echo $casttabel;
+}
+
 ?>
