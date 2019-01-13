@@ -29,34 +29,34 @@ require_once 'databaseconnection.php';
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
 <body>
-    <?php printHeader();
-    $select = "SELECT movie_id,cover_image, title FROM totale_films";
-    $overzicht = "Filmoverzicht";
-    if (isset($_GET['page_id'])) {
-        switch ($_GET['page_id']) {
-            case 1:
-                $select = "SELECT movie_id,cover_image, title FROM totale_films";
-                $overzicht = "Filmoverzicht";
-                break;
-            case 2:
-                $select = "SELECT movie_id,cover_image, title FROM actie_films";
-                $overzicht = "Actie Filmoverzicht";
-                break;
-            case 3:
-                $select = "SELECT movie_id,cover_image, title FROM comedy_films";
-                $overzicht = "Comedy Filmoverzicht";
-                break;
-            case 4:
-                $select = "SELECT movie_id,cover_image, title FROM drama_films";
-                $overzicht = "Drama Filmoverzicht";
-                break;
-            default:
-                $select = "SELECT movie_id,cover_image, title FROM totale_films";
-                $overzicht = "Filmoverzicht";
-                break;
-        }
+<?php printHeader();
+$select = "SELECT movie_id,cover_image, title FROM totale_films";
+$overzicht = "Filmoverzicht";
+if (isset($_GET['page_id'])) {
+    switch ($_GET['page_id']) {
+        case 1:
+            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            $overzicht = "Filmoverzicht";
+            break;
+        case 2:
+            $select = "SELECT movie_id,cover_image, title FROM actie_films";
+            $overzicht = "Actie Filmoverzicht";
+            break;
+        case 3:
+            $select = "SELECT movie_id,cover_image, title FROM comedy_films";
+            $overzicht = "Comedy Filmoverzicht";
+            break;
+        case 4:
+            $select = "SELECT movie_id,cover_image, title FROM drama_films";
+            $overzicht = "Drama Filmoverzicht";
+            break;
+        default:
+            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            $overzicht = "Filmoverzicht";
+            break;
     }
-    ?>
+}
+?>
 <main>
     <div class="cover">
         <div class="background">
@@ -130,9 +130,9 @@ require_once 'databaseconnection.php';
                                 $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                             }
                             $filmSelectie = $_SESSION['movies'];
-                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">';
-                            tekenFilms($filmSelectie);
-                            echo '</div>';
+                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . '
+                            tekenFilms($filmSelectie).
+                            </div>';
                         }
                     } else {
                         header('Location:aanmeldpagina.php');

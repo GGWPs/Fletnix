@@ -10,12 +10,13 @@
 <!--*/
 -->
 h1 {
-    text-align: end;
-    color: black;
+    text-align: left;
+    color: white;
+
 }
 
 h2 {
-    text-align: end;
+    text-align: left;
 }
 
 .cover {
@@ -23,8 +24,6 @@ h2 {
 }
 
 .gastenboek {
-    min-height: 600px;
-    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -34,12 +33,13 @@ h2 {
 
 .invoerveld {
     height: 100%;
-    width: 40%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.9);
     padding: 0.5em;
     color: #dc0505;
     text-align: start;
     font-size: 1.1vw;
+
 }
 
 form {
@@ -50,16 +50,23 @@ form {
 }
 
 .commentswel {
-    width: 55%;
+    width: 100%;
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
 
 }
 
+.commentswel h2{
+    width: 100%;
+}
+.commentsniet  h2{
+    width: 80%
+
+}
+
 .commentswel div {
-    width: 30%;
-    height: 32%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-wrap: wrap;
@@ -68,7 +75,24 @@ form {
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* IE */
     white-space: pre-wrap;
-    margin: 1%;
+    margin: 10px;
+    padding: 20px;
+
+}
+
+@media screen and (min-width: 960px) {
+    .commentswel div {
+        width: calc(33.333% - 20px);
+
+    }
+
+    .commentswel, .invoerveld {
+        width: 40%;
+        margin:  0;
+    }
+    .invoerveld{
+        margin: 80px 0 0 0;
+    }
 }
 
 .commentsniet {
@@ -99,7 +123,7 @@ form {
     color: #dc0505;
     text-align: start;
     vertical-align: middle;
-    font-size: 1vw;
+    font-size: 1rem;
 
 }
 

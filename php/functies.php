@@ -52,21 +52,19 @@ function printFooter()
 
 function gastenBoekInvoer()
 {
-    echo '<form method = "post" action = "gastenboekreactie.php">';
-    echo '<textarea name="comment" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>';
-    echo '<input type="submit" class="button2" value="Plaatsen">';
-    echo '</form>';
+    echo '<form method = "post" action = "gastenboekreactie.php">
+          <textarea name="comment" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>
+          <input type="submit" class="button2" value="Plaatsen">
+          </form>';
 }
 
 function roepComments()
 {
-    $query = verbindDatabase()->query('SELECT top 7 naam,datum,bericht FROM gastenboek order by datum desc');
+    $query = verbindDatabase()->query('SELECT top 20 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
         echo "<div class='commenttext'>" . $r["naam"] . " plaatste om" . '<br>' . $r["datum"] . '<br>' . $r["bericht"], '<br>' . '</div>';
     }
-
 }
-
 
 /*
  *
@@ -80,8 +78,8 @@ function laadLanden($land_options)
     } catch (PDOException $e) {
         $error = $e;
     }
-    while($country = $data2->fetch()){
-        $land_options .= '<option value="land1"> '.$country["country_name"].'</option>';
+    while ($country = $data2->fetch()) {
+        $land_options .= '<option value="land1"> ' . $country["country_name"] . '</option>';
     }
     return $land_options;
 }
@@ -111,7 +109,6 @@ function stripInvoer($invoer)
         return true;
     }
 }
-
 
 
 /* Een functie die alle booleans samenvat en een boolean returned */
