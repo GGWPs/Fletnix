@@ -1,6 +1,6 @@
 <!--/*-->
 <!-- * Team: Kaene Peters en Ivan Miladinovic-->
-<!-- * Auteur: Ivan-->
+<!-- * Auteur: Kaene en Ivan-->
 <!-- * Versie: 2-->
 <!-- * Datum: 16 januari 2019-->
 <!---->
@@ -50,8 +50,9 @@ require_once '../php/databaseconnection.php';
         for ($i = 0; $i < count($gegevensgenres); $i++) {
             if ($i == 0) {
                 echo ' ' . $gegevensgenres[$i]['genre_name'];
+            } else {
+                echo ', ' . $gegevensgenres[$i]['genre_name'];
             }
-            echo ', ' . $gegevensgenres[$i]['genre_name'];
         }
         echo '</p><br></div>';
         $cast = "SELECT firstname+ ' ' +lastname AS Name, role FROM Movie_Cast INNER JOIN Person ON Movie_Cast.person_id=Person.person_id WHERE movie_id=?";
@@ -75,8 +76,8 @@ require_once '../php/databaseconnection.php';
         }
         $casttabel .= '</table></div>';
         echo $casttabel;
-        echo '<div class="resp-container"><iframe class="resp-iframe" src="' . $gegevens[0]['URL'] . '" allowfullscreen></iframe></div>';
         ?>
+        <div class="resp-container"><iframe class="resp-iframe" src="<?= $gegevens[0]['URL'] ?>" allowfullscreen></iframe></div>;
     </div>
 
 </main>

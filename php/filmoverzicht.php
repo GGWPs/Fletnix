@@ -1,12 +1,12 @@
 <!--
     Team: Kaene Peters en Ivan Miladinovic
     Auteur: Kaene en Ivan
-    Versie: 1
- *  Datum: 10/01/2019
+    Versie: 2
+ *  Datum: 13/01/2019
 
      Aangepast:
         Html en php code beter gescheiden
-        Switch toegevoegd, zoekopties verbeterd en de pagina ziet er beter uit kwa css en structuur.
+        Switch toegevoegd, zoekopties verbeterd, pagina structuur verbeterd, CSS verbeterd
  *
 -->
 
