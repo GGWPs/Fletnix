@@ -89,9 +89,7 @@ require_once 'databaseconnection.php';
                     <?php
                     if (isset ($_SESSION['voornaam'])) {
                         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-                            $query = verbindDatabase()->prepare($select);
-                            $query->execute();
-                            $filmSelectie = $query->fetchAll();
+                            $filmSelectie = voerQueryUit($select, 0);
                             tekenFilms($filmSelectie);
                         }
                         if (isset($_POST['verzending'])) {
@@ -129,9 +127,7 @@ require_once 'databaseconnection.php';
                                 $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                             }
                             $filmSelectie = $_SESSION['movies'];
-                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . '
-                            tekenFilms($filmSelectie).
-                            </div>';
+                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . tekenFilms($filmSelectie) . '</div>';
                         }
                     } else {
                         header('Location:aanmeldpagina.php');
