@@ -3,7 +3,7 @@
      * Versie: 2
     * Datum: 16/01/2019
     * Aangepast: checkUnieks , dataMagInsertedWorden toegevoegd
-    Stripinvoer ,laadLanden functie aangepast
+    Stripinvoer ,laadLanden functie aangepast, voerQuery functie toegevoegd
 -->
 
 
@@ -40,11 +40,13 @@ function checkUniekGebruikersnaam($gebruikersnaam)
     }
 }
 
+/* print de header uit */
 function printHeader()
 {
     include '../php/header.php';
 }
 
+/* print de footer uit */
 function printFooter()
 {
     include '../php/footer.php';
@@ -68,7 +70,7 @@ function roepComments()
 
 /*
  *
- *laad landen in voor bij abbonement keuze
+ *laad landen in voor bij registratie van gebruiker.
  */
 function laadLanden($land_options)
 {
@@ -119,4 +121,11 @@ function dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $ww1, $w
     }
 }
 
+/* voert een query uit en geeft de gegevens van de query terug */
+function voerQueryUit($query, $movieid){
+    $data = verbindDatabase()->prepare($query);
+    $data->execute([$movieid]);
+    $gegevens = $data->fetchAll();
+    return $gegevens;
+}
 ?>

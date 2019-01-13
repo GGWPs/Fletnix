@@ -1,12 +1,12 @@
 <!--
     Team: Kaene Peters en Ivan Miladinovic
     Auteur: Kaene en Ivan
-    Versie: 1
- *  Datum: 10/01/2019
+    Versie: 2
+ *  Datum: 13/01/2019
 
      Aangepast:
         Html en php code beter gescheiden
-        Switch toegevoegd, zoekopties verbeterd en de pagina ziet er beter uit kwa css en structuur.
+        Switch toegevoegd, zoekopties verbeterd, pagina structuur verbeterd, CSS verbeterd
  *
 -->
 
@@ -89,9 +89,7 @@ require_once 'databaseconnection.php';
                     <?php
                     if (isset ($_SESSION['voornaam'])) {
                         if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-                            $query = verbindDatabase()->prepare($select);
-                            $query->execute();
-                            $filmSelectie = $query->fetchAll();
+                            $filmSelectie = voerQueryUit($select, 0);
                             tekenFilms($filmSelectie);
                         }
                         if (isset($_POST['verzending'])) {
@@ -129,9 +127,7 @@ require_once 'databaseconnection.php';
                                 $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                             }
                             $filmSelectie = $_SESSION['movies'];
-                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . '
-                            tekenFilms($filmSelectie).
-                            </div>';
+                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . tekenFilms($filmSelectie) . '</div>';
                         }
                     } else {
                         header('Location:aanmeldpagina.php');
