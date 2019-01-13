@@ -129,9 +129,9 @@ require_once 'databaseconnection.php';
                                 $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                             }
                             $filmSelectie = $_SESSION['movies'];
-                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">';
-                            tekenFilms($filmSelectie);
-                            echo '</div>';
+                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . '
+                            tekenFilms($filmSelectie).
+                            </div>';
                         }
                     } else {
                         header('Location:aanmeldpagina.php');

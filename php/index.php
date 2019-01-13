@@ -28,7 +28,7 @@ include 'functies.php';
     <div class="cover">
         <div class="tekst">
             <h1>Welkom bij Fletnix. Voor iedereen die van films houdt!</h1>
-            <button class="button2" type="button" onclick="window.location.href='abonnement.php'">Abonneer nu!
+            <button class="button2" type="button" onclick=window.location.href="abonnement.php">Abonneer nu!
             </button>
         </div>
         <div class="prijsLijst">
