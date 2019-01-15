@@ -26,6 +26,7 @@ include 'functies.php';
     <?php printHeader(); ?>
 <main>
     <div class="cover">
+        <div class="background">
         <div class="tekst">
             <h1>Welkom bij Fletnix. Voor iedereen die van films houdt!</h1>
             <button class="button2" type="button" onclick=window.location.href="abonnement.php">Abonneer nu!
@@ -93,6 +94,7 @@ include 'functies.php';
             <br>
             <button class="button2" type="button" onclick=window.location.href="abonnement.php">Koop nu!</button>
         </div>
+    </div>
     </div>
 </main>
         <?php printFooter(); ?>

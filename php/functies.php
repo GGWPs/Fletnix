@@ -69,7 +69,6 @@ function roepComments()
 }
 
 /*
- *
  *laad landen in voor bij registratie van gebruiker.
  */
 function laadLanden($land_options)
@@ -121,7 +120,7 @@ function dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $ww1, $w
     }
 }
 
-/* voert een query uit en geeft de gegevens van de query terug */
+/* voert een meegegeven query uit en geeft de gegevens van de query terug */
 function voerQueryUit($query, $movieid){
     $data = verbindDatabase()->prepare($query);
     $data->execute([$movieid]);

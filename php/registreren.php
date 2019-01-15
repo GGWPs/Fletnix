@@ -8,7 +8,7 @@
     * - Required bij html invoervelden toegevoegd
     * - Query toegevoegd aan land, landen roept ie op via functie
     * maxJaar, checkt nu op minimale leeftijd van 12 jaar.
-    Data invoer aangepast met een functie dataMagInsertedWorden, hashing toegevoegd
+    Data invoer aangepast met een functie dataMagInsertedWorden, hashing toegevoegd, toegevoegd dat gebruikers niet de limieten van database kolommen breken
 -->
 
 <!DOCTYPE html>
@@ -64,10 +64,10 @@
     if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
         try {
             $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
-            $data = verbindDatabase()->prepare("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender)
-         Values (?,?,?,?,?,?,?,?,?,?,?,?)");
+            $data = verbindDatabase()->prepare("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender, birth_date)
+         Values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-            $data->execute(array($email, $voornaam, $achternaam, $betaalMethode, $rekeningnummer, $abonnement, $subscription_start, null, $gebruikersnaam, $hash, $land, null));
+            $data->execute(array($email, $voornaam, $achternaam, $betaalMethode, $rekeningnummer, $abonnement, $subscription_start, null, $gebruikersnaam, $hash, $land, null, $geboortejaar));
             header("Location: ../php/accountaangemaakt.php");
             exit;
         } catch (PDOException $e) {
@@ -115,9 +115,9 @@ $land_options = laadLanden($land_options);
                 </select>
                 <span class="meldingTekst">
                     <?= $emailError ?></span>
-                <input type="email" required name="email" required placeholder="Email">
-                <input type="text" name="voornaam" required placeholder="Voornaam">
-                <input type="text" name="achternaam" required placeholder="Achternaam">
+                <input type="email" required name="email" required placeholder="Email" maxlength="255">
+                <input type="text" name="voornaam" required placeholder="Voornaam" maxlength="50">
+                <input type="text" name="achternaam" required placeholder="Achternaam" maxlength="50">
                 <select name="land" required>
                     <?= $land_options ?>
                 </select>
@@ -130,10 +130,10 @@ $land_options = laadLanden($land_options);
                 </select>
                 <input type="text" name="rekeningnummer" required placeholder="Rekeningnummer">
                 <span class="meldingTekst"><?= $gebruikersnaamError ?></span>
-                <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in">
+                <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in" maxlength="50">
                 <span class="meldingTekst"><?= $wachtwoordError ?></span>
-                <input type="password" name="wachtwoord" required placeholder="Wachtwoord">
-                <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen">
+                <input type="password" name="wachtwoord" required placeholder="Wachtwoord" maxlength="255">
+                <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen" maxlength="255">
                 <span class="meldingTekst"><?= $vergetenInTeVullen ?></span>
                 <input type="submit" class="button2" value="Registreer">
             </form>

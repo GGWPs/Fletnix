@@ -5,7 +5,7 @@
 <!-- * Datum: 16 januari 2019-->
 <!---->
 <!-- * Aangepast:-->
-<!-- * fatsoenlijke CSS, genres bijgevoegd
+<!-- * fatsoenlijke CSS, genres bijgevoegd, PHP code verminderd
 <!- *
 <!-*/-->
 

@@ -6,7 +6,7 @@
 
      Aangepast:
         Html en php code beter gescheiden
-        Switch toegevoegd, zoekopties verbeterd, pagina structuur verbeterd, CSS verbeterd
+        Switch toegevoegd, zoekopties verbeterd, pagina structuur verbeterd, CSS verbeterd, PHP code verminderd
  *
 -->
 

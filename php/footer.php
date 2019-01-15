@@ -5,7 +5,7 @@
  *  Datum: 16/01/2019
 
      Aangepast:
-    samenvoeging twee footers bestanden, link aangepast
+    samenvoeging twee footers bestanden in een, link aangepast
     Beter leesbaar gemaakt
  *
 -->
