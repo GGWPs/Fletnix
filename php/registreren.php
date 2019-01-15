@@ -30,6 +30,9 @@
     if (isset($_SESSION['voornaam'])) {
         header("Location: filmoverzicht.php?page_id=1");
     }
+    $emailQuery = "select * from Customer where customer_mail_address =?";
+    $gebruikersnaamQuery = "select * from Customer where user_name =?";
+
     $emailError = "";
     $gebruikersnaamError = "";
     $wachtwoordError = "";
@@ -61,7 +64,7 @@
         $wachtwoord2 = $_POST["wachtwoord2"];
         $subscription_start = date("Y-m-d");
 
-    if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
+    if (dataMagInsertedWorden($invoerCorrect, $email, $emailQuery, $gebruikersnaam,$gebruikersnaamQuery, $wachtwoord, $wachtwoord2)) {
         try {
             $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
             $data = verbindDatabase()->prepare("insert into Customer (customer_mail_address,firstname,lastname,payment_method,payment_card_number,contract_type,subscription_start,subscription_end,user_name,password, country_name, gender, birth_date)
@@ -74,11 +77,11 @@
             echo $e;
         }
     } else {
-        if (!checkUniekEmail($email)) {
+        if (!checkUniek($emailQuery, $email)) {
             global $emailError;
-            $emailError = "Deze Email is al in gebruik.";
+            $emailError = "Deze email is al in gebruik.";
         }
-        if (!checkUniekGebruikersnaam($gebruikersnaam)) {
+        if (!checkUniek($gebruikersnaamQuery, $gebruikersnaam)) {
             global $gebruikersnaamError;
             $gebruikersnaamError = "Deze gebruikersnaam is al in gebruik.";
         }

@@ -10,28 +10,10 @@
 <?php
 require_once '../php/databaseconnection.php';
 
-/* checkt of de email uniek is*/
-function checkUniekEmail($email)
+function checkUniek($query, $variabel)
 {
-    $query = "select customer_mail_address from Customer where customer_mail_address = :customer_mail_address";
     $sql = verbindDatabase()->prepare($query);
-    $sql->execute(array(
-        ":customer_mail_address" => $email));
-    $row = $sql->rowCount();
-    if ($row == 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-/* checkt of de gebruikersnaam uniek is*/
-function checkUniekGebruikersnaam($gebruikersnaam)
-{
-    $query = "select user_name from customer where user_name = :user_name";
-    $sql = verbindDatabase()->prepare($query);
-    $sql->execute(array(
-        ":user_name" => $gebruikersnaam));
+    $sql->execute([$variabel]);
     $row = $sql->rowCount();
     if ($row == 0) {
         return true;
@@ -105,19 +87,18 @@ function stripInvoer($invoer)
     }
 }
 
-
 /* Een functie die alle booleans samenvat en een boolean returned */
-function dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $ww1, $ww2)
+function dataMagInsertedWorden($invoerCorrect, $email, $emailQuery, $gebruikersnaam,$gebruikersnaamQuery, $ww1, $ww2)
 {
-    if ($invoerCorrect && checkUniekEmail($email) && checkUniekGebruikersnaam($gebruikersnaam) && $ww1 == $ww2) {
+    if ($invoerCorrect && checkUniek($emailQuery, $email) && checkUniek($gebruikersnaamQuery,$gebruikersnaam) && $ww1 == $ww2) {
         return true;
     }
 }
 
 /* voert een meegegeven query uit en geeft de gegevens van de query terug */
-function voerQueryUit($query, $movieid){
+function voerQueryUit($query, $gegeven){
     $data = verbindDatabase()->prepare($query);
-    $data->execute([$movieid]);
+    $data->execute([$gegeven]);
     $gegevens = $data->fetchAll();
     return $gegevens;
 }

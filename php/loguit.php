@@ -5,7 +5,7 @@
 <!-- * Datum: 14 maart 2018-->
 <!---->
 <!-- * Aangepast:-->
-<!-- *Ggeen aanpassingen
+<!-- *Geen aanpassingen
 <!- *
 <!-*/-->
 
