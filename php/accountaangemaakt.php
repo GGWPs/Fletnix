@@ -1,12 +1,11 @@
 <!--
     Team: Kaene Peters en Ivan Miladinovic
     Auteur: Kaene en Ivan
-    Versie: 1
+    Versie: 2
  *  Datum: 10/01/2019
 
      Aangepast:
-    *hele pagina is nieuw"
-    *kleine verplaatsing voor beter overzicht
+    *kleine verplaatsing voor beter overzicht, CSS verandert
  *
 -->
 

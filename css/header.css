@@ -1,12 +1,18 @@
 /*HEADERS EN BUTTONS*/
+<!--/*-->
+<!-- * Team: Kaene Peters en Ivan Miladinovic-->
+<!-- * Auteur: Kaene en Ivan-->
+<!-- * Versie: 2-->
+<!-- * Datum: 16 Januari 2019-->
+<!---->
+<!-- * Aangepast:-->
+<!-- * - header css aangepast dat het goed schaalt met meerdere apparaten -->
+<!--*/-->
 
 a {
     color:white;
 }
 
-.headerbuttons {
-
-}
 .logoheader {
     width:20%;
     justify-content: flex-start;
@@ -21,7 +27,6 @@ a {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-
     height:100%;
 }
 

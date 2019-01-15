@@ -6,8 +6,7 @@
 
 
   Aangepast:
- * - headers aangepast zodat ze via functies gaan en include.
- * - php code beter gescheiden gehoudenen location link aangepast.
+ * - php code beter gescheiden, location link aangepast.
 -->
 <?php
 include 'functies.php';
@@ -50,8 +49,6 @@ include 'functies.php';
             <a href="registreren.php"><h4>Nog geen account? klik dan hier</h4></a>
         </div>
         </div>
-
-
 </main>
 <?php printFooter(); ?>
 

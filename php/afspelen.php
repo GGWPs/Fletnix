@@ -12,7 +12,6 @@
 <?php
 include 'functies.php';
 require_once '../php/databaseconnection.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="nl">
