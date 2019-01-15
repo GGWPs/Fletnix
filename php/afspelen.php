@@ -79,7 +79,6 @@ require_once '../php/databaseconnection.php';
         ?>
         <div class="resp-container"><iframe class="resp-iframe" src="<?= $gegevens[0]['URL'] ?>" allowfullscreen></iframe></div>;
     </div>
-
 </main>
 <?php printFooter(); ?>
 </html>

@@ -13,6 +13,7 @@
 session_start();
 require_once 'databaseconnection.php';
 try {
+
     $stmt = verbindDatabase()->prepare("SELECT * FROM Customer WHERE user_name = :value1");
     $stmt->execute(array(":value1" => $_POST["gebruikersnaam"]));
     $result = $stmt->fetch(PDO::FETCH_ASSOC);

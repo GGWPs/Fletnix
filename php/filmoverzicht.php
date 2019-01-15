@@ -31,6 +31,9 @@ require_once 'databaseconnection.php';
     <?php printHeader();
     $select = "SELECT movie_id,cover_image, title FROM totale_films";
     $overzicht = "Filmoverzicht";
+    if (!isset($_GET['page_id'])) {
+        header("Location: ../php/filmoverzicht.php?page_id=1");
+    }
     if (isset($_GET['page_id'])) {
         switch ($_GET['page_id']) {
             case 1:
@@ -112,14 +115,14 @@ require_once 'databaseconnection.php';
                         }
                         if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
                             if ($_SESSION['zoektitelinfo'] == null) {
-                                $stuk1 = "";
+                                $stuk1 = "U heeft gezocht op:";
                             } else {
                                 $stuk1 = 'U heeft gezocht op titel: ' . $_SESSION['zoektitelinfo'];
                             }
                             if ($_SESSION['zoekregisseurinfo'] == null) {
                                 $stuk2 = " ";
                             } else {
-                                $stuk2 = ', regisseur: ' . $_SESSION['zoekregisseurinfo'];
+                                $stuk2 = ' regisseur: ' . $_SESSION['zoekregisseurinfo'];
                             }
                             if ($_SESSION['zoekjaarinfo'] == null) {
                                 $stuk3 = " ";
