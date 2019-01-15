@@ -1,8 +1,8 @@
 <!--
     Team: Kaene Peters en Ivan Miladinovic
     Auteur: Kaene en Ivan
-    Versie: 1
- *  Datum: 10/01/2019
+    Versie: 2
+ *  Datum: 16/01/2019
 
     Aangepast:
   * Kleine aanpassing en in functie gezet.
@@ -17,7 +17,7 @@ function verbindDatabase()
     $hostname = "localhost";
     $dbname = "FLETNIX_DOCENT";
     $username = "sa";
-    $password = "fojmBNHfMyYjHB6boNcZ";
+    $password = "a119af9915";
 
     try {
         $dbh = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$password");

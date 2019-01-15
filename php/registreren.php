@@ -51,15 +51,15 @@
         $voornaam = $_POST["voornaam"];
         $achternaam = $_POST["achternaam"];
         $land = $_POST["land"];
-        $geboortejaar = date("Y-m-d");
+        $date = strtotime($_POST["geboortejaar"]);
+        $date = date('Y-m-d', $date);
+        $geboortejaar = $date;
         $betaalMethode = $_POST["betaalMethode"];
         $rekeningnummer = $_POST["rekeningnummer"];
         $gebruikersnaam = $_POST["gebruikersnaam"];
         $wachtwoord = $_POST["wachtwoord"];
         $wachtwoord2 = $_POST["wachtwoord2"];
         $subscription_start = date("Y-m-d");
-        $land = $_POST["land"];;
-
 
     if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
         try {

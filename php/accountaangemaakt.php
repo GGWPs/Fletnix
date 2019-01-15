@@ -29,11 +29,13 @@ header("refresh:5;url=filmoverzicht.php?page_id=1");
 </head>
     <?php printHeader(); ?>
 <main>
+    <div class="cover">
+        <div class="background">
     <div class="login">
         <a href="filmoverzicht.php?page_id=1"> <img src="../afbeeldingen/loading.gif" alt="Loading"></a>
-        <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier></a>
+        <h3>Uw registratie is gelukt! Klik</h3> <a href="../php/aanmeldpagina.php">hier</a>
         <h3>om aan te melden!</h3>
-    </div>
+    </div></div></div>
 </main>
 <?php printFooter(); ?>
 </html>

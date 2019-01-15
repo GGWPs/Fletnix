@@ -26,6 +26,8 @@ include 'functies.php';
 
 <main>
     <?php printHeader(); ?>
+    <div class="cover">
+        <div class="background">
     <div class="gastenboek">
         <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
             </div>
@@ -40,6 +42,7 @@ include 'functies.php';
         }
         roepComments();
         ?>
+    </div>
     </div>
     </div>
 </main>

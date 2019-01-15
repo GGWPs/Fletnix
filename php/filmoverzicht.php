@@ -31,9 +31,6 @@ require_once 'databaseconnection.php';
     <?php printHeader();
     $select = "SELECT movie_id,cover_image, title FROM totale_films";
     $overzicht = "Filmoverzicht";
-    if (!isset($_GET['page_id'])) {
-        header("Location: ../php/filmoverzicht.php?page_id=1");
-    }
     if (isset($_GET['page_id'])) {
         switch ($_GET['page_id']) {
             case 1:

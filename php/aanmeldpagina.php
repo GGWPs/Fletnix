@@ -32,6 +32,7 @@ include 'functies.php';
     ?>
 <main>
     <div class="cover">
+        <div class="background">
         <div class="login">
             <h1>Inloggen</h1>
             <img src="../afbeeldingen/slot.png" width="80" height="80" alt="login">
@@ -47,6 +48,7 @@ include 'functies.php';
                 <input type="submit" class="submit-button" value="Log in">
             </form>
             <a href="registreren.php"><h4>Nog geen account? klik dan hier</h4></a>
+        </div>
         </div>
 
 

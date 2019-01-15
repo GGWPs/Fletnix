@@ -6,7 +6,7 @@
 <!---->
 <!-- * Aangepast:-->
 <!-- * - aangepast-->
-<!-- * - Geen aanpassingen
+<!-- * - Voorwaarden tekst aangepast zodat twaalfjarige kunnen registreren.
 <!-*/-->
 
 
@@ -29,8 +29,8 @@ include 'functies.php';
 </head>
     <?php printHeader(); ?>
 <div class="cover">
+    <div class="background">
     <div class="voorwaarden">
-
         <h1>Gebruiksvoorwaarden van Flexnix</h1>
 
         <p>Flexnix is een service in abonnementsvorm die leden toegang biedt tot series en films ('Flexnix-content') die
@@ -248,8 +248,8 @@ include 'functies.php';
         </ol>
 
         <p>Laatst bijgewerkt: 1 januari 2019</p>
-
     </div>
+</div>
 </div>
 <?php printFooter(); ?>
 </html>
