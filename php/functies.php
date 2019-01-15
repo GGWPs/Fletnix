@@ -52,13 +52,7 @@ function printFooter()
     include '../php/footer.php';
 }
 
-function gastenBoekInvoer()
-{
-    echo '<form method = "post" action = "gastenboekreactie.php">
-          <textarea name="comment" cols="30" rows="10" maxlength="200" required placeholder="Maximaal 255 karakters"></textarea>
-          <input type="submit" class="button2" value="Plaatsen">
-          </form>';
-}
+
 
 function roepComments()
 {
