@@ -58,7 +58,7 @@
         $wachtwoord = $_POST["wachtwoord"];
         $wachtwoord2 = $_POST["wachtwoord2"];
         $subscription_start = date("Y-m-d");
-        $land = $_POST["land"];;
+        echo $land;
 
 
     if (dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2)) {
@@ -71,7 +71,7 @@
             header("Location: ../php/accountaangemaakt.php");
             exit;
         } catch (PDOException $e) {
-            echo 'Er bestaat al een account met deze gegevens. Klik <a href="../php/registreren.php">Hier</a>  om terug te gaan';
+            echo $e;
         }
     } else {
         if (!checkUniekEmail($email)) {
