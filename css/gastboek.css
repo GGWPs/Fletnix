@@ -57,10 +57,20 @@ form {
 
 }
 
-.commentswel h2{
+.commentsniet {
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+.commentswel h2 {
     width: 100%;
 }
-.commentsniet  h2{
+
+.commentsniet h2 {
     width: 80%
 
 }
@@ -79,32 +89,6 @@ form {
     padding: 20px;
 
 }
-
-@media screen and (min-width: 960px) {
-    .commentswel div {
-        width: calc(33.333% - 20px);
-
-    }
-
-    .commentswel, .invoerveld {
-        width: 40%;
-        margin:  0;
-    }
-    .invoerveld{
-        margin: 80px 0 0 0;
-    }
-}
-
-.commentsniet {
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-
-}
-
 .commentsniet div {
     width: 30%;
     height: 32%;
@@ -116,16 +100,32 @@ form {
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* IE */
     white-space: pre-wrap;
-    margin: 1%;
+    margin: 10px;
 }
 
-.commenttext {
+@media screen and (min-width: 960px) {
+    .commentswel div {
+        width: calc(33.333% - 20px);
+    }
+
+    .commentswel, .invoerveld {
+        width: 40%;
+        margin: 0;
+    }
+
+    .invoerveld {
+        margin: 80px 0 0 0;
+    }
+}
+
+.comment {
     color: #dc0505;
     text-align: start;
     vertical-align: middle;
     font-size: 1rem;
 
 }
+
 
 .titel {
     width: 80%;
