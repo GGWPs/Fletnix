@@ -28,13 +28,17 @@ include 'functies.php';
     <?php printHeader(); ?>
     <div class="gastenboek">
         <div class="titel"><h1> Welkom bij ons gastenboek hier kunt u een reactie op onze website achterlaten</h1>
-            </div>
+        </div>
         <?php
         if (isset($_SESSION['voornaam'])) {
             echo '<div class="invoerveld"> Beste abonnee, laat hier een reactie achter om te laten weten wat je van deze site vind.'
-                . "<br>" . date("Y-m-d H:i:s") . "<br>" . $_SESSION['voornaam'] . " " . $_SESSION['achternaam'];
-            gastenBoekInvoer();
-            echo '</div><div class="commentswel"><h2> Laatste berichten </h2>';
+                . "<br>" . date("Y-m-d H:i:s") . "<br>" . $_SESSION["voornaam"] . " " . $_SESSION["achternaam"] . '
+                  <form method = "post" action = "gastenboekreactie.php">
+                  <textarea name="comment" cols="30" rows="10" maxlength="100" required placeholder="Maximaal 100 karakters"></textarea>
+                  <input type="submit" class="button2" value="Plaatsen">
+                  </form>
+                  </div>
+                  <div class="commentswel"><h2> Laatste berichten </h2>';
         } else {
             echo '<div class="titel"><h1>Gelieve eerst in te loggen</h1></div><div class="commentsniet"><h2> Laatste berichten </h2>';
         }
