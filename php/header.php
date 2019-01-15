@@ -9,7 +9,7 @@
 <div class="logoheader">
     <?php
     session_start();
-    if (isset($_SESSION['voornaam'])) {
+    if (isset($_SESSION['voornaam']))       {
         setlocale(LC_ALL, 'nl_NL') or setlocale(LC_ALL, 'nld_NLD');
         echo '<a href="filmoverzicht.php?page_id=1"><img src="../afbeeldingen/klein/fletnix-logo-klein.png" width="200" height="50" alt="Fletnix logo"></a>
         </div>

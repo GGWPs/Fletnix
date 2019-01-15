@@ -87,7 +87,7 @@
         }
         if (stripInvoer($wachtwoord)) {
             global $wachtwoordError;
-            $wachtwoordError = "Dit is geen juist wachtwoord, u mag geen .";
+            $wachtwoordError = "Dit is geen juist wachtwoord, u mag geen vreemde tekens zoals @ gebruiken of spaties.";
 
         } elseif ($wachtwoord != $wachtwoord2) {
             global $wachtwoordError;
