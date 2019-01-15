@@ -61,7 +61,7 @@ if (isset($_GET['page_id'])) {
         <div class="background">
             <div class="index-container">
                 <h1> <?= $overzicht ?></h1>
-                <form action="filmoverzicht.php" method="post">
+                <form action="filmoverzicht.php" method="post" action="<?= htmlspecialchars($_SERVER["PHP_SELF"])?>">
                     <label for='titel'>Zoeken op: </label>
                     <?php
                     if (isset($_GET['titel']) && !empty($_GET['titel'])) {

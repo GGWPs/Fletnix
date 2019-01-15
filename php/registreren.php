@@ -111,7 +111,7 @@ $land_options = laadLanden($land_options);
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
             <form method="post" action="
-            <?= $_SERVER['PHP_SELF'] ?>">
+            <?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
                 <select name="abonnement">
                     <option value="Basic">Basis €4.99</option>
                     <option value="Pro">Pro €7.99</option>
