@@ -81,7 +81,7 @@ function laadLanden($land_options)
         $error = $e;
     }
     while ($country = $data2->fetch()) {
-        $land_options .= '<option name="land1"> ' . $country["country_name"] . '</option>';
+        $land_options .= '<option name="land"> ' . $country["country_name"] . '</option>';
     }
     return $land_options;
 }
@@ -123,13 +123,9 @@ function dataMagInsertedWorden($invoerCorrect, $email, $gebruikersnaam, $ww1, $w
 
 /* voert een query uit en geeft de gegevens van de query terug */
 function voerQueryUit($query, $movieid){
-    try {
-        $data = verbindDatabase()->prepare($query);
-        $data->execute([$movieid]);
-        $gegevens = $data->fetchAll();
-        return $gegevens;
-    } catch (PDOException $e){
-        die ( "Fout met de database: {$e->getMessage()} " );
-    }
+    $data = verbindDatabase()->prepare($query);
+    $data->execute([$movieid]);
+    $gegevens = $data->fetchAll();
+    return $gegevens;
 }
 ?>
