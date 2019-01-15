@@ -107,6 +107,7 @@ $land_options = laadLanden($land_options);
 ?>
 <main>
     <div class="cover">
+        <div class="background">
         <div class="invoerveld">
             <h1>Kies uw abbonement</h1>
             <form method="post" action="
@@ -135,12 +136,13 @@ $land_options = laadLanden($land_options);
                 <span class="meldingTekst"><?= $gebruikersnaamError ?></span>
                 <input type="text" name="gebruikersnaam" required placeholder="Gebruikersnaam -> Hiermee logt u in" maxlength="50">
                 <span class="meldingTekst"><?= $wachtwoordError ?></span>
-                <input type="password" name="wachtwoord" required placeholder="Wachtwoord" maxlength="255">
-                <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen" maxlength="255">
+                <input type="password" name="wachtwoord" required placeholder="Wachtwoord" maxlength="255" minlength="8">
+                <input type="password" name="wachtwoord2" required placeholder="Wachtwoord herhalen" maxlength="255" minlength="8">
                 <span class="meldingTekst"><?= $vergetenInTeVullen ?></span>
                 <input type="submit" class="button2" value="Registreer">
             </form>
         </div>
+    </div>
     </div>
 </main>
 <?php printFooter(); ?>
