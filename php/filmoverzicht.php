@@ -28,34 +28,34 @@ require_once 'databaseconnection.php';
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/knoppen.css">
 </head>
-    <?php printHeader();
-    $select = "SELECT movie_id,cover_image, title FROM totale_films";
-    $overzicht = "Filmoverzicht";
-    if (isset($_GET['page_id'])) {
-        switch ($_GET['page_id']) {
-            case 1:
-                $select = "SELECT movie_id,cover_image, title FROM totale_films";
-                $overzicht = "Filmoverzicht";
-                break;
-            case 2:
-                $select = "SELECT movie_id,cover_image, title FROM actie_films";
-                $overzicht = "Actie Filmoverzicht";
-                break;
-            case 3:
-                $select = "SELECT movie_id,cover_image, title FROM comedy_films";
-                $overzicht = "Comedy Filmoverzicht";
-                break;
-            case 4:
-                $select = "SELECT movie_id,cover_image, title FROM drama_films";
-                $overzicht = "Drama Filmoverzicht";
-                break;
-            default:
-                $select = "SELECT movie_id,cover_image, title FROM totale_films";
-                $overzicht = "Filmoverzicht";
-                break;
-        }
+<?php printHeader();
+$select = "SELECT movie_id,cover_image, title FROM totale_films";
+$overzicht = "Filmoverzicht";
+if (isset($_GET['page_id'])) {
+    switch ($_GET['page_id']) {
+        case 1:
+            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            $overzicht = "Filmoverzicht";
+            break;
+        case 2:
+            $select = "SELECT movie_id,cover_image, title FROM actie_films";
+            $overzicht = "Actie Filmoverzicht";
+            break;
+        case 3:
+            $select = "SELECT movie_id,cover_image, title FROM comedy_films";
+            $overzicht = "Comedy Filmoverzicht";
+            break;
+        case 4:
+            $select = "SELECT movie_id,cover_image, title FROM drama_films";
+            $overzicht = "Drama Filmoverzicht";
+            break;
+        default:
+            $select = "SELECT movie_id,cover_image, title FROM totale_films";
+            $overzicht = "Filmoverzicht";
+            break;
     }
-    ?>
+}
+?>
 <main>
     <div class="cover">
         <div class="background">
@@ -82,58 +82,62 @@ require_once 'databaseconnection.php';
                     } else {
                         echo "<input type='number' id='publicatiejaar' name='publicatiejaar' placeholder='Jaar' min='1900' max='2030'>";
                     }
-                    ?>
-                    <input type="submit" id="zoeken" value="Zoeken" name="verzending">
-                </form>
-                <div class="index-item">
-                    <?php
-                    if (isset ($_SESSION['voornaam'])) {
-                        if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
-                            $filmSelectie = voerQueryUit($select, 0);
-                            tekenFilms($filmSelectie);
+                    echo '<input type="submit" id="zoeken" value="Zoeken" name="verzending">
+                          </form>';
+                    if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
+                        if ($_SESSION['zoektitelinfo'] == null) {
+                            $stuk1 = "U heeft gezocht op:";
+                        } else {
+                            $stuk1 = 'U heeft gezocht op titel: ' . $_SESSION['zoektitelinfo'];
                         }
-                        if (isset($_POST['verzending'])) {
-                            $filmtitel = "%" . $_POST['filmtitel'] . "%";
-                            $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
-                            $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
-                            $statement = "SELECT distinct totale_films.movie_id, cover_image, totale_films.publication_year, totale_films.title
+                        if ($_SESSION['zoekregisseurinfo'] == null) {
+                            $stuk2 = " ";
+                        } else {
+                            $stuk2 = ' regisseur: ' . $_SESSION['zoekregisseurinfo'];
+                        }
+                        if ($_SESSION['zoekjaarinfo'] == null) {
+                            $stuk3 = " ";
+                        } else {
+                            $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
+                        }
+                        echo '<h2>' . $stuk1 . $stuk2 . $stuk3 . ' </h2>';
+                    }
+                    ?>
+
+                    <div class="index-item">
+                        <?php
+                        if (isset ($_SESSION['voornaam'])) {
+                            if (!isset($_POST['verzending']) && !isset($_GET['zoek'])) {
+                                $filmSelectie = voerQueryUit($select, 0);
+                                tekenFilms($filmSelectie);
+                            }
+                            if (isset($_POST['verzending'])) {
+                                $filmtitel = "%" . $_POST['filmtitel'] . "%";
+                                $filmregisseur = "%" . $_POST['filmregisseur'] . "%";
+                                $publicatiejaar = "%" . $_POST['publicatiejaar'] . "%";
+                                $statement = "SELECT distinct totale_films.movie_id, cover_image, totale_films.publication_year, totale_films.title
                                             FROM totale_films
                                             INNER JOIN Movie_Director md on totale_films.movie_id=md.movie_id 
                                             INNER JOIN Person p on p.person_id=md.person_id 
                                             WHERE  p.firstname + ' ' + p.lastname LIKE ? AND totale_films.title LIKE ? AND totale_films.publication_year LIKE ? ORDER BY totale_films.publication_year desc , totale_films.title asc";
-                            $query = verbindDatabase()->prepare($statement);
-                            $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
-                            $filmSelectie = $query->fetchAll();
-                            $_SESSION['movies'] = $filmSelectie;
-                            $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
-                            $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
-                            $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
-                            header('Location:filmoverzicht.php?zoek=result&titel=' . $_POST["filmtitel"] . '&regisseur=' . $_POST["filmregisseur"] . '&publicatiejaar=' . $_POST["publicatiejaar"] . '');
+                                $query = verbindDatabase()->prepare($statement);
+                                $query->execute([$filmregisseur, $filmtitel, $publicatiejaar]);
+                                $filmSelectie = $query->fetchAll();
+                                $_SESSION['movies'] = $filmSelectie;
+                                $_SESSION['zoektitelinfo'] = $_POST['filmtitel'];
+                                $_SESSION['zoekregisseurinfo'] = $_POST['filmregisseur'];
+                                $_SESSION['zoekjaarinfo'] = $_POST['publicatiejaar'];
+                                header('Location:filmoverzicht.php?zoek=result&titel=' . $_POST["filmtitel"] . '&regisseur=' . $_POST["filmregisseur"] . '&publicatiejaar=' . $_POST["publicatiejaar"] . '');
+                            }
+                            if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
+                                $filmSelectie = $_SESSION['movies'];
+                                echo '<div class="index-item">' . tekenFilms($filmSelectie) . '</div>';
+                            }
+                        } else {
+                            header('Location:aanmeldpagina.php');
                         }
-                        if (isset ($_GET['zoek']) && $_GET['zoek'] == 'result') {
-                            if ($_SESSION['zoektitelinfo'] == null) {
-                                $stuk1 = "U heeft gezocht op:";
-                            } else {
-                                $stuk1 = 'U heeft gezocht op titel: ' . $_SESSION['zoektitelinfo'];
-                            }
-                            if ($_SESSION['zoekregisseurinfo'] == null) {
-                                $stuk2 = " ";
-                            } else {
-                                $stuk2 = ' regisseur: ' . $_SESSION['zoekregisseurinfo'];
-                            }
-                            if ($_SESSION['zoekjaarinfo'] == null) {
-                                $stuk3 = " ";
-                            } else {
-                                $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
-                            }
-                            $filmSelectie = $_SESSION['movies'];
-                            echo '<p>' . $stuk1 . $stuk2 . $stuk3 . ' </p><div class="index-item">' . tekenFilms($filmSelectie) . '</div>';
-                        }
-                    } else {
-                        header('Location:aanmeldpagina.php');
-                    }
-                    ?>
-                </div>
+                        ?>
+                    </div>
             </div>
         </div>
     </div>

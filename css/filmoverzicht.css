@@ -19,6 +19,7 @@ h2{
     color:white;
     display: flex;
     text-align: center;
+    width:100%;
 }
 
 .background {
