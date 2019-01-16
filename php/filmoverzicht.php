@@ -98,7 +98,7 @@ if (isset($_GET['page_id'])) {
                         if ($_SESSION['zoekjaarinfo'] == null) {
                             $stuk3 = " ";
                         } else {
-                            $stuk3 = ' en publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
+                            $stuk3 = ' publicatiejaar:  ' . $_SESSION['zoekjaarinfo'];
                         }
                         echo '<h2>' . $stuk1 . $stuk2 . $stuk3 . ' </h2>';
                     }

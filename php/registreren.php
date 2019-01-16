@@ -85,7 +85,7 @@
             global $gebruikersnaamError;
             $gebruikersnaamError = "Deze gebruikersnaam is al in gebruik.";
         }
-        if (stripInvoer($wachtwoord)) {
+        if (!stripInvoer($wachtwoord)) {
             global $wachtwoordError;
             $wachtwoordError = "Dit is geen juist wachtwoord, u mag geen vreemde tekens zoals @ gebruiken of spaties.";
 

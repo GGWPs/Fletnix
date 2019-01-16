@@ -40,7 +40,7 @@ function roepComments()
 {
     $query = verbindDatabase()->query('SELECT top 20 naam,datum,bericht FROM gastenboek order by datum desc');
     while ($r = $query->fetch()) {
-        echo "<div class='comment'>" . $r["naam"] . " plaatste om" . '<br>' . date('d-m-Y H:i',strtotime($r["datum"])) . '<br>' . $r["bericht"], '<br>' . '</div>';
+        echo "<div class='comment'>" . $r["naam"] . " plaatste op" . '<br>' . date('d-m-Y H:i',strtotime($r["datum"])) . '<br>' . $r["bericht"], '<br>' . '</div>';
     }
 }
 /*
