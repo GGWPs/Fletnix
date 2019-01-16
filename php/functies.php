@@ -9,7 +9,7 @@
 
 <?php
 require_once '../php/databaseconnection.php';
-
+/* deze functie voert een query uit die kijkt bijvoorbeeld of de username of email al bestaat */
 function checkUniek($query, $variabel)
 {
     $sql = verbindDatabase()->prepare($query);
