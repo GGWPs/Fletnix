@@ -45,7 +45,7 @@ include 'functies.php';
             en software die is verbonden aan onze service.</p>
 
         <ol>
-            <li><strong>Lidmaatschap.</strong> Je Flexnix-lidmaatschap wordt maandelijks voortgezet totdat het wordt
+            <li>Lidmaatschap. Je Flexnix-lidmaatschap wordt maandelijks voortgezet totdat het wordt
                 opgezegd. Als je gebruik wilt maken van de Flexnix-service, moet je over internettoegang en een
                 Flexnix-compatibel apparaat beschikken en ook een recente, geldige, geaccepteerde betalingsmethode
                 opgeven die je van tijd tot tijd kunt bewerken ('Betalingsmethode'). Je geeft ons toestemming om
@@ -54,8 +54,8 @@ include 'functies.php';
                 details met betrekking tot je Flexnix-lidmaatschap zijn te vinden op de Flexnix-website door onder je
                 profielnaam op de link 'Mijn account' te klikken.
             </li>
-            <li><strong>Gratis proefperioden</strong>
-                <ul style="list-style: none;">
+            <li>Gratis proefperioden
+                <ul>
                     <li>2.1. Je Flexnix-lidmaatschap kan met een gratis proefperiode beginnen. Tenzij anders wordt
                         aangegeven tijdens het registratieproces, duurt de gratis proefperiode van je lidmaatschap één
                         maand. De gratis proefperiode is bedoeld om nieuwe leden en bepaalde voormalige leden de service
@@ -79,8 +79,8 @@ include 'functies.php';
                     </li>
                 </ul>
             </li>
-            <li><strong>Facturering</strong>
-                <ul style="list-style: none;">
+            <li>Facturering
+                <ul>
                     <li>3.1. <u>Factureringscyclus.</u> De lidmaatschapskosten voor de Flexnix-service en andere
                         eventuele kosten in verband met je gebruik van de service, zoals belastingen en mogelijke
                         transactiekosten, worden maandelijks afgeschreven via je Betalingsmethode op de kalenderdag
@@ -124,8 +124,8 @@ include 'functies.php';
                     </li>
                 </ul>
             </li>
-            <li><strong>Flexnix-service</strong>
-                <ul style="list-style: none;">
+            <li>Flexnix-service
+                <ul>
                     <li>4.1. Je moet minimaal twaalf jaar zijn of meerderjarig in je provincie, regio of land om lid te
                         worden van de Flexnix-service. Minderjarigen mogen alleen gebruikmaken van de service onder
                         toezicht van een volwassene.
@@ -207,7 +207,7 @@ include 'functies.php';
                     </li>
                 </ul>
             </li>
-            <li><strong>Wachtwoorden en accounttoegang.</strong> Het lid dat het Flexnix-account heeft aangemaakt en via
+            <li>Wachtwoorden en accounttoegang. Het lid dat het Flexnix-account heeft aangemaakt en via
                 wiens Betalingsmethode de lidmaatschapskosten worden afgeschreven (de 'Accounteigenaar'), heeft toegang
                 tot en controle over het Flexnix-account en de Flexnix-compatibele apparaten waarmee toegang tot onze
                 service wordt verkregen. Teneinde de controle over het account te behouden alsmede te voorkomen dat
@@ -219,8 +219,8 @@ include 'functies.php';
                 kunnen je account beëindigen of tijdelijk blokkeren om jou, Flexnix of onze partners te beschermen tegen
                 identiteitsdiefstal of andere frauduleuze activiteiten.
             </li>
-            <li><strong>Diversen</strong>
-                <ul style="list-style: none;">
+            <li>Diversen
+                <ul>
                     <li>6.1. <u>Toepasselijk recht.</u> Deze Gebruiksvoorwaarden worden beheerst door en geïnterpreteerd
                         overeenkomstig Nederlands recht. Deze voorwaarden vormen geen beperking van de dwingende
                         rechtelijke consumentenbescherming die je mogelijk toekomt onder de toepasselijke wetgeving in
