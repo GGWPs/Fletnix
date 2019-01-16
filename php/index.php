@@ -6,6 +6,9 @@
 -->
 <?php
 include 'functies.php';
+if (isset($_SESSION['voornaam'])) {
+    header("Location: filmoverzicht.php?page_id=1");
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -25,7 +28,7 @@ include 'functies.php';
         <div class="background">
         <div class="tekst">
             <h1>Welkom bij Fletnix. Voor iedereen die van films houdt!</h1>
-            <button class="button2" type="button" onclick=window.location.href="abonnement.php">Abonneer nu!
+            <button class="button2" type="button" onclick=window.location.href="registreren.php">Abonneer nu!
             </button>
         </div>
         <div class="prijsLijst">
