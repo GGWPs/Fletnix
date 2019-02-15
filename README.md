@@ -1,2 +1,2 @@
-# Flexnix-Project
-Beroepsproduct voor WebTech
+# Fletnix
+Een netflix alternatief.
